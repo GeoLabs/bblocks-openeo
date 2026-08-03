@@ -1,0 +1,13 @@
+- title: Example 1
+  content: |-
+    Calling `array_append` with these arguments returns `[1, 2, 3]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2
+        ],
+        "value": 3
+      }

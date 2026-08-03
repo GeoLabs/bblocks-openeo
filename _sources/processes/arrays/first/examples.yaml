@@ -1,0 +1,41 @@
+- title: Example 1
+  content: |-
+    Calling `first` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `first` with these arguments returns `"A"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null,
+          "A",
+          "B"
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `first` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null,
+          2,
+          3
+        ],
+        "ignore_nodata": false
+      }

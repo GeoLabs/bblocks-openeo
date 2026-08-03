@@ -1,0 +1,8 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Get the labels for an array
+type: object
+properties:
+  data:
+    type: array
+required:
+- data

@@ -1,0 +1,121 @@
+- title: Example 1
+  content: |-
+    Calling `array_find` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3,
+          2,
+          3
+        ],
+        "value": 2
+      }
+- title: Example 2
+  content: |-
+    Calling `array_find` with these arguments returns `3`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3,
+          2,
+          3
+        ],
+        "value": 2,
+        "reverse": true
+      }
+- title: Example 3
+  content: |-
+    Calling `array_find` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "A",
+          "B",
+          "C"
+        ],
+        "value": "b"
+      }
+- title: Example 4
+  content: |-
+    Calling `array_find` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3
+        ],
+        "value": "2"
+      }
+- title: Example 5
+  content: |-
+    Calling `array_find` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "value": [
+          1,
+          2
+        ]
+      }
+- title: Example 6
+  content: |-
+    Calling `array_find` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "value": 2
+      }
+- title: Example 7
+  content: |-
+    Calling `array_find` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          {
+            "a": "b"
+          },
+          {
+            "c": "d"
+          }
+        ],
+        "value": {
+          "a": "b"
+        }
+      }

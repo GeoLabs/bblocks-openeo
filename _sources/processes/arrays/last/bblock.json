@@ -1,0 +1,23 @@
+{
+  "name": "Last",
+  "abstract": "Last element",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — last",
+      "link": "https://processes.openeo.org/#last"
+    },
+    {
+      "title": "Open-EO/openeo-processes — last.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/last.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "reducer"
+  ]
+}

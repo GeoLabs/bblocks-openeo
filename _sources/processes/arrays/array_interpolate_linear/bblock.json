@@ -1,0 +1,24 @@
+{
+  "name": "Array interpolate linear",
+  "abstract": "One-dimensional linear interpolation for arrays",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — array_interpolate_linear",
+      "link": "https://processes.openeo.org/#array_interpolate_linear"
+    },
+    {
+      "title": "Open-EO/openeo-processes — array_interpolate_linear.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_interpolate_linear.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "math",
+    "math-interpolation"
+  ]
+}

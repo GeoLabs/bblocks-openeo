@@ -1,0 +1,47 @@
+- title: Example 1
+  content: |-
+    Calling `array_create` with these arguments returns `[]`.
+  snippets:
+  - language: json
+    code: |-
+      {}
+- title: Example 2
+  content: |-
+    Calling `array_create` with these arguments returns `["this", "is", "a", "test"]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "this",
+          "is",
+          "a",
+          "test"
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `array_create` with these arguments returns `[null, null, null]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null
+        ],
+        "repeat": 3
+      }
+- title: Example 4
+  content: |-
+    Calling `array_create` with these arguments returns `[1, 2, 3, 1, 2, 3]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3
+        ],
+        "repeat": 2
+      }

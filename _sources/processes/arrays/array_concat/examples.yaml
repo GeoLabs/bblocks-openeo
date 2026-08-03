@@ -1,0 +1,35 @@
+- title: Example 1
+  content: |-
+    Concatenates two numerical arrays.
+
+    Calling `array_concat` with these arguments returns `[1.5, 2.5, 5]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "array1": [
+          1.5,
+          2.5
+        ],
+        "array2": [
+          5
+        ]
+      }
+- title: Example 2
+  content: |-
+    Concatenates two arrays containing different data type, may not always be supported.
+
+    Calling `array_concat` with these arguments returns `["a", "b", 1, 2]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "array1": [
+          "a",
+          "b"
+        ],
+        "array2": [
+          1,
+          2
+        ]
+      }

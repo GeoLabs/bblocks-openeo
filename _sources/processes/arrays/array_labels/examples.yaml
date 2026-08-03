@@ -1,0 +1,15 @@
+- title: Labels of an unlabeled array
+  content: |-
+    For an array without labels, the zero-based indices are returned.
+
+    Calling `array_labels` with these arguments returns `[0, 1, 2]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "a",
+          "b",
+          "c"
+        ]
+      }

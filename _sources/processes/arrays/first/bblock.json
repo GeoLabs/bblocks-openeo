@@ -1,0 +1,23 @@
+{
+  "name": "First",
+  "abstract": "First element",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — first",
+      "link": "https://processes.openeo.org/#first"
+    },
+    {
+      "title": "Open-EO/openeo-processes — first.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/first.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "reducer"
+  ]
+}

@@ -1,0 +1,22 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Count the number of elements
+type: object
+properties:
+  data:
+    type: array
+    items:
+      description: Any data type is allowed.
+  condition:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.process-graph
+    - title: All elements
+      description: Boolean `true` counts all elements in the list.
+      type: boolean
+      const: true
+    - title: Valid elements
+      description: '`null` counts valid elements in the list.'
+      type: 'null'
+  context:
+    description: Any data type.
+required:
+- data

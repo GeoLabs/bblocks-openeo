@@ -1,0 +1,23 @@
+{
+  "name": "Array find",
+  "abstract": "Get the index for a value in an array",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — array_find",
+      "link": "https://processes.openeo.org/#array_find"
+    },
+    {
+      "title": "Open-EO/openeo-processes — array_find.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_find.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "reducer"
+  ]
+}

@@ -1,0 +1,89 @@
+- title: Example 1
+  content: |-
+    Calling `order` with these arguments returns `[1, 2, 8, 5, 0, 4, 7, 9, 10]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          6,
+          -1,
+          2,
+          null,
+          7,
+          4,
+          null,
+          8,
+          3,
+          9,
+          9
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `order` with these arguments returns `[1, 2, 8, 5, 0, 4, 7, 9, 10, 3, 6]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          6,
+          -1,
+          2,
+          null,
+          7,
+          4,
+          null,
+          8,
+          3,
+          9,
+          9
+        ],
+        "nodata": true
+      }
+- title: Example 3
+  content: |-
+    Calling `order` with these arguments returns `[9, 10, 7, 4, 0, 5, 8, 2, 1, 3, 6]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          6,
+          -1,
+          2,
+          null,
+          7,
+          4,
+          null,
+          8,
+          3,
+          9,
+          9
+        ],
+        "asc": false,
+        "nodata": true
+      }
+- title: Example 4
+  content: |-
+    Calling `order` with these arguments returns `[3, 6, 9, 10, 7, 4, 0, 5, 8, 2, 1]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          6,
+          -1,
+          2,
+          null,
+          7,
+          4,
+          null,
+          8,
+          3,
+          9,
+          9
+        ],
+        "asc": false,
+        "nodata": false
+      }

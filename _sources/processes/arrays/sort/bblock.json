@@ -1,0 +1,27 @@
+{
+  "name": "Sort",
+  "abstract": "Sort data",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — sort",
+      "link": "https://processes.openeo.org/#sort"
+    },
+    {
+      "title": "Open-EO/openeo-processes — sort.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sort.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "sorting"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date",
+    "ogc.openeo.types.date-time"
+  ]
+}

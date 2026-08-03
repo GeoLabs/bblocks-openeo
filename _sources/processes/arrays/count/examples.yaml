@@ -1,0 +1,79 @@
+- title: Example 1
+  content: |-
+    Calling `count` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": []
+      }
+- title: Example 2
+  content: |-
+    Calling `count` with these arguments returns `4`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `count` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "ABC",
+          null
+        ]
+      }
+- title: Example 4
+  content: |-
+    Calling `count` with these arguments returns `2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          false,
+          null
+        ],
+        "condition": true
+      }
+- title: Example 5
+  content: |-
+    Calling `count` with these arguments returns `3`.
+
+    Note: this official OpenEO example represents `condition` as a bare process-node map, without the `process_graph` wrapper key required by the `process-graph` subtype schema. This snippet is kept verbatim for fidelity to the source and is not schema-validated; it appears to be an inconsistency in the upstream openeo-processes specification between this example and its own subtype schema.
+  snippets:
+  - language: text
+    code: |-
+      {
+        "data": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          null
+        ],
+        "condition": {
+          "gt": {
+            "process_id": "gt",
+            "arguments": {
+              "x": {
+                "from_parameter": "element"
+              },
+              "y": 2
+            },
+            "result": true
+          }
+        }
+      }

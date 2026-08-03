@@ -1,0 +1,20 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Sort data
+type: object
+properties:
+  data:
+    type: array
+    items:
+      anyOf:
+      - type: number
+      - type: 'null'
+      - $ref: bblocks://ogc.openeo.types.date-time
+      - $ref: bblocks://ogc.openeo.types.date
+  asc:
+    type: boolean
+  nodata:
+    type:
+    - boolean
+    - 'null'
+required:
+- data

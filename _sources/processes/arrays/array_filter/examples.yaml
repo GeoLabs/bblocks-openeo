@@ -1,0 +1,30 @@
+- title: Keep elements greater than 1
+  content: |-
+    Filters the array to the elements for which `gt(x, 1)` returns `true`.
+
+    Calling `array_filter` with these arguments returns `[2, 3]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "condition": {
+          "process_graph": {
+            "gt1": {
+              "process_id": "gt",
+              "arguments": {
+                "x": {
+                  "from_parameter": "x"
+                },
+                "y": 1
+              },
+              "result": true
+            }
+          }
+        }
+      }

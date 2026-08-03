@@ -1,0 +1,41 @@
+- title: Example 1
+  content: |-
+    Calling `last` with these arguments returns `2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `last` with these arguments returns `"B"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "A",
+          "B",
+          null
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `last` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          0,
+          1,
+          null
+        ],
+        "ignore_nodata": false
+      }

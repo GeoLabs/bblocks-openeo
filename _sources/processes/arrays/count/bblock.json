@@ -1,0 +1,27 @@
+{
+  "name": "Count",
+  "abstract": "Count the number of elements",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — count",
+      "link": "https://processes.openeo.org/#count"
+    },
+    {
+      "title": "Open-EO/openeo-processes — count.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/count.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "math-statistics",
+    "reducer"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph"
+  ]
+}

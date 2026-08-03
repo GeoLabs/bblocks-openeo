@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a process to each array element
+type: object
+properties:
+  data:
+    type: array
+    items:
+      description: Any data type is allowed.
+  process:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  context:
+    description: Any data type.
+required:
+- data
+- process

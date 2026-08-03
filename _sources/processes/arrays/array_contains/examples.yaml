@@ -1,0 +1,75 @@
+- title: Example 1
+  content: |-
+    Calling `array_contains` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3
+        ],
+        "value": 2
+      }
+- title: Example 2
+  content: |-
+    Calling `array_contains` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "A",
+          "B",
+          "C"
+        ],
+        "value": "b"
+      }
+- title: Example 3
+  content: |-
+    Calling `array_contains` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3
+        ],
+        "value": "2"
+      }
+- title: Example 4
+  content: |-
+    Calling `array_contains` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          null
+        ],
+        "value": null
+      }
+- title: Example 5
+  content: |-
+    Calling `array_contains` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          [
+            1,
+            2
+          ],
+          [
+            3,
+            4
+          ]
+        ],
+        "value": 2
+      }
