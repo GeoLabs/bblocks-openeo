@@ -1,0 +1,28 @@
+{
+  "name": "Date between",
+  "abstract": "Between comparison for dates and times",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — date_between",
+      "link": "https://processes.openeo.org/#date_between"
+    },
+    {
+      "title": "Open-EO/openeo-processes — date_between.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/date_between.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison",
+    "date-and-time"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date",
+    "ogc.openeo.types.date-time",
+    "ogc.openeo.types.time"
+  ]
+}

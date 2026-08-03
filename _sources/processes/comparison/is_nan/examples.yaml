@@ -1,0 +1,11 @@
+- title: An ordinary number is not NaN
+  content: |-
+    Calling `is_nan` with these arguments returns `false`.
+
+    JSON has no literal representation for `NaN`, so a JSON example cannot demonstrate the `true` branch; in a process graph, a NaN value typically arises from a prior computation (e.g. `0 / 0`) rather than from a literal argument.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 5
+      }

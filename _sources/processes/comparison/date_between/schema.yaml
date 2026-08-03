@@ -1,0 +1,25 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Between comparison for dates and times
+type: object
+properties:
+  x:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.date-time
+    - $ref: bblocks://ogc.openeo.types.date
+    - $ref: bblocks://ogc.openeo.types.time
+  min:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.date-time
+    - $ref: bblocks://ogc.openeo.types.date
+    - $ref: bblocks://ogc.openeo.types.time
+  max:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.date-time
+    - $ref: bblocks://ogc.openeo.types.date
+    - $ref: bblocks://ogc.openeo.types.time
+  exclude_max:
+    type: boolean
+required:
+- x
+- min
+- max

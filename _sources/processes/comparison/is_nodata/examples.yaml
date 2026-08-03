@@ -1,0 +1,39 @@
+- title: Example 1
+  content: |-
+    Calling `is_nodata` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1
+      }
+- title: Example 2
+  content: |-
+    Calling `is_nodata` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": "Test"
+      }
+- title: Example 3
+  content: |-
+    Calling `is_nodata` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null
+      }
+- title: Example 4
+  content: |-
+    Calling `is_nodata` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": [
+          null,
+          null
+        ]
+      }

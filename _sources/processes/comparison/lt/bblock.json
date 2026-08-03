@@ -1,0 +1,22 @@
+{
+  "name": "LT",
+  "abstract": "Less than comparison",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — lt",
+      "link": "https://processes.openeo.org/#lt"
+    },
+    {
+      "title": "Open-EO/openeo-processes — lt.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/lt.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison"
+  ]
+}

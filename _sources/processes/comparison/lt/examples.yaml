@@ -1,0 +1,70 @@
+- title: Example 1
+  content: |-
+    Calling `lt` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "y": null
+      }
+- title: Example 2
+  content: |-
+    Calling `lt` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0,
+        "y": 0
+      }
+- title: Example 3
+  content: |-
+    Calling `lt` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "y": 2
+      }
+- title: Example 4
+  content: |-
+    Calling `lt` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -0.5,
+        "y": -0.6
+      }
+- title: Example 5
+  content: |-
+    Calling `lt` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": "2018-01-01T00:00:00Z",
+        "y": "2018-01-02T00:00:00Z"
+      }
+- title: Example 6
+  content: |-
+    Calling `lt` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0,
+        "y": true
+      }
+- title: Example 7
+  content: |-
+    Calling `lt` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": false,
+        "y": true
+      }
