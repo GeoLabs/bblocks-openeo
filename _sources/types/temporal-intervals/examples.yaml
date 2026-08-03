@@ -1,0 +1,52 @@
+- title: Example 1
+  content: |-
+    An example value for this subtype.
+  snippets:
+  - language: json
+    code: |-
+      [
+        [
+          "2015-01-01",
+          "2016-01-01"
+        ],
+        [
+          "2016-01-01",
+          "2017-01-01"
+        ],
+        [
+          "2017-01-01",
+          "2018-01-01"
+        ]
+      ]
+- title: Example 2
+  content: |-
+    An example value for this subtype.
+  snippets:
+  - language: json
+    code: |-
+      [
+        [
+          "00:00:00",
+          "12:00:00"
+        ],
+        [
+          "12:00:00",
+          null
+        ]
+      ]
+- title: Example value
+  content: |-
+    Two consecutive half-year intervals.
+  snippets:
+  - language: json
+    code: |-
+      [
+        [
+          "2020-01-01",
+          "2020-07-01"
+        ],
+        [
+          "2020-07-01",
+          "2021-01-01"
+        ]
+      ]

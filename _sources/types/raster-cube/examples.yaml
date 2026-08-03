@@ -1,0 +1,7 @@
+- title: Example value
+  content: |-
+    A raster data cube reference; prefer the `datacube` subtype for new processes.
+  snippets:
+  - language: json
+    code: |-
+      {}

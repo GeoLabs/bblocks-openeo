@@ -1,0 +1,13 @@
+- title: Example value
+  content: |-
+    A GeoJSON point geometry.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "type": "Point",
+        "coordinates": [
+          16.37,
+          48.21
+        ]
+      }

@@ -1,0 +1,7 @@
+- title: Example value
+  content: |-
+    A collection identifier for Sentinel-2 Level-2A data.
+  snippets:
+  - language: json
+    code: |-
+      "SENTINEL2_L2A"

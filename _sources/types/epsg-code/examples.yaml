@@ -1,0 +1,6 @@
+- title: Example 1
+  content: |-
+    An example value for this subtype: `3857`.
+- title: Example value
+  content: |-
+    The EPSG code for WGS 84. For example, `4326`.

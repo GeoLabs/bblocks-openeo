@@ -1,0 +1,13 @@
+- title: Example value
+  content: |-
+    A bounding box around Vienna, Austria, in EPSG:4326.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "west": 16.06,
+        "south": 48.06,
+        "east": 16.65,
+        "north": 48.31,
+        "crs": 4326
+      }

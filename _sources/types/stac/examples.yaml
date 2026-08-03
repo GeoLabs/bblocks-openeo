@@ -1,0 +1,17 @@
+- title: Example value
+  content: |-
+    A minimal valid STAC Item (no geometry).
+  snippets:
+  - language: json
+    code: |-
+      {
+        "type": "Feature",
+        "stac_version": "1.0.0",
+        "id": "sample-item",
+        "geometry": null,
+        "properties": {
+          "datetime": "2020-01-01T00:00:00Z"
+        },
+        "links": [],
+        "assets": {}
+      }

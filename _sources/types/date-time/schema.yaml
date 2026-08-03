@@ -1,0 +1,7 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: date-time
+format: date-time
+title: Date with Time
+description: Date and time representation, as defined for `date-time` by [RFC 3339 in section
+  5.6](https://www.rfc-editor.org/rfc/rfc3339.html#section-5.6).

@@ -1,0 +1,45 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+subtype: bounding-box
+title: Bounding Box
+description: A bounding box with the required fields `west`, `south`, `east`, `north` and
+  optionally `base`, `height`, `crs`. The `crs` is a EPSG code or a WKT2:2018 string.
+required:
+- west
+- south
+- east
+- north
+properties:
+  west:
+    description: West (lower left corner, coordinate axis 1).
+    type: number
+  south:
+    description: South (lower left corner, coordinate axis 2).
+    type: number
+  east:
+    description: East (upper right corner, coordinate axis 1).
+    type: number
+  north:
+    description: North (upper right corner, coordinate axis 2).
+    type: number
+  base:
+    description: Base (optional, lower left corner, coordinate axis 3).
+    type:
+    - number
+    - 'null'
+    default: null
+  height:
+    description: Height (optional, upper right corner, coordinate axis 3).
+    type:
+    - number
+    - 'null'
+    default: null
+  crs:
+    description: Coordinate reference system of the extent, specified as [EPSG code](https://spatialreference.org/ref/epsg/)
+      or [WKT2 CRS string](http://docs.opengeospatial.org/is/18-010r7/18-010r7.html). Defaults
+      to `4326` (EPSG code 4326) unless the client explicitly requests a different coordinate
+      reference system.
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.epsg-code
+    - $ref: bblocks://ogc.openeo.types.wkt2-definition
+    default: 4326

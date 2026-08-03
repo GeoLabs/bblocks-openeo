@@ -1,0 +1,30 @@
+- title: Example 1
+  content: |-
+    An example value for this subtype.
+  snippets:
+  - language: json
+    code: |-
+      [
+        "2015-01-01T00:00:00Z",
+        "2016-01-01T00:00:00Z"
+      ]
+- title: Example 2
+  content: |-
+    An example value for this subtype.
+  snippets:
+  - language: json
+    code: |-
+      [
+        "2015-01-01",
+        "2016-01-01"
+      ]
+- title: Example value
+  content: |-
+    A left-closed interval covering the year 2020.
+  snippets:
+  - language: json
+    code: |-
+      [
+        "2020-01-01",
+        "2021-01-01"
+      ]

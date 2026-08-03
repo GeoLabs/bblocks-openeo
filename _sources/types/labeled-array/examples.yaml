@@ -1,0 +1,11 @@
+- title: Example value
+  content: |-
+    An array; when labeled, each value would carry an associated label.
+  snippets:
+  - language: json
+    code: |-
+      [
+        1,
+        2,
+        3
+      ]

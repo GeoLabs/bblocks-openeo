@@ -1,0 +1,9 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+subtype: metadata-filter
+title: Filters
+description: A list of filters to check against. Specify key-value-pairs with the key being
+  the name of the metadata property name and the value being a user-defined process evaluated
+  against the metadata values.
+additionalProperties:
+  $ref: bblocks://ogc.openeo.types.process-graph

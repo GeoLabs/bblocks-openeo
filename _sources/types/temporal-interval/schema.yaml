@@ -1,0 +1,34 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: array
+subtype: temporal-interval
+title: Single temporal interval
+description: 'Left-closed temporal interval, represented as two-element array with the following
+  elements:
+
+
+  1. The first element is the start of the temporal interval. The specified time instant is
+  **included** in the interval.
+
+  2. The second element is the end of the temporal interval. The specified time instant is
+  **excluded** from the interval.
+
+
+  The second element must always be greater/later than the first element. Otherwise, an exception
+  is thrown.
+
+
+  The specified temporal strings follow [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339.html).
+  Also supports unbounded intervals by setting one of the boundaries to `null`, but never
+  both.'
+uniqueItems: true
+minItems: 2
+maxItems: 2
+items:
+  description: Processes and implementations may choose to only implement a subset of the
+    subtypes specified here. Clients must check what back-ends / processes actually support.
+  anyOf:
+  - $ref: bblocks://ogc.openeo.types.date-time
+  - $ref: bblocks://ogc.openeo.types.date
+  - $ref: bblocks://ogc.openeo.types.time
+  - $ref: bblocks://ogc.openeo.types.year
+  - type: 'null'

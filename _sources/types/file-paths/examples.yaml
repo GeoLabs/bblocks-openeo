@@ -1,0 +1,10 @@
+- title: Example value
+  content: |-
+    Two relative paths to uploaded files.
+  snippets:
+  - language: json
+    code: |-
+      [
+        "data/input1.tif",
+        "data/input2.tif"
+      ]

@@ -1,0 +1,7 @@
+- title: Example value
+  content: |-
+    Noon, UTC.
+  snippets:
+  - language: json
+    code: |-
+      "12:00:00"

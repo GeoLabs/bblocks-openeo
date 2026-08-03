@@ -1,0 +1,23 @@
+- title: Example value
+  content: |-
+    A 3x3 Laplacian edge-detection kernel.
+  snippets:
+  - language: json
+    code: |-
+      [
+        [
+          1,
+          1,
+          1
+        ],
+        [
+          1,
+          -8,
+          1
+        ],
+        [
+          1,
+          1,
+          1
+        ]
+      ]

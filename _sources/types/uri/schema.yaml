@@ -1,0 +1,7 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: uri
+format: uri
+title: URI
+description: A valid URI according to [RFC3986](https://www.rfc-editor.org/rfc/rfc3986.html).
+  Can be restricted using a regular expression, e.g. to (dis)allow certain protocols.

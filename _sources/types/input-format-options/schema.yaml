@@ -1,0 +1,6 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+subtype: input-format-options
+title: Options for Input File Formats
+description: Key-value-pairs with arguments for the input format options supported by the
+  back-end.

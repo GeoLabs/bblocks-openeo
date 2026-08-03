@@ -1,0 +1,3 @@
+This Building Block proposes a schema representation of the OpenEO shared subtype `band-name`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.
+
+Either a unique band name (metadata field `name`) or a [common band name](https://github.com/radiantearth/stac-spec/tree/v0.9.0/extensions/eo#common-band-names) (metadata field `common_name`) available in the data cube. If the unique band name and the common name conflict, the unique band name has a higher priority.

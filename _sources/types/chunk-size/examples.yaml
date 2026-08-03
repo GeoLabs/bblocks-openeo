@@ -1,0 +1,10 @@
+- title: Example value
+  content: |-
+    A 256-pixel chunk size for the x dimension.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "dimension": "x",
+        "value": 256
+      }

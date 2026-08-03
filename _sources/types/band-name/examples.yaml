@@ -1,0 +1,7 @@
+- title: Example value
+  content: |-
+    A common Sentinel-2 band name.
+  snippets:
+  - language: json
+    code: |-
+      "B04"

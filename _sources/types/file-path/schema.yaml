@@ -1,0 +1,6 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: file-path
+pattern: "^[^\r\n\\:'\"]+$"
+title: Single File path
+description: A relative path to a user-uploaded file. Folders can't be specified.

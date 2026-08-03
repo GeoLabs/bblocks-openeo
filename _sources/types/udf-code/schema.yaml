@@ -1,0 +1,6 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: udf-code
+title: UDF source code
+description: The multi-line source code of a user-defined function (UDF), must contain a newline/line-break.
+pattern: "(\r\n|\r|\n)"

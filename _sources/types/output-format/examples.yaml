@@ -1,0 +1,7 @@
+- title: Example value
+  content: |-
+    The identifier of the GeoTIFF output format.
+  snippets:
+  - language: json
+    code: |-
+      "GTiff"

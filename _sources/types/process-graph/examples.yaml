@@ -1,0 +1,18 @@
+- title: Example value
+  content: |-
+    A minimal callback process graph that computes `1 + 1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "process_graph": {
+          "add1": {
+            "process_id": "add",
+            "arguments": {
+              "x": 1,
+              "y": 1
+            },
+            "result": true
+          }
+        }
+      }

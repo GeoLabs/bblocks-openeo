@@ -1,0 +1,5 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: udf-runtime
+title: UDF runtime
+description: The identifier of a UDF runtime you want to run the given UDF source code with.

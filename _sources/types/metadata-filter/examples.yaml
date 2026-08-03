@@ -1,0 +1,22 @@
+- title: Example value
+  content: |-
+    Filters collections/items to those with less than 50% cloud cover.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "eo:cloud_cover": {
+          "process_graph": {
+            "lt1": {
+              "process_id": "lt",
+              "arguments": {
+                "x": {
+                  "from_parameter": "value"
+                },
+                "y": 50
+              },
+              "result": true
+            }
+          }
+        }
+      }

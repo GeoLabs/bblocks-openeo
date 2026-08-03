@@ -1,0 +1,10 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+subtype: stac
+title: STAC resource
+description: A STAC Catalog, Collection, or Item, as defined by the [STAC specification](https://stacspec.org)
+  version 0.9.0 or later.
+oneOf:
+- $ref: http://schemas.stacspec.org/v1.0.0/catalog-spec/json-schema/catalog.json
+- $ref: http://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json
+- $ref: http://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json
