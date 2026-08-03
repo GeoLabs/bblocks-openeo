@@ -1,18 +1,26 @@
 # A short, descriptive name of this building block collection
-name: My OGC Building Blocks repository
+name: OpenEO Building Blocks
 
 # Short abstract for this collection (optional)
 abstract: |
-  This is an example text for the abstract. It should be short and to the point.
-  A "Tell me more" link will appear if there is an additional description with a longer explanation.
+  An investigation into representing the [OpenEO](https://openeo.org) process catalogue —
+  an OGC Community Standard — as OGC Building Blocks. Each Building Block here is a proposed
+  schema correspondence for one OpenEO process or shared subtype, not a settled equivalence.
 
 # Description for this collection (optional)
 description: |
-  The description can be longer. Both **the abstract** *and the description* support Markdown,
-  including [links](https://google.es).
+  This register is produced under OSPD 2026 D100 Activity 4 (GeoLabs). It models the stable
+  processes of the [OpenEO Processes specification](https://processes.openeo.org/) — sourced from
+  [Open-EO/openeo-processes](https://github.com/Open-EO/openeo-processes) — as OGC Building Block
+  schemas, grouped by OpenEO's own process categories. Shared OpenEO subtypes (data cubes, process
+  graphs, temporal intervals, etc.) are modelled once under `types/` and reused by reference across
+  process Building Blocks.
+
+  This is an open investigation: each mapping between an OpenEO process and an OGC Building Block
+  is a proposed correspondence, offered for review, not a final or authoritative statement.
 
 # Customize the following prefix (will be prepended to the path of the building blocks):
-identifier-prefix: ogc.bbr.template.
+identifier-prefix: ogc.openeo.
 
 # List of imports ("default" is an alias for the main OGC Building Blocks Register)
 imports:
