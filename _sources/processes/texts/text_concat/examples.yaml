@@ -1,0 +1,72 @@
+- title: Example 1
+  content: |-
+    Calling `text_concat` with these arguments returns `"Hello World"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          "Hello",
+          "World"
+        ],
+        "separator": " "
+      }
+- title: Example 2
+  content: |-
+    Calling `text_concat` with these arguments returns `"1234567890"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          0
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `text_concat` with these arguments returns `"null\ntrue\nfalse\n1\n-1.5\n\u00df"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null,
+          true,
+          false,
+          1,
+          -1.5,
+          "\u00df"
+        ],
+        "separator": "\n"
+      }
+- title: Example 4
+  content: |-
+    Calling `text_concat` with these arguments returns `"210"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          2,
+          0
+        ],
+        "separator": 1
+      }
+- title: Example 5
+  content: |-
+    Calling `text_concat` with these arguments returns `""`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": []
+      }

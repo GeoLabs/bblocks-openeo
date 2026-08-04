@@ -1,0 +1,62 @@
+- title: Example 1
+  content: |-
+    Calling `text_begins` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": "Lorem ipsum dolor sit amet",
+        "pattern": "amet"
+      }
+- title: Example 2
+  content: |-
+    Calling `text_begins` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": "Lorem ipsum dolor sit amet",
+        "pattern": "Lorem"
+      }
+- title: Example 3
+  content: |-
+    Calling `text_begins` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": "Lorem ipsum dolor sit amet",
+        "pattern": "lorem"
+      }
+- title: Example 4
+  content: |-
+    Calling `text_begins` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": "Lorem ipsum dolor sit amet",
+        "pattern": "lorem",
+        "case_sensitive": false
+      }
+- title: Example 5
+  content: |-
+    Calling `text_begins` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": "\u00c4",
+        "pattern": "\u00e4",
+        "case_sensitive": false
+      }
+- title: Example 6
+  content: |-
+    Calling `text_begins` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": null,
+        "pattern": "null"
+      }

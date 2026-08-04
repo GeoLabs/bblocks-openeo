@@ -1,0 +1,22 @@
+{
+  "name": "Text concat",
+  "abstract": "Concatenate elements to a single text",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — text_concat",
+      "link": "https://processes.openeo.org/#text_concat"
+    },
+    {
+      "title": "Open-EO/openeo-processes — text_concat.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_concat.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "texts"
+  ]
+}

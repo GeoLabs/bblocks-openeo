@@ -1,0 +1,115 @@
+- title: Example 1
+  content: |-
+    Calling `eq` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "y": null
+      }
+- title: Example 2
+  content: |-
+    Calling `eq` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "y": 1
+      }
+- title: Example 3
+  content: |-
+    Calling `eq` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "y": "1"
+      }
+- title: Example 4
+  content: |-
+    Calling `eq` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0,
+        "y": false
+      }
+- title: Example 5
+  content: |-
+    Calling `eq` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1.02,
+        "y": 1,
+        "delta": 0.01
+      }
+- title: Example 6
+  content: |-
+    Calling `eq` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -1,
+        "y": -1.001,
+        "delta": 0.01
+      }
+- title: Example 7
+  content: |-
+    Calling `eq` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 115,
+        "y": 110,
+        "delta": 10
+      }
+- title: Example 8
+  content: |-
+    Calling `eq` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": "Test",
+        "y": "test"
+      }
+- title: Example 9
+  content: |-
+    Calling `eq` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": "Test",
+        "y": "test",
+        "case_sensitive": false
+      }
+- title: Example 10
+  content: |-
+    Calling `eq` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": "\u00c4",
+        "y": "\u00e4",
+        "case_sensitive": false
+      }
+- title: Example 11
+  content: |-
+    Calling `eq` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": "2018-01-01T00:00:00Z",
+        "y": "2018-01-01T00:00:00+00:00"
+      }

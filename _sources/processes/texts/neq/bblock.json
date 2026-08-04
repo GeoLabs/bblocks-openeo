@@ -1,0 +1,23 @@
+{
+  "name": "NEQ",
+  "abstract": "Not equal to comparison",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — neq",
+      "link": "https://processes.openeo.org/#neq"
+    },
+    {
+      "title": "Open-EO/openeo-processes — neq.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/neq.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "texts",
+    "comparison"
+  ]
+}
