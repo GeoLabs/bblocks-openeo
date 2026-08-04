@@ -1,0 +1,31 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Temporal aggregations based on calendar hierarchies
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  period:
+    type: string
+    enum:
+    - hour
+    - day
+    - week
+    - dekad
+    - month
+    - season
+    - tropical-season
+    - year
+    - decade
+    - decade-ad
+  reducer:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  dimension:
+    type:
+    - string
+    - 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- period
+- reducer

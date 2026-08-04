@@ -1,0 +1,25 @@
+- title: Monthly mean aggregation
+  content: |-
+    Calling `aggregate_temporal_period` with these arguments returns `{}`.
+
+    `data` and the return value are data cube references — in an actual process graph these are node/parameter references (`from_node` / `from_parameter`), not literal JSON; `{}` here only satisfies the `datacube` shared type's minimal object constraint.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {},
+        "period": "month",
+        "reducer": {
+          "process_graph": {
+            "mean1": {
+              "process_id": "mean",
+              "arguments": {
+                "data": {
+                  "from_parameter": "data"
+                }
+              },
+              "result": true
+            }
+          }
+        }
+      }

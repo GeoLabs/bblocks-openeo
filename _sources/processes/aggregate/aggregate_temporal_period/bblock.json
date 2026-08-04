@@ -1,0 +1,28 @@
+{
+  "name": "Aggregate temporal period",
+  "abstract": "Temporal aggregations based on calendar hierarchies",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — aggregate_temporal_period",
+      "link": "https://processes.openeo.org/#aggregate_temporal_period"
+    },
+    {
+      "title": "Open-EO/openeo-processes — aggregate_temporal_period.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_temporal_period.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "aggregate",
+    "climatology",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph"
+  ]
+}
