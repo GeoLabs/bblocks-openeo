@@ -1,0 +1,12 @@
+- title: NDVI-style normalized difference
+  content: |-
+    Calling `normalized_difference` with these arguments returns `0.7142857142857143`.
+
+    For example, `x` = NIR reflectance and `y` = red reflectance gives NDVI.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0.6,
+        "y": 0.1
+      }
