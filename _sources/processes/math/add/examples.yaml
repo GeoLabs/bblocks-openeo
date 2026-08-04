@@ -1,0 +1,30 @@
+- title: Example 1
+  content: |-
+    Calling `add` with these arguments returns `7.5`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 5,
+        "y": 2.5
+      }
+- title: Example 2
+  content: |-
+    Calling `add` with these arguments returns `-6`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -2,
+        "y": -4
+      }
+- title: Example 3
+  content: |-
+    Calling `add` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "y": null
+      }

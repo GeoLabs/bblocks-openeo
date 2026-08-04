@@ -1,0 +1,23 @@
+{
+  "name": "Int",
+  "abstract": "Integer part of a number",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — int",
+      "link": "https://processes.openeo.org/#int"
+    },
+    {
+      "title": "Open-EO/openeo-processes — int.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/int.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "math-rounding"
+  ]
+}

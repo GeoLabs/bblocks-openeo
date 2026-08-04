@@ -1,0 +1,44 @@
+- title: Example 1
+  content: |-
+    Calling `max` with these arguments returns `3`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `max` with these arguments returns `5`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          5,
+          2.5,
+          null,
+          -0.7
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `max` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          null,
+          2
+        ],
+        "ignore_nodata": false
+      }

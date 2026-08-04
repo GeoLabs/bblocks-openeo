@@ -1,0 +1,22 @@
+{
+  "name": "Mod",
+  "abstract": "Modulo",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — mod",
+      "link": "https://processes.openeo.org/#mod"
+    },
+    {
+      "title": "Open-EO/openeo-processes — mod.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mod.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ]
+}

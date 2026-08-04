@@ -1,0 +1,22 @@
+{
+  "name": "Absolute",
+  "abstract": "Absolute value",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — absolute",
+      "link": "https://processes.openeo.org/#absolute"
+    },
+    {
+      "title": "Open-EO/openeo-processes — absolute.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/absolute.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ]
+}

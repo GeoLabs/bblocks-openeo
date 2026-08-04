@@ -1,0 +1,22 @@
+{
+  "name": "Linear scale range",
+  "abstract": "Linear transformation between two ranges",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — linear_scale_range",
+      "link": "https://processes.openeo.org/#linear_scale_range"
+    },
+    {
+      "title": "Open-EO/openeo-processes — linear_scale_range.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/linear_scale_range.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ]
+}

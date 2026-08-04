@@ -1,0 +1,70 @@
+- title: Example 1
+  content: |-
+    Calling `sum` with these arguments returns `6`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          5,
+          1
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `sum` with these arguments returns `4.5`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          -2,
+          4,
+          2.5
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `sum` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          null
+        ],
+        "ignore_nodata": false
+      }
+- title: Example 4
+  content: |-
+    Calling `sum` with these arguments returns `100`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          100
+        ]
+      }
+- title: Example 5
+  content: |-
+    Calling `sum` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null
+        ],
+        "ignore_nodata": false
+      }
+- title: Example 6
+  content: |-
+    Calling `sum` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": []
+      }

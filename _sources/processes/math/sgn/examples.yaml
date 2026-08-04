@@ -1,0 +1,36 @@
+- title: Example 1
+  content: |-
+    Calling `sgn` with these arguments returns `-1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -2
+      }
+- title: Example 2
+  content: |-
+    Calling `sgn` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 3.5
+      }
+- title: Example 3
+  content: |-
+    Calling `sgn` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0
+      }
+- title: Example 4
+  content: |-
+    Calling `sgn` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null
+      }

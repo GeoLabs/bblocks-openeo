@@ -1,0 +1,60 @@
+- title: Example 1
+  content: |-
+    Calling `mod` with these arguments returns `2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 27,
+        "y": 5
+      }
+- title: Example 2
+  content: |-
+    Calling `mod` with these arguments returns `3`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -27,
+        "y": 5
+      }
+- title: Example 3
+  content: |-
+    Calling `mod` with these arguments returns `-0.86`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 3.14,
+        "y": -2
+      }
+- title: Example 4
+  content: |-
+    Calling `mod` with these arguments returns `-2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -27,
+        "y": -5
+      }
+- title: Example 5
+  content: |-
+    Calling `mod` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 27,
+        "y": null
+      }
+- title: Example 6
+  content: |-
+    Calling `mod` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null,
+        "y": 5
+      }

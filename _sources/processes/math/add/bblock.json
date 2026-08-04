@@ -1,0 +1,22 @@
+{
+  "name": "Add",
+  "abstract": "Addition of two numbers",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — add",
+      "link": "https://processes.openeo.org/#add"
+    },
+    {
+      "title": "Open-EO/openeo-processes — add.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/add.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ]
+}

@@ -1,0 +1,50 @@
+- title: Example 1
+  content: |-
+    Calling `linear_scale_range` with these arguments returns `165.75`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0.3,
+        "inputMin": -1,
+        "inputMax": 1,
+        "outputMin": 0,
+        "outputMax": 255
+      }
+- title: Example 2
+  content: |-
+    Calling `linear_scale_range` with these arguments returns `0.1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 25.5,
+        "inputMin": 0,
+        "inputMax": 255
+      }
+- title: Example 3
+  content: |-
+    Calling `linear_scale_range` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null,
+        "inputMin": 0,
+        "inputMax": 100
+      }
+- title: Example 4
+  content: |-
+    Shows that the input data is clipped.
+
+    Calling `linear_scale_range` with these arguments returns `255`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1.12,
+        "inputMin": 0,
+        "inputMax": 1,
+        "outputMin": 0,
+        "outputMax": 255
+      }

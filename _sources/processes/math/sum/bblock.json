@@ -1,0 +1,23 @@
+{
+  "name": "Sum",
+  "abstract": "Compute the sum by adding up numbers",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — sum",
+      "link": "https://processes.openeo.org/#sum"
+    },
+    {
+      "title": "Open-EO/openeo-processes — sum.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sum.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "reducer"
+  ]
+}

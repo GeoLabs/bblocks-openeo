@@ -1,0 +1,70 @@
+- title: Example 1
+  content: |-
+    Calling `power` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": 0,
+        "p": 2
+      }
+- title: Example 2
+  content: |-
+    Calling `power` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": 2.5,
+        "p": 0
+      }
+- title: Example 3
+  content: |-
+    Calling `power` with these arguments returns `27`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": 3,
+        "p": 3
+      }
+- title: Example 4
+  content: |-
+    Calling `power` with these arguments returns `0.2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": 5,
+        "p": -1
+      }
+- title: Example 5
+  content: |-
+    Calling `power` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": 1,
+        "p": 0.5
+      }
+- title: Example 6
+  content: |-
+    Calling `power` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": 1,
+        "p": null
+      }
+- title: Example 7
+  content: |-
+    Calling `power` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "base": null,
+        "p": 2
+      }

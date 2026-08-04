@@ -1,0 +1,53 @@
+- title: Example 1
+  content: |-
+    Calling `min` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `min` with these arguments returns `-0.7`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          5,
+          2.5,
+          null,
+          -0.7
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `min` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          null,
+          2
+        ],
+        "ignore_nodata": false
+      }
+- title: Example 4
+  content: |-
+    Calling `min` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": []
+      }

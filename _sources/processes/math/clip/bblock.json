@@ -1,0 +1,22 @@
+{
+  "name": "Clip",
+  "abstract": "Clip a value between a minimum and a maximum",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — clip",
+      "link": "https://processes.openeo.org/#clip"
+    },
+    {
+      "title": "Open-EO/openeo-processes — clip.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/clip.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ]
+}

@@ -1,0 +1,36 @@
+- title: Example 1
+  content: |-
+    Calling `sqrt` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0
+      }
+- title: Example 2
+  content: |-
+    Calling `sqrt` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1
+      }
+- title: Example 3
+  content: |-
+    Calling `sqrt` with these arguments returns `3`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 9
+      }
+- title: Example 4
+  content: |-
+    Calling `sqrt` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null
+      }

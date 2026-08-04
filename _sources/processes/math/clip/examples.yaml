@@ -1,0 +1,44 @@
+- title: Example 1
+  content: |-
+    Calling `clip` with these arguments returns `-1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -5,
+        "min": -1,
+        "max": 1
+      }
+- title: Example 2
+  content: |-
+    Calling `clip` with these arguments returns `10`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 10.001,
+        "min": 1,
+        "max": 10
+      }
+- title: Example 3
+  content: |-
+    Calling `clip` with these arguments returns `1e-06`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1e-06,
+        "min": 0,
+        "max": 0.02
+      }
+- title: Example 4
+  content: |-
+    Calling `clip` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null,
+        "min": 0,
+        "max": 1
+      }
