@@ -1,0 +1,11 @@
+- title: Log a value for debugging
+  content: |-
+    Calling `inspect` with these arguments returns `42`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": 42,
+        "message": "checking value",
+        "level": "debug"
+      }

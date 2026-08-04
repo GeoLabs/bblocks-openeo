@@ -1,0 +1,19 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Add information to the logs
+type: object
+properties:
+  data:
+    description: Any data type is allowed.
+  message:
+    type: string
+  code:
+    type: string
+  level:
+    type: string
+    enum:
+    - error
+    - warning
+    - info
+    - debug
+required:
+- data
