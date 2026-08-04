@@ -1,0 +1,96 @@
+- title: Example 1
+  content: |-
+    Calling `date_shift` with these arguments returns `"2020-08-01T17:22:45Z"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2020-02-01T17:22:45Z",
+        "value": 6,
+        "unit": "month"
+      }
+- title: Example 2
+  content: |-
+    Calling `date_shift` with these arguments returns `"2021-03-24T00:00:00+02:00"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2021-03-31T00:00:00+02:00",
+        "value": -7,
+        "unit": "day"
+      }
+- title: Example 3
+  content: |-
+    Adding a year to February 29th in a leap year will result in February 28th in the next (non-leap) year.
+
+    Calling `date_shift` with these arguments returns `"2021-02-28T17:22:45Z"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2020-02-29T17:22:45Z",
+        "value": 1,
+        "unit": "year"
+      }
+- title: Example 4
+  content: |-
+    Adding a month to January 31th will result in February 29th in leap years.
+
+    Calling `date_shift` with these arguments returns `"2020-02-29"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2020-01-31",
+        "value": 1,
+        "unit": "month"
+      }
+- title: Example 5
+  content: |-
+    The process skips over the leap second `2016-12-31T23:59:60Z`.
+
+    Calling `date_shift` with these arguments returns `"2017-01-01T00:00:00Z"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2016-12-31T23:59:59Z",
+        "value": 1,
+        "unit": "second"
+      }
+- title: Example 6
+  content: |-
+    Milliseconds can be added or subtracted. If not given, the default value is `0`.
+
+    Calling `date_shift` with these arguments returns `"2018-12-31T17:22:46.150Z"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2018-12-31T17:22:45Z",
+        "value": 1150,
+        "unit": "millisecond"
+      }
+- title: Example 7
+  content: |-
+    Calling `date_shift` with these arguments returns `"2018-01-02"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2018-01-01",
+        "value": 25,
+        "unit": "hour"
+      }
+- title: Example 8
+  content: |-
+    Calling `date_shift` with these arguments returns `"2017-12-31"`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "date": "2018-01-01",
+        "value": -1,
+        "unit": "hour"
+      }

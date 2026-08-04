@@ -1,0 +1,26 @@
+{
+  "name": "Date shift",
+  "abstract": "Manipulates dates and times by addition or subtraction",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — date_shift",
+      "link": "https://processes.openeo.org/#date_shift"
+    },
+    {
+      "title": "Open-EO/openeo-processes — date_shift.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/date_shift.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "date-and-time"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date",
+    "ogc.openeo.types.date-time"
+  ]
+}
