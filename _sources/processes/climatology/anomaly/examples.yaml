@@ -1,0 +1,13 @@
+- title: Anomaly against monthly normals
+  content: |-
+    Calling `anomaly` with these arguments returns `{}`.
+
+    `data`, `normals` and the return value are data cube references — in an actual process graph these are node/parameter references, not literal JSON; `{}` here only satisfies the `datacube` shared type's minimal object constraint.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {},
+        "normals": {},
+        "period": "month"
+      }
