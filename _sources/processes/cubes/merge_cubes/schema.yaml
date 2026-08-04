@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Merge two data cubes
+type: object
+properties:
+  cube1:
+    $ref: bblocks://ogc.openeo.types.datacube
+  cube2:
+    $ref: bblocks://ogc.openeo.types.datacube
+  overlap_resolver:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  context:
+    description: Any data type.
+required:
+- cube1
+- cube2

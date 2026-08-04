@@ -1,0 +1,17 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Normalized Difference Vegetation Index
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  nir:
+    $ref: bblocks://ogc.openeo.types.band-name
+  red:
+    $ref: bblocks://ogc.openeo.types.band-name
+  target_band:
+    anyOf:
+    - type: string
+      pattern: ^\w+$
+    - type: 'null'
+required:
+- data

@@ -1,0 +1,26 @@
+{
+  "name": "Apply polygon",
+  "abstract": "Apply a process to segments of the data cube",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — apply_polygon",
+      "link": "https://processes.openeo.org/#apply_polygon"
+    },
+    {
+      "title": "Open-EO/openeo-processes — apply_polygon.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_polygon.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph"
+  ]
+}

@@ -1,0 +1,13 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Spatial filter using a bounding box
+type: object
+properties:
+  data:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.datacube
+    - $ref: bblocks://ogc.openeo.types.datacube
+  extent:
+    $ref: bblocks://ogc.openeo.types.bounding-box
+required:
+- data
+- extent

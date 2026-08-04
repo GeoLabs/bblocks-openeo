@@ -1,0 +1,26 @@
+{
+  "name": "Merge cubes",
+  "abstract": "Merge two data cubes",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — merge_cubes",
+      "link": "https://processes.openeo.org/#merge_cubes"
+    },
+    {
+      "title": "Open-EO/openeo-processes — merge_cubes.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/merge_cubes.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph"
+  ]
+}

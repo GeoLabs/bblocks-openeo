@@ -1,0 +1,27 @@
+{
+  "name": "Climatological normal",
+  "abstract": "Compute climatology normals",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — climatological_normal",
+      "link": "https://processes.openeo.org/#climatological_normal"
+    },
+    {
+      "title": "Open-EO/openeo-processes — climatological_normal.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/climatological_normal.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "climatology"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.year"
+  ]
+}

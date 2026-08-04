@@ -1,0 +1,14 @@
+- title: Example 1
+  content: |-
+    Calling `dimension_labels` with these arguments returns `["B02", "B03", "B04", "B08"]`.
+
+    Data-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) — a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is illustrative — actual labels depend on the input data cube's dimension metadata, which isn't known outside a real process graph.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {
+          "from_parameter": "data"
+        },
+        "dimension": "bands"
+      }

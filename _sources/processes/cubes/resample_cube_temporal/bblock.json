@@ -1,0 +1,26 @@
+{
+  "name": "Resample cube temporal",
+  "abstract": "Resample temporal dimensions to match a target data cube",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — resample_cube_temporal",
+      "link": "https://processes.openeo.org/#resample_cube_temporal"
+    },
+    {
+      "title": "Open-EO/openeo-processes — resample_cube_temporal.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/resample_cube_temporal.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "reproject"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ]
+}

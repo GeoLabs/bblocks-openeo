@@ -1,0 +1,27 @@
+{
+  "name": "Filter spatial",
+  "abstract": "Spatial filter raster data cubes using geometries",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — filter_spatial",
+      "link": "https://processes.openeo.org/#filter_spatial"
+    },
+    {
+      "title": "Open-EO/openeo-processes — filter_spatial.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_spatial.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson"
+  ]
+}

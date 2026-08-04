@@ -1,0 +1,22 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a polygon mask
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  mask:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.datacube
+    - $ref: bblocks://ogc.openeo.types.geojson
+      deprecated: true
+  replacement:
+    anyOf:
+    - type: number
+    - type: boolean
+    - type: string
+    - type: 'null'
+  inside:
+    type: boolean
+required:
+- data
+- mask

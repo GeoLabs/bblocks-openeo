@@ -1,0 +1,15 @@
+- title: Example 1
+  content: |-
+    Calling `run_udf` with these arguments returns `0.42`.
+
+    The return value's actual type depends entirely on what the UDF code returns (`data` is of type "any"); the illustrative value shown here is not computed.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {
+          "from_parameter": "data"
+        },
+        "udf": "import numpy as np\n\ndef apply(data):\n    return data * 2\n",
+        "runtime": "Python"
+      }

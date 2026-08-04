@@ -1,0 +1,9 @@
+- title: Example 1
+  content: |-
+    Calling `create_data_cube` with these arguments returns `{}`.
+
+    Takes no parameters; always returns a new, empty data cube.
+  snippets:
+  - language: json
+    code: |-
+      {}

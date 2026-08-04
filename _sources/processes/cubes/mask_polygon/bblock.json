@@ -1,0 +1,27 @@
+{
+  "name": "Mask polygon",
+  "abstract": "Apply a polygon mask",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — mask_polygon",
+      "link": "https://processes.openeo.org/#mask_polygon"
+    },
+    {
+      "title": "Open-EO/openeo-processes — mask_polygon.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mask_polygon.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "masks"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "name": "Resample spatial",
+  "abstract": "Resample and warp the spatial dimensions",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — resample_spatial",
+      "link": "https://processes.openeo.org/#resample_spatial"
+    },
+    {
+      "title": "Open-EO/openeo-processes — resample_spatial.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/resample_spatial.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "reproject"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.epsg-code",
+    "ogc.openeo.types.wkt2-definition"
+  ]
+}

@@ -1,0 +1,14 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Spatial filter raster data cubes using geometries
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  geometries:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.datacube
+    - $ref: bblocks://ogc.openeo.types.geojson
+      deprecated: true
+required:
+- data
+- geometries

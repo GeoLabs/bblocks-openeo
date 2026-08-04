@@ -1,0 +1,24 @@
+- title: Rename named labels
+  content: |-
+    Renaming the bands from `B1` to `red`, from `B2` to `green` and from `B3` to `blue`.
+
+    Example arguments for calling `rename_labels`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {
+          "from_parameter": "data"
+        },
+        "dimension": "bands",
+        "source": [
+          "B1",
+          "B2",
+          "B3"
+        ],
+        "target": [
+          "red",
+          "green",
+          "blue"
+        ]
+      }

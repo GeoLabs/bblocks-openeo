@@ -1,0 +1,17 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a raster mask
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  mask:
+    $ref: bblocks://ogc.openeo.types.datacube
+  replacement:
+    type:
+    - number
+    - boolean
+    - string
+    - 'null'
+required:
+- data
+- mask

@@ -1,0 +1,11 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Remove a dimension
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  name:
+    type: string
+required:
+- data
+- name

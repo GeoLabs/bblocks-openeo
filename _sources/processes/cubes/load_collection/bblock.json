@@ -1,0 +1,32 @@
+{
+  "name": "Load collection",
+  "abstract": "Load a collection",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — load_collection",
+      "link": "https://processes.openeo.org/#load_collection"
+    },
+    {
+      "title": "Open-EO/openeo-processes — load_collection.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/load_collection.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "import"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.band-name",
+    "ogc.openeo.types.bounding-box",
+    "ogc.openeo.types.collection-id",
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson",
+    "ogc.openeo.types.metadata-filter",
+    "ogc.openeo.types.temporal-interval"
+  ]
+}

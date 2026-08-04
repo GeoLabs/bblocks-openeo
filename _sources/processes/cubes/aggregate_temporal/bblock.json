@@ -1,0 +1,28 @@
+{
+  "name": "Aggregate temporal",
+  "abstract": "Temporal aggregations",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — aggregate_temporal",
+      "link": "https://processes.openeo.org/#aggregate_temporal"
+    },
+    {
+      "title": "Open-EO/openeo-processes — aggregate_temporal.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_temporal.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "aggregate"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.temporal-intervals"
+  ]
+}

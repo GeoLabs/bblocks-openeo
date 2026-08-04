@@ -1,0 +1,14 @@
+- title: Example 1
+  content: |-
+    Calling `climatological_normal` with these arguments returns `{}`.
+
+    Data-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) — a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {
+          "from_parameter": "data"
+        },
+        "period": "month"
+      }

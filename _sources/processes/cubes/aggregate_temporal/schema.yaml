@@ -1,0 +1,27 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Temporal aggregations
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  intervals:
+    $ref: bblocks://ogc.openeo.types.temporal-intervals
+  reducer:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  labels:
+    type: array
+    uniqueItems: true
+    items:
+      type:
+      - number
+      - string
+  dimension:
+    type:
+    - string
+    - 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- intervals
+- reducer

@@ -1,0 +1,11 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Get the dimension labels
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  dimension:
+    type: string
+required:
+- data
+- dimension

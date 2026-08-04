@@ -1,0 +1,22 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a process to segments of the data cube
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  geometries:
+    $ref: bblocks://ogc.openeo.types.datacube
+  process:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  mask_value:
+    anyOf:
+    - type: number
+    - type: boolean
+    - type: string
+    - type: 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- geometries
+- process

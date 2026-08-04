@@ -1,0 +1,16 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Reduce dimensions
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  reducer:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  dimension:
+    type: string
+  context:
+    description: Any data type.
+required:
+- data
+- reducer
+- dimension

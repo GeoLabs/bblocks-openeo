@@ -1,0 +1,27 @@
+{
+  "name": "Filter labels",
+  "abstract": "Filter dimension labels based on a condition",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — filter_labels",
+      "link": "https://processes.openeo.org/#filter_labels"
+    },
+    {
+      "title": "Open-EO/openeo-processes — filter_labels.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_labels.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph"
+  ]
+}

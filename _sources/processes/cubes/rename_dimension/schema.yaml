@@ -1,0 +1,14 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Rename a dimension
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  source:
+    type: string
+  target:
+    type: string
+required:
+- data
+- source
+- target

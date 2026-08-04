@@ -1,0 +1,24 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a spatial convolution with a kernel
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  kernel:
+    $ref: bblocks://ogc.openeo.types.kernel
+  factor:
+    type: number
+  border:
+    anyOf:
+    - type: string
+      enum:
+      - replicate
+      - reflect
+      - reflect_pixel
+      - wrap
+    - type: number
+  replace_invalid:
+    type: number
+required:
+- data
+- kernel

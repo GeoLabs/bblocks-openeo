@@ -1,0 +1,28 @@
+{
+  "name": "Ndvi",
+  "abstract": "Normalized Difference Vegetation Index",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — ndvi",
+      "link": "https://processes.openeo.org/#ndvi"
+    },
+    {
+      "title": "Open-EO/openeo-processes — ndvi.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/ndvi.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "math-indices",
+    "vegetation-indices"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.band-name",
+    "ogc.openeo.types.datacube"
+  ]
+}

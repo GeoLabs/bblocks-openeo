@@ -1,0 +1,29 @@
+{
+  "name": "Save result",
+  "abstract": "Save processed data",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — save_result",
+      "link": "https://processes.openeo.org/#save_result"
+    },
+    {
+      "title": "Open-EO/openeo-processes — save_result.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/save_result.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "export",
+    "stac"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.output-format",
+    "ogc.openeo.types.output-format-options"
+  ]
+}

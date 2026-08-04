@@ -1,0 +1,24 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Run a UDF
+type: object
+properties:
+  data:
+    description: A value of any data type.
+  udf:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.uri
+    - $ref: bblocks://ogc.openeo.types.file-path
+    - $ref: bblocks://ogc.openeo.types.udf-code
+  runtime:
+    $ref: bblocks://ogc.openeo.types.udf-runtime
+  version:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.udf-runtime-version
+    - title: Default runtime version
+      type: 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- udf
+- runtime

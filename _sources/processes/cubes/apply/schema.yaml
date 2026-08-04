@@ -1,0 +1,13 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a process to each value
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  process:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  context:
+    description: Any data type.
+required:
+- data
+- process

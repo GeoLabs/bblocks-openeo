@@ -1,0 +1,27 @@
+{
+  "name": "Filter temporal",
+  "abstract": "Temporal filter based on temporal intervals",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — filter_temporal",
+      "link": "https://processes.openeo.org/#filter_temporal"
+    },
+    {
+      "title": "Open-EO/openeo-processes — filter_temporal.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_temporal.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.temporal-interval"
+  ]
+}

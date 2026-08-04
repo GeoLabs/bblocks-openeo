@@ -1,0 +1,20 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a process to all values along a dimension
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  process:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  dimension:
+    type: string
+  target_dimension:
+    type:
+    - string
+    - 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- process
+- dimension

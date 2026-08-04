@@ -1,0 +1,26 @@
+{
+  "name": "Apply dimension",
+  "abstract": "Apply a process to all values along a dimension",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — apply_dimension",
+      "link": "https://processes.openeo.org/#apply_dimension"
+    },
+    {
+      "title": "Open-EO/openeo-processes — apply_dimension.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_dimension.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph"
+  ]
+}

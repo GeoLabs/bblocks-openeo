@@ -1,0 +1,26 @@
+{
+  "name": "Mask",
+  "abstract": "Apply a raster mask",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — mask",
+      "link": "https://processes.openeo.org/#mask"
+    },
+    {
+      "title": "Open-EO/openeo-processes — mask.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mask.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "masks"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ]
+}

@@ -1,0 +1,29 @@
+- title: Example 1
+  content: |-
+    Filters the data cube to only contain data from platform Sentinel-2A. This example assumes that the data cube has a dimension `platform` so that computations can distinguish between Sentinel-2A and Sentinel-2B data.
+
+    Example arguments for calling `filter_labels`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": {
+          "from_parameter": "sentinel2_data"
+        },
+        "condition": {
+          "process_graph": {
+            "eq": {
+              "process_id": "eq",
+              "arguments": {
+                "x": {
+                  "from_parameter": "value"
+                },
+                "y": "Sentinel-2A",
+                "case_sensitive": false
+              },
+              "result": true
+            }
+          }
+        },
+        "dimension": "platform"
+      }

@@ -1,0 +1,27 @@
+{
+  "name": "Apply neighborhood",
+  "abstract": "Apply a process to pixels in a n-dimensional neighborhood",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — apply_neighborhood",
+      "link": "https://processes.openeo.org/#apply_neighborhood"
+    },
+    {
+      "title": "Open-EO/openeo-processes — apply_neighborhood.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_neighborhood.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.chunk-size",
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.process-graph"
+  ]
+}

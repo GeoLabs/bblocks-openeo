@@ -1,0 +1,40 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Load a collection
+type: object
+properties:
+  id:
+    $ref: bblocks://ogc.openeo.types.collection-id
+  spatial_extent:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.bounding-box
+    - $ref: bblocks://ogc.openeo.types.geojson
+      deprecated: true
+    - $ref: bblocks://ogc.openeo.types.datacube
+    - title: No filter
+      description: Don't filter spatially. All data is included in the data cube.
+      type: 'null'
+  temporal_extent:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.temporal-interval
+    - title: No filter
+      description: Don't filter temporally. All data is included in the data cube.
+      type: 'null'
+  bands:
+    anyOf:
+    - type: array
+      minItems: 1
+      items:
+        $ref: bblocks://ogc.openeo.types.band-name
+    - title: No filter
+      description: Don't filter bands. All bands are included in the data cube.
+      type: 'null'
+  properties:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.metadata-filter
+    - title: No filter
+      description: Don't filter by metadata properties.
+      type: 'null'
+required:
+- id
+- spatial_extent
+- temporal_extent

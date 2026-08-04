@@ -1,0 +1,28 @@
+{
+  "name": "Aggregate spatial",
+  "abstract": "Zonal statistics for geometries",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — aggregate_spatial",
+      "link": "https://processes.openeo.org/#aggregate_spatial"
+    },
+    {
+      "title": "Open-EO/openeo-processes — aggregate_spatial.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_spatial.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "aggregate"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson",
+    "ogc.openeo.types.process-graph"
+  ]
+}

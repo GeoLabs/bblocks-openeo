@@ -1,0 +1,31 @@
+{
+  "name": "Run udf",
+  "abstract": "Run a UDF",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — run_udf",
+      "link": "https://processes.openeo.org/#run_udf"
+    },
+    {
+      "title": "Open-EO/openeo-processes — run_udf.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/run_udf.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "import",
+    "udf"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.file-path",
+    "ogc.openeo.types.udf-code",
+    "ogc.openeo.types.udf-runtime",
+    "ogc.openeo.types.udf-runtime-version",
+    "ogc.openeo.types.uri"
+  ]
+}

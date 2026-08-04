@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Temporal filter based on temporal intervals
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  extent:
+    $ref: bblocks://ogc.openeo.types.temporal-interval
+  dimension:
+    type:
+    - string
+    - 'null'
+required:
+- data
+- extent

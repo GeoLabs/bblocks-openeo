@@ -1,0 +1,23 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Zonal statistics for geometries
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  geometries:
+    anyOf:
+    - $ref: bblocks://ogc.openeo.types.datacube
+    - $ref: bblocks://ogc.openeo.types.geojson
+      deprecated: true
+  reducer:
+    $ref: bblocks://ogc.openeo.types.process-graph
+  target_dimension:
+    type:
+    - string
+    - 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- geometries
+- reducer

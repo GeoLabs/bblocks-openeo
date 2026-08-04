@@ -1,0 +1,13 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Save processed data
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  format:
+    $ref: bblocks://ogc.openeo.types.output-format
+  options:
+    $ref: bblocks://ogc.openeo.types.output-format-options
+required:
+- data
+- format

@@ -1,0 +1,27 @@
+{
+  "name": "Apply kernel",
+  "abstract": "Apply a spatial convolution with a kernel",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — apply_kernel",
+      "link": "https://processes.openeo.org/#apply_kernel"
+    },
+    {
+      "title": "Open-EO/openeo-processes — apply_kernel.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_kernel.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "math-image-filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.kernel"
+  ]
+}

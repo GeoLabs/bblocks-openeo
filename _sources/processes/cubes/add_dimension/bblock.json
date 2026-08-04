@@ -1,0 +1,25 @@
+{
+  "name": "Add dimension",
+  "abstract": "Add a new dimension",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — add_dimension",
+      "link": "https://processes.openeo.org/#add_dimension"
+    },
+    {
+      "title": "Open-EO/openeo-processes — add_dimension.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/add_dimension.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ]
+}

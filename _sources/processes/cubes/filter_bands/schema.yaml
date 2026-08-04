@@ -1,0 +1,25 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Filter the bands by names
+type: object
+properties:
+  data:
+    $ref: bblocks://ogc.openeo.types.datacube
+  bands:
+    type: array
+    items:
+      $ref: bblocks://ogc.openeo.types.band-name
+  wavelengths:
+    type: array
+    items:
+      type: array
+      minItems: 2
+      maxItems: 2
+      items:
+        type: number
+      examples:
+      - - - 0.45
+          - 0.5
+        - - 0.6
+          - 0.7
+required:
+- data

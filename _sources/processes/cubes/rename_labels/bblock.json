@@ -1,0 +1,25 @@
+{
+  "name": "Rename labels",
+  "abstract": "Rename dimension labels",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — rename_labels",
+      "link": "https://processes.openeo.org/#rename_labels"
+    },
+    {
+      "title": "Open-EO/openeo-processes — rename_labels.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/rename_labels.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ]
+}
