@@ -1,0 +1,7 @@
+- title: Pi
+  content: |-
+    Calling `pi` with these arguments returns `3.141592653589793`.
+  snippets:
+  - language: json
+    code: |-
+      {}

@@ -1,0 +1,23 @@
+{
+  "name": "E",
+  "abstract": "Euler's number (e)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — e",
+      "link": "https://processes.openeo.org/#e"
+    },
+    {
+      "title": "Open-EO/openeo-processes — e.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/e.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-constants",
+    "math-exponential-and-logarithmic"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "name": "Pi",
+  "abstract": "Pi (π)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — pi",
+      "link": "https://processes.openeo.org/#pi"
+    },
+    {
+      "title": "Open-EO/openeo-processes — pi.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/pi.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-constants",
+    "math-trigonometric"
+  ]
+}

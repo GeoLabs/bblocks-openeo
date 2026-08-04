@@ -1,0 +1,9 @@
+- title: A constant string value
+  content: |-
+    Calling `constant` with these arguments returns `42`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 42
+      }

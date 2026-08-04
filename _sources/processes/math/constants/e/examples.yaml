@@ -1,0 +1,7 @@
+- title: Euler's number
+  content: |-
+    Calling `e` with these arguments returns `2.718281828459045`.
+  snippets:
+  - language: json
+    code: |-
+      {}
