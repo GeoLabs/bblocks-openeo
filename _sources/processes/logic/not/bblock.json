@@ -1,0 +1,22 @@
+{
+  "name": "Not",
+  "abstract": "Inverting a boolean",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — not",
+      "link": "https://processes.openeo.org/#not"
+    },
+    {
+      "title": "Open-EO/openeo-processes — not.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/not.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "logic"
+  ]
+}

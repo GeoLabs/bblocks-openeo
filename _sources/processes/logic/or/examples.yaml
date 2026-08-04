@@ -1,0 +1,50 @@
+- title: Example 1
+  content: |-
+    Calling `or` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": true,
+        "y": true
+      }
+- title: Example 2
+  content: |-
+    Calling `or` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": false,
+        "y": false
+      }
+- title: Example 3
+  content: |-
+    Calling `or` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": true,
+        "y": null
+      }
+- title: Example 4
+  content: |-
+    Calling `or` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null,
+        "y": true
+      }
+- title: Example 5
+  content: |-
+    Calling `or` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": false,
+        "y": null
+      }

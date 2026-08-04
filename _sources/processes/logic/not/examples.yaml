@@ -1,0 +1,27 @@
+- title: Example 1
+  content: |-
+    Calling `not` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": null
+      }
+- title: Example 2
+  content: |-
+    Calling `not` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": false
+      }
+- title: Example 3
+  content: |-
+    Calling `not` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": true
+      }

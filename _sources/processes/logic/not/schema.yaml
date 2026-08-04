@@ -1,0 +1,10 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Inverting a boolean
+type: object
+properties:
+  x:
+    type:
+    - boolean
+    - 'null'
+required:
+- x

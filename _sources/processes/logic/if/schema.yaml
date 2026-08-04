@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: If-Then-Else conditional
+type: object
+properties:
+  value:
+    type:
+    - boolean
+    - 'null'
+  accept:
+    description: Any data type is allowed.
+  reject:
+    description: Any data type is allowed.
+required:
+- value
+- accept

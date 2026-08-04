@@ -1,0 +1,23 @@
+{
+  "name": "Any",
+  "abstract": "Is at least one value true?",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — any",
+      "link": "https://processes.openeo.org/#any"
+    },
+    {
+      "title": "Open-EO/openeo-processes — any.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/any.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "logic",
+    "reducer"
+  ]
+}

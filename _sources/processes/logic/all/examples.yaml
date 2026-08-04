@@ -1,0 +1,131 @@
+- title: Example 1
+  content: |-
+    Calling `all` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          false,
+          null
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `all` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          true,
+          null
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `all` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          false,
+          null
+        ],
+        "ignore_nodata": false
+      }
+- title: Example 4
+  content: |-
+    Calling `all` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          true,
+          null
+        ],
+        "ignore_nodata": false
+      }
+- title: Example 5
+  content: |-
+    Calling `all` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          true,
+          false,
+          true,
+          false
+        ]
+      }
+- title: Example 6
+  content: |-
+    Calling `all` with these arguments returns `false`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          true,
+          false
+        ]
+      }
+- title: Example 7
+  content: |-
+    Calling `all` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          true,
+          true
+        ]
+      }
+- title: Example 8
+  content: |-
+    Calling `all` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          true
+        ]
+      }
+- title: Example 9
+  content: |-
+    Calling `all` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null
+        ],
+        "ignore_nodata": false
+      }
+- title: Example 10
+  content: |-
+    Calling `all` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          null
+        ]
+      }
+- title: Example 11
+  content: |-
+    Calling `all` with these arguments returns `true`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": []
+      }

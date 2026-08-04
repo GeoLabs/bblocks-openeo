@@ -1,0 +1,14 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Is at least one value true?
+type: object
+properties:
+  data:
+    type: array
+    items:
+      type:
+      - boolean
+      - 'null'
+  ignore_nodata:
+    type: boolean
+required:
+- data
