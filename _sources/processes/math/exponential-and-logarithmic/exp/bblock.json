@@ -1,0 +1,22 @@
+{
+  "name": "Exp",
+  "abstract": "Exponentiation to the base e",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — exp",
+      "link": "https://processes.openeo.org/#exp"
+    },
+    {
+      "title": "Open-EO/openeo-processes — exp.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/exp.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-exponential-and-logarithmic"
+  ]
+}

@@ -1,0 +1,40 @@
+- title: Example 1
+  content: |-
+    Calling `log` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 10,
+        "base": 10
+      }
+- title: Example 2
+  content: |-
+    Calling `log` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 2,
+        "base": 2
+      }
+- title: Example 3
+  content: |-
+    Calling `log` with these arguments returns `2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 4,
+        "base": 2
+      }
+- title: Example 4
+  content: |-
+    Calling `log` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1,
+        "base": 16
+      }

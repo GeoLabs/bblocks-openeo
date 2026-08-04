@@ -1,0 +1,16 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Logarithm to a base
+type: object
+properties:
+  x:
+    type:
+    - number
+    - 'null'
+    minimum: 0
+  base:
+    type:
+    - number
+    - 'null'
+required:
+- x
+- base

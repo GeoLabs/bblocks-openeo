@@ -1,0 +1,10 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Exponentiation to the base e
+type: object
+properties:
+  p:
+    type:
+    - number
+    - 'null'
+required:
+- p

@@ -1,0 +1,11 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Natural logarithm
+type: object
+properties:
+  x:
+    type:
+    - number
+    - 'null'
+    minimum: 0
+required:
+- x
