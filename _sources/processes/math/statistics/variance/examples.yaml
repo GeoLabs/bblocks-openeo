@@ -1,0 +1,45 @@
+- title: Example 1
+  content: |-
+    Calling `variance` with these arguments returns `4`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          -1,
+          1,
+          3
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `variance` with these arguments returns `1.1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          2,
+          3,
+          3,
+          null,
+          4,
+          4,
+          5
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `variance` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          -1,
+          1,
+          null,
+          3
+        ],
+        "ignore_nodata": false
+      }

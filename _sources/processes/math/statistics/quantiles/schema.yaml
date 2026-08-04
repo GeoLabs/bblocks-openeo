@@ -1,0 +1,30 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Quantiles
+type: object
+properties:
+  data:
+    type: array
+    items:
+      type:
+      - number
+      - 'null'
+  probabilities:
+    anyOf:
+    - title: List of probabilities
+      type: array
+      uniqueItems: true
+      items:
+        type: number
+        minimum: 0
+        maximum: 1
+    - title: Number of intervals (q-quantiles)
+      type: integer
+      minimum: 2
+  q:
+    type: integer
+    minimum: 2
+    deprecated: true
+  ignore_nodata:
+    type: boolean
+required:
+- data

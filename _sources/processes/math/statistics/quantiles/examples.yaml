@@ -1,0 +1,89 @@
+- title: Example 1
+  content: |-
+    Calling `quantiles` with these arguments returns `[2.07, 2.14, 2.28, 2.7, 3.4, 4.5]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          2,
+          4,
+          4,
+          4,
+          5,
+          5,
+          7,
+          9
+        ],
+        "probabilities": [
+          0.005,
+          0.01,
+          0.02,
+          0.05,
+          0.1,
+          0.5
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `quantiles` with these arguments returns `[4, 4.5, 5.5]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          2,
+          4,
+          4,
+          4,
+          5,
+          5,
+          7,
+          9
+        ],
+        "probabilities": 4
+      }
+- title: Example 3
+  content: |-
+    Calling `quantiles` with these arguments returns `[-0.5]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          -1,
+          -0.5,
+          null,
+          1
+        ],
+        "probabilities": 2
+      }
+- title: Example 4
+  content: |-
+    Calling `quantiles` with these arguments returns `[null, null, null]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          -1,
+          -0.5,
+          null,
+          1
+        ],
+        "probabilities": 4,
+        "ignore_nodata": false
+      }
+- title: Empty array
+  content: |-
+    Calling `quantiles` with these arguments returns `[null, null]`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [],
+        "probabilities": [
+          0.1,
+          0.5
+        ]
+      }

@@ -1,0 +1,23 @@
+{
+  "name": "Variance",
+  "abstract": "Variance",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — variance",
+      "link": "https://processes.openeo.org/#variance"
+    },
+    {
+      "title": "Open-EO/openeo-processes — variance.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/variance.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics",
+    "reducer"
+  ]
+}

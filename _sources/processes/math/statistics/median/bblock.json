@@ -1,0 +1,23 @@
+{
+  "name": "Median",
+  "abstract": "Statistical median",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — median",
+      "link": "https://processes.openeo.org/#median"
+    },
+    {
+      "title": "Open-EO/openeo-processes — median.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/median.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics",
+    "reducer"
+  ]
+}

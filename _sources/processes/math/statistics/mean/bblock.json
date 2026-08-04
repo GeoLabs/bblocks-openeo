@@ -1,0 +1,23 @@
+{
+  "name": "Mean",
+  "abstract": "Arithmetic mean (average)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — mean",
+      "link": "https://processes.openeo.org/#mean"
+    },
+    {
+      "title": "Open-EO/openeo-processes — mean.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mean.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics",
+    "reducer"
+  ]
+}

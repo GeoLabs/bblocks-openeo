@@ -1,0 +1,41 @@
+- title: Example 1
+  content: |-
+    Calling `mean` with these arguments returns `1.5`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          0,
+          3,
+          2
+        ]
+      }
+- title: Example 2
+  content: |-
+    Calling `mean` with these arguments returns `3`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          9,
+          2.5,
+          null,
+          -2.5
+        ]
+      }
+- title: Example 3
+  content: |-
+    Calling `mean` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "data": [
+          1,
+          null
+        ],
+        "ignore_nodata": false
+      }
