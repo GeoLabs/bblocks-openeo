@@ -1,0 +1,22 @@
+{
+  "name": "Floor",
+  "abstract": "Round fractions down",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — floor",
+      "link": "https://processes.openeo.org/#floor"
+    },
+    {
+      "title": "Open-EO/openeo-processes — floor.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/floor.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-rounding"
+  ]
+}

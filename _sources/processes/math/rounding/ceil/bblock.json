@@ -1,0 +1,22 @@
+{
+  "name": "Ceil",
+  "abstract": "Round fractions up",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — ceil",
+      "link": "https://processes.openeo.org/#ceil"
+    },
+    {
+      "title": "Open-EO/openeo-processes — ceil.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/ceil.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-rounding"
+  ]
+}

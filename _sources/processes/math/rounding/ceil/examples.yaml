@@ -1,0 +1,36 @@
+- title: Example 1
+  content: |-
+    Calling `ceil` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0
+      }
+- title: Example 2
+  content: |-
+    Calling `ceil` with these arguments returns `4`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 3.5
+      }
+- title: Example 3
+  content: |-
+    Calling `ceil` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -0.4
+      }
+- title: Example 4
+  content: |-
+    Calling `ceil` with these arguments returns `-3`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -3.5
+      }

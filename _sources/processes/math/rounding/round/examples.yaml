@@ -1,0 +1,77 @@
+- title: Example 1
+  content: |-
+    Calling `round` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0
+      }
+- title: Example 2
+  content: |-
+    Calling `round` with these arguments returns `3.6`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 3.56,
+        "p": 1
+      }
+- title: Example 3
+  content: |-
+    Calling `round` with these arguments returns `-0.44`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -0.4444444,
+        "p": 2
+      }
+- title: Example 4
+  content: |-
+    Calling `round` with these arguments returns `-2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -2.5
+      }
+- title: Example 5
+  content: |-
+    Calling `round` with these arguments returns `-4`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": -3.5
+      }
+- title: Example 6
+  content: |-
+    Calling `round` with these arguments returns `0.2`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0.25,
+        "p": 1
+      }
+- title: Example 7
+  content: |-
+    Calling `round` with these arguments returns `0.4`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0.35,
+        "p": 1
+      }
+- title: Example 8
+  content: |-
+    Calling `round` with these arguments returns `1200`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 1234.5,
+        "p": -2
+      }

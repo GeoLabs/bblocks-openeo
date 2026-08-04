@@ -1,0 +1,22 @@
+{
+  "name": "Round",
+  "abstract": "Round to a specified precision",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — round",
+      "link": "https://processes.openeo.org/#round"
+    },
+    {
+      "title": "Open-EO/openeo-processes — round.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/round.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-rounding"
+  ]
+}
