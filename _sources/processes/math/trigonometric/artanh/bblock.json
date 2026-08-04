@@ -1,0 +1,22 @@
+{
+  "name": "Artanh",
+  "abstract": "Inverse hyperbolic tangent",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — artanh",
+      "link": "https://processes.openeo.org/#artanh"
+    },
+    {
+      "title": "Open-EO/openeo-processes — artanh.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/artanh.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ]
+}

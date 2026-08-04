@@ -1,0 +1,9 @@
+- title: Example 1
+  content: |-
+    Calling `cos` with these arguments returns `1`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0
+      }

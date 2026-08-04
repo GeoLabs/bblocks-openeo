@@ -1,0 +1,22 @@
+{
+  "name": "Sin",
+  "abstract": "Sine",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — sin",
+      "link": "https://processes.openeo.org/#sin"
+    },
+    {
+      "title": "Open-EO/openeo-processes — sin.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sin.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ]
+}

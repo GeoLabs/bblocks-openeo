@@ -1,0 +1,22 @@
+{
+  "name": "Cosh",
+  "abstract": "Hyperbolic cosine",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — cosh",
+      "link": "https://processes.openeo.org/#cosh"
+    },
+    {
+      "title": "Open-EO/openeo-processes — cosh.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/cosh.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ]
+}

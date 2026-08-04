@@ -1,0 +1,9 @@
+- title: Example 1
+  content: |-
+    Calling `arcsin` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "x": 0
+      }

@@ -1,0 +1,10 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Inverse hyperbolic sine
+type: object
+properties:
+  x:
+    type:
+    - number
+    - 'null'
+required:
+- x

@@ -1,0 +1,22 @@
+{
+  "name": "Tanh",
+  "abstract": "Hyperbolic tangent",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — tanh",
+      "link": "https://processes.openeo.org/#tanh"
+    },
+    {
+      "title": "Open-EO/openeo-processes — tanh.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/tanh.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ]
+}

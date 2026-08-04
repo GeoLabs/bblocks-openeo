@@ -1,0 +1,22 @@
+{
+  "name": "Arctan",
+  "abstract": "Inverse tangent",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — arctan",
+      "link": "https://processes.openeo.org/#arctan"
+    },
+    {
+      "title": "Open-EO/openeo-processes — arctan.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/arctan.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ]
+}

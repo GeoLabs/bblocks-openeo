@@ -1,0 +1,22 @@
+{
+  "name": "Arccos",
+  "abstract": "Inverse cosine",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes — arccos",
+      "link": "https://processes.openeo.org/#arccos"
+    },
+    {
+      "title": "Open-EO/openeo-processes — arccos.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/arccos.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ]
+}

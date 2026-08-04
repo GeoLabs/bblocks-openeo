@@ -1,0 +1,20 @@
+- title: Example 1
+  content: |-
+    Calling `arctan2` with these arguments returns `0`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "y": 0,
+        "x": 0
+      }
+- title: Example 2
+  content: |-
+    Calling `arctan2` with these arguments returns `null`.
+  snippets:
+  - language: json
+    code: |-
+      {
+        "y": null,
+        "x": 1.5
+      }
