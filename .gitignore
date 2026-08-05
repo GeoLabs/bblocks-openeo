@@ -3,3 +3,6 @@ build-local/
 bblocks-config-local.yml
 bblocks-config-local.yaml
 .volumes
+
+# Local-only operational notes (not registry content, never pushed)
+git-restitution-guide.md
