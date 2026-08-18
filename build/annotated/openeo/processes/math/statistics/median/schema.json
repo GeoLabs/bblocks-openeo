@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Statistical median",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    },
+    "ignore_nodata": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

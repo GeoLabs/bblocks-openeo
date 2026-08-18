@@ -1,0 +1,50 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.geojson",
+  "name": "OpenEO type: GeoJSON",
+  "abstract": "A GeoJSON geometry, feature or feature collection (deprecated in favour of `datacube`/`vector-cube` handling).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type",
+    "deprecated"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/geojson/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/geojson/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/geojson/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `geojson`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\n> **Note:** OpenEO marks this subtype as deprecated in its own specification; it is retained here for completeness while existing processes still reference it.\n\nGeoJSON as defined by [RFC 7946](https://www.rfc-editor.org/rfc/rfc7946.html). The GeoJSON type `GeometryCollection` is not supported.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A GeoJSON point geometry.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/geojson/example_1_1.json",
+          "sizeBytes": 66,
+          "code": "{\n  \"type\": \"Point\",\n  \"coordinates\": [\n    16.37,\n    48.21\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: geojson\ntitle: GeoJSON\ndescription: GeoJSON as defined by [RFC 7946](https://www.rfc-editor.org/rfc/rfc7946.html).\n  The GeoJSON type `GeometryCollection` is not supported.\ndeprecated: true\nallOf:\n- $ref: https://geojson.org/schema/GeoJSON.json\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/geojson"
+}

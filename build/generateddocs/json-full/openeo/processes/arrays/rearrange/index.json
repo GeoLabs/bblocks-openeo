@@ -1,0 +1,79 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.rearrange",
+  "name": "Rearrange",
+  "abstract": "Sort an array based on a permutation",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 rearrange",
+      "link": "https://processes.openeo.org/#rearrange"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 rearrange.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/rearrange.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "sorting"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/rearrange/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/rearrange/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/rearrange/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/rearrange/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/rearrange/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/rearrange/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`rearrange`](https://processes.openeo.org/#rearrange) \u2014 *Sort an array based on a permutation*. It models the `arguments` object of a process graph node invoking `rearrange`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nRearranges an array based on a ranked list of element positions in the original list (i.e., a permutation). The positions must be zero-based. The process `order()` can compute such a permutation.\n\n## Source\n\nOpenEO Processes specification: [`rearrange`](https://processes.openeo.org/#rearrange) ([openeo-processes/rearrange.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/rearrange.json)).\n",
+  "examples": [
+    {
+      "title": "Reverse a list",
+      "content": "Calling `rearrange` with these arguments returns `[3, 4, 5]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/rearrange/example_1_1.json",
+          "sizeBytes": 77,
+          "code": "{\n  \"data\": [\n    5,\n    4,\n    3\n  ],\n  \"order\": [\n    2,\n    1,\n    0\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Remove two elements",
+      "content": "Calling `rearrange` with these arguments returns `[4, 2]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/rearrange/example_2_1.json",
+          "sizeBytes": 77,
+          "code": "{\n  \"data\": [\n    5,\n    4,\n    3,\n    2\n  ],\n  \"order\": [\n    1,\n    3\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Swap two elements",
+      "content": "Calling `rearrange` with these arguments returns `[5, 3, 4, 2]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/rearrange/example_3_1.json",
+          "sizeBytes": 91,
+          "code": "{\n  \"data\": [\n    5,\n    4,\n    3,\n    2\n  ],\n  \"order\": [\n    0,\n    2,\n    1,\n    3\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Sort an array based on a permutation\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  order:\n    type: array\n    items:\n      type: integer\n      minimum: 0\nrequired:\n- data\n- order\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/rearrange"
+}

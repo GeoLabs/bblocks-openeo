@@ -1,0 +1,7 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "subtype": "datacube",
+  "title": "Data Cube",
+  "description": "A data cube that consists of an arbitrary number of dimensions and doesn't require any dimension type specifically."
+}

@@ -1,0 +1,66 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.exponential-and-logarithmic.exp",
+  "name": "Exp",
+  "abstract": "Exponentiation to the base e",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 exp",
+      "link": "https://processes.openeo.org/#exp"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 exp.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/exp.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-exponential-and-logarithmic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/exponential-and-logarithmic/exp/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/exponential-and-logarithmic/exp/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/exponential-and-logarithmic/exp/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/exponential-and-logarithmic/exp/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/exponential-and-logarithmic/exp/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/exponential-and-logarithmic/exp/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`exp`](https://processes.openeo.org/#exp) \u2014 *Exponentiation to the base e*. It models the `arguments` object of a process graph node invoking `exp`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nExponential function to the base *e* raised to the power of `p`.\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`exp`](https://processes.openeo.org/#exp) ([openeo-processes/exp.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/exp.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `exp` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/exponential-and-logarithmic/exp/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"p\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `exp` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/exponential-and-logarithmic/exp/example_2_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"p\": null\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Exponentiation to the base e\ntype: object\nproperties:\n  p:\n    type:\n    - number\n    - 'null'\nrequired:\n- p\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/exponential-and-logarithmic/exp"
+}

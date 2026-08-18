@@ -1,0 +1,51 @@
+{
+  "title": "Validation report for ogc.openeo.processes.cubes.reduce_dimension - Reduce dimension",
+  "bblockName": "Reduce dimension",
+  "bblockId": "ogc.openeo.processes.cubes.reduce_dimension",
+  "generated": "2026-08-18T09:14:59.254640+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/openeo/processes/cubes/reduce_dimension/example_1_1.json",
+        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/reduce_dimension/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0
+  }
+}

@@ -1,0 +1,57 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_apply",
+  "name": "Array apply",
+  "abstract": "Apply a process to each array element",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_apply",
+      "link": "https://processes.openeo.org/#array_apply"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_apply.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_apply.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_apply/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_apply/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_apply/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_apply/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_apply/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_apply/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_apply`](https://processes.openeo.org/#array_apply) \u2014 *Apply a process to each array element*. It models the `arguments` object of a process graph node invoking `array_apply`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a process to each individual value in the array. This is basically what other languages call either a `for each` loop or a `map` function.\n\n## Callback (child process) signature\n\nThe child process passed as `process` is called with the following named parameters:\n\n- `x`: The value of the current element being processed.\n- `index`: The zero-based index of the current element being processed.\n- `label` (optional): The label of the current element being processed. Only populated for labeled arrays.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The value to be set in the new array.\n\n## Source\n\nOpenEO Processes specification: [`array_apply`](https://processes.openeo.org/#array_apply) ([openeo-processes/array_apply.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_apply.json)).\n",
+  "examples": [
+    {
+      "title": "Apply absolute() to each element",
+      "content": "Applies the `absolute` process to each element of the array.\n\nCalling `array_apply` with these arguments returns `[1, 2, 3]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_apply/example_1_1.json",
+          "sizeBytes": 268,
+          "code": "{\n  \"data\": [\n    -1,\n    2,\n    -3\n  ],\n  \"process\": {\n    \"process_graph\": {\n      \"abs1\": {\n        \"process_id\": \"absolute\",\n        \"arguments\": {\n          \"x\": {\n            \"from_parameter\": \"x\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Apply a process to each array element\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  process:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  context:\n    description: Any data type.\nrequired:\n- data\n- process\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_apply"
+}

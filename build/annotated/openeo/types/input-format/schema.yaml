@@ -1,0 +1,5 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: input-format
+title: Input File Format
+description: A file format that the back-end supports to import data from.

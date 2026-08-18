@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["x"],"required":true,"schema_type":["number","null"],"sources":["bblocks://ogc.openeo.processes.math.rounding.round"]},{"path":["p"],"schema_type":"integer","sources":["bblocks://ogc.openeo.processes.math.rounding.round"]}]}

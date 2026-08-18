@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["x"],"required":true,"schema_type":["number","null"],"sources":["bblocks://ogc.openeo.processes.math.trigonometric.sinh"]}]}

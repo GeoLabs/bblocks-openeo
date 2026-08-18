@@ -1,0 +1,16 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "dimension": "bands",
+  "source": [
+    "B1",
+    "B2",
+    "B3"
+  ],
+  "target": [
+    "red",
+    "green",
+    "blue"
+  ]
+}

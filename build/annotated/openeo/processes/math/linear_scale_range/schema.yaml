@@ -1,0 +1,20 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Linear transformation between two ranges
+type: object
+properties:
+  x:
+    type:
+    - number
+    - 'null'
+  inputMin:
+    type: number
+  inputMax:
+    type: number
+  outputMin:
+    type: number
+  outputMax:
+    type: number
+required:
+- x
+- inputMin
+- inputMax

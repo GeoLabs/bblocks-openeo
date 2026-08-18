@@ -1,0 +1,91 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.int",
+  "name": "Int",
+  "abstract": "Integer part of a number",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 int",
+      "link": "https://processes.openeo.org/#int"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 int.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/int.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "math-rounding"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/int/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/int/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/int/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/int/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/int/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/int/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`int`](https://processes.openeo.org/#int) \u2014 *Integer part of a number*. It models the `arguments` object of a process graph node invoking `int`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nThe integer part of the real number `x`.\n\nThis process is *not* an alias for the `floor()` process as defined by some mathematicians, see the examples for negative numbers in both processes for differences.\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`int`](https://processes.openeo.org/#int) ([openeo-processes/int.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/int.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `int` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/int/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `int` with these arguments returns `3`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/int/example_2_1.json",
+          "sizeBytes": 14,
+          "code": "{\n  \"x\": 3.5\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `int` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/int/example_3_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": -0.4\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `int` with these arguments returns `-3`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/int/example_4_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": -3.5\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Integer part of a number\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/int"
+}

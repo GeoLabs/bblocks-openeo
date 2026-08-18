@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Temporal aggregations",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "intervals": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-intervals/schema.json"
+    },
+    "reducer": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.json"
+    },
+    "labels": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": [
+          "number",
+          "string"
+        ]
+      }
+    },
+    "dimension": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "context": {
+      "description": "Any data type."
+    }
+  },
+  "required": [
+    "data",
+    "intervals",
+    "reducer"
+  ]
+}

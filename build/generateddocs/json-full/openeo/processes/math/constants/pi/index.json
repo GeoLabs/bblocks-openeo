@@ -1,0 +1,54 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.constants.pi",
+  "name": "Pi",
+  "abstract": "Pi (\u03c0)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 pi",
+      "link": "https://processes.openeo.org/#pi"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 pi.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/pi.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-constants",
+    "math-trigonometric"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/constants/pi/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/constants/pi/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/constants/pi/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/constants/pi/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/constants/pi/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`pi`](https://processes.openeo.org/#pi) \u2014 *Pi (\u03c0)*. It models the `arguments` object of a process graph node invoking `pi`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nThe real number Pi (\u03c0) is a mathematical constant that is the ratio of the circumference of a circle to its diameter. The numerical value is approximately *3.14159*.\n\n## Source\n\nOpenEO Processes specification: [`pi`](https://processes.openeo.org/#pi) ([openeo-processes/pi.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/pi.json)).\n",
+  "examples": [
+    {
+      "title": "Pi",
+      "content": "Calling `pi` with these arguments returns `3.141592653589793`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/constants/pi/example_1_1.json",
+          "sizeBytes": 2,
+          "code": "{}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: \"Pi (\\u03C0)\"\ntype: object\nproperties: {}\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/constants/pi"
+}

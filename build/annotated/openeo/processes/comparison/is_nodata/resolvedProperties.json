@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["x"],"description":"Any data type is allowed.","required":true,"sources":["bblocks://ogc.openeo.processes.comparison.is_nodata"]}]}

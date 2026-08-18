@@ -1,0 +1,12 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: First element
+type: object
+properties:
+  data:
+    type: array
+    items:
+      description: Any data type is allowed.
+  ignore_nodata:
+    type: boolean
+required:
+- data

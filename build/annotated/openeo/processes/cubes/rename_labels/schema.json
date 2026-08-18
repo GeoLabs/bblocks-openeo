@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Rename dimension labels",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "dimension": {
+      "type": "string"
+    },
+    "target": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": [
+          "number",
+          "string"
+        ]
+      }
+    },
+    "source": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": [
+          "number",
+          "string"
+        ]
+      }
+    }
+  },
+  "required": [
+    "data",
+    "dimension",
+    "target"
+  ]
+}

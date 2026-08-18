@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Create an array",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "description": "Any data type is allowed."
+      }
+    },
+    "repeat": {
+      "type": "integer",
+      "minimum": 1
+    }
+  }
+}

@@ -1,0 +1,102 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.texts.text_concat",
+  "name": "Text concat",
+  "abstract": "Concatenate elements to a single text",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 text_concat",
+      "link": "https://processes.openeo.org/#text_concat"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 text_concat.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_concat.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "texts"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_concat/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_concat/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/texts/text_concat/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_concat/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/texts/text_concat/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/texts/text_concat/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`text_concat`](https://processes.openeo.org/#text_concat) \u2014 *Concatenate elements to a single text*. It models the `arguments` object of a process graph node invoking `text_concat`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nMerges text representations (also known as *string*) of a set of elements to a single text, having the separator between each element.\n\n## Source\n\nOpenEO Processes specification: [`text_concat`](https://processes.openeo.org/#text_concat) ([openeo-processes/text_concat.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_concat.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `text_concat` with these arguments returns `\"Hello World\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_concat/example_1_1.json",
+          "sizeBytes": 64,
+          "code": "{\n  \"data\": [\n    \"Hello\",\n    \"World\"\n  ],\n  \"separator\": \" \"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `text_concat` with these arguments returns `\"1234567890\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_concat/example_2_1.json",
+          "sizeBytes": 88,
+          "code": "{\n  \"data\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    7,\n    8,\n    9,\n    0\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `text_concat` with these arguments returns `\"null\\ntrue\\nfalse\\n1\\n-1.5\\n\\u00df\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_concat/example_3_1.json",
+          "sizeBytes": 101,
+          "code": "{\n  \"data\": [\n    null,\n    true,\n    false,\n    1,\n    -1.5,\n    \"\\u00df\"\n  ],\n  \"separator\": \"\\n\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `text_concat` with these arguments returns `\"210\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_concat/example_4_1.json",
+          "sizeBytes": 50,
+          "code": "{\n  \"data\": [\n    2,\n    0\n  ],\n  \"separator\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `text_concat` with these arguments returns `\"\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_concat/example_5_1.json",
+          "sizeBytes": 16,
+          "code": "{\n  \"data\": []\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Concatenate elements to a single text\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - string\n      - number\n      - boolean\n      - 'null'\n  separator:\n    type:\n    - string\n    - number\n    - boolean\n    - 'null'\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/texts/text_concat"
+}

@@ -1,0 +1,8 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "mask": {
+    "from_parameter": "mask"
+  }
+}

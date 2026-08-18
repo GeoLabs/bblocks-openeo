@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Save processed data",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "format": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/output-format/schema.json"
+    },
+    "options": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/output-format-options/schema.json"
+    }
+  },
+  "required": [
+    "data",
+    "format"
+  ]
+}

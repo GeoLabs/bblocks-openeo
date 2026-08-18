@@ -1,0 +1,16 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Reduce dimensions
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  reducer:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml
+  dimension:
+    type: string
+  context:
+    description: Any data type.
+required:
+- data
+- reducer
+- dimension

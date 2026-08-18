@@ -1,0 +1,68 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_interpolate_linear",
+  "name": "Array interpolate linear",
+  "abstract": "One-dimensional linear interpolation for arrays",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_interpolate_linear",
+      "link": "https://processes.openeo.org/#array_interpolate_linear"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_interpolate_linear.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_interpolate_linear.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "math",
+    "math-interpolation"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_interpolate_linear/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_interpolate_linear/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_interpolate_linear/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_interpolate_linear/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_interpolate_linear/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_interpolate_linear/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_interpolate_linear`](https://processes.openeo.org/#array_interpolate_linear) \u2014 *One-dimensional linear interpolation for arrays*. It models the `arguments` object of a process graph node invoking `array_interpolate_linear`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nPerforms a linear interpolation for each of the NaN and no-data values in the array given, except for leading and trailing NaN and no-data values.\n\nThe linear interpolants are defined by the array indices or labels (x axis) and the values in the array (y axis).\n\n## Source\n\nOpenEO Processes specification: [`array_interpolate_linear`](https://processes.openeo.org/#array_interpolate_linear) ([openeo-processes/array_interpolate_linear.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_interpolate_linear.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `array_interpolate_linear` with these arguments returns `[null, 1, 3.5, 6, -1, -8]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_interpolate_linear/example_1_1.json",
+          "sizeBytes": 70,
+          "code": "{\n  \"data\": [\n    null,\n    1,\n    null,\n    6,\n    null,\n    -8\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `array_interpolate_linear` with these arguments returns `[null, 1, null, null]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_interpolate_linear/example_2_1.json",
+          "sizeBytes": 55,
+          "code": "{\n  \"data\": [\n    null,\n    1,\n    null,\n    null\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: One-dimensional linear interpolation for arrays\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_interpolate_linear"
+}

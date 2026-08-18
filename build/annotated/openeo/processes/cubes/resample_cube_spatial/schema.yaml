@@ -1,0 +1,28 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Resample the spatial dimensions to match a target data cube
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  target:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  method:
+    type: string
+    enum:
+    - average
+    - bilinear
+    - cubic
+    - cubicspline
+    - lanczos
+    - max
+    - med
+    - min
+    - mode
+    - near
+    - q1
+    - q3
+    - rms
+    - sum
+required:
+- data
+- target

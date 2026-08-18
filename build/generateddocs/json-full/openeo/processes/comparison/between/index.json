@@ -1,0 +1,102 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.comparison.between",
+  "name": "Between",
+  "abstract": "Between comparison",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 between",
+      "link": "https://processes.openeo.org/#between"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 between.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/between.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/between/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/between/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/between/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/between/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/between/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/comparison/between/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`between`](https://processes.openeo.org/#between) \u2014 *Between comparison*. It models the `arguments` object of a process graph node invoking `between`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nBy default, this process checks whether `x` is greater than or equal to `min` and lower than or equal to `max`, which is the same as computing `and(gte(x, min), lte(x, max))`. Therefore, all definitions from `and()`, `gte()` and `lte()` apply here as well.\n\nIf `exclude_max` is set to `true` the upper bound is excluded so that the process checks whether `x` is greater than or equal to `min` and lower than `max`. In this case, the process works the same as computing `and(gte(x, min), lt(x, max))`.\n\nLower and upper bounds are not allowed to be swapped. So `min` MUST be lower than or equal to `max` or otherwise the process always returns `false`.\n\n## Source\n\nOpenEO Processes specification: [`between`](https://processes.openeo.org/#between) ([openeo-processes/between.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/between.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `between` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/between/example_1_1.json",
+          "sizeBytes": 39,
+          "code": "{\n  \"x\": null,\n  \"min\": 0,\n  \"max\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `between` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/between/example_2_1.json",
+          "sizeBytes": 36,
+          "code": "{\n  \"x\": 1,\n  \"min\": 0,\n  \"max\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `between` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/between/example_3_1.json",
+          "sizeBytes": 59,
+          "code": "{\n  \"x\": 1,\n  \"min\": 0,\n  \"max\": 1,\n  \"exclude_max\": true\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Swapped bounds (min is greater than max) MUST always return `false`.\n\nCalling `between` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/between/example_4_1.json",
+          "sizeBytes": 38,
+          "code": "{\n  \"x\": 0.5,\n  \"min\": 1,\n  \"max\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `between` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/between/example_5_1.json",
+          "sizeBytes": 40,
+          "code": "{\n  \"x\": -0.5,\n  \"min\": -1,\n  \"max\": 0\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Between comparison\ntype: object\nproperties:\n  x:\n    description: Any data type is allowed.\n  min:\n    type: number\n  max:\n    type: number\n  exclude_max:\n    type: boolean\nrequired:\n- x\n- min\n- max\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/comparison/between"
+}

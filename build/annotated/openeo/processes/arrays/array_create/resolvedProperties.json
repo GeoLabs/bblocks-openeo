@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"schema_type":"array","sources":["bblocks://ogc.openeo.processes.arrays.array_create"]},{"path":["repeat"],"schema_type":"integer","sources":["bblocks://ogc.openeo.processes.arrays.array_create"]}]}

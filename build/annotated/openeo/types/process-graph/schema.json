@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "subtype": "process-graph",
+  "title": "User-defined process",
+  "description": "An process graph that is passed as an argument and is expected to be executed by the process. Parameters passed to the process graph are specified in the `parameters` property of the corresponding schema.",
+  "required": [
+    "process_graph"
+  ],
+  "properties": {
+    "process_graph": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "process_id",
+          "arguments"
+        ],
+        "properties": {
+          "process_id": {
+            "type": "string"
+          },
+          "arguments": {}
+        }
+      }
+    }
+  }
+}

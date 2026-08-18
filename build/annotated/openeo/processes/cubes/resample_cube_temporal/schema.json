@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Resample temporal dimensions to match a target data cube",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "target": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "dimension": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "valid_within": {
+      "type": [
+        "number",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "target"
+  ]
+}

@@ -1,0 +1,79 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_element",
+  "name": "Array element",
+  "abstract": "Get an element from an array",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_element",
+      "link": "https://processes.openeo.org/#array_element"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_element.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_element.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_element/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_element/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_element/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_element/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_element/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_element/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_element`](https://processes.openeo.org/#array_element) \u2014 *Get an element from an array*. It models the `arguments` object of a process graph node invoking `array_element`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nGives the element with the specified index or label from the array.\n\nEither the parameter `index` or `label` must be specified, otherwise the `ArrayElementParameterMissing` exception is thrown. If both parameters are set the `ArrayElementParameterConflict` exception is thrown.\n\n## Exceptions\n\n- `ArrayElementNotAvailable`: The array has no element with the specified index or label.\n- `ArrayElementParameterMissing`: The process `array_element` requires either the `index` or `labels` parameter to be set.\n- `ArrayElementParameterConflict`: The process `array_element` only allows that either the `index` or the `labels` parameter is set.\n- `ArrayNotLabeled`: The array is not a labeled array, but the `label` parameter is set. Use the `index` instead.\n\n## Source\n\nOpenEO Processes specification: [`array_element`](https://processes.openeo.org/#array_element) ([openeo-processes/array_element.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_element.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `array_element` with these arguments returns `7`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_element/example_1_1.json",
+          "sizeBytes": 67,
+          "code": "{\n  \"data\": [\n    9,\n    8,\n    7,\n    6,\n    5\n  ],\n  \"index\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `array_element` with these arguments returns `\"A\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_element/example_2_1.json",
+          "sizeBytes": 59,
+          "code": "{\n  \"data\": [\n    \"A\",\n    \"B\",\n    \"C\"\n  ],\n  \"index\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `array_element` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_element/example_3_1.json",
+          "sizeBytes": 55,
+          "code": "{\n  \"data\": [],\n  \"index\": 0,\n  \"return_nodata\": true\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Get an element from an array\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  index:\n    type: integer\n    minimum: 0\n  label:\n    anyOf:\n    - type: number\n    - type: string\n  return_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_element"
+}

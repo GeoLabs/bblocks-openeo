@@ -1,0 +1,12 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Inverse hyperbolic tangent
+type: object
+properties:
+  x:
+    type:
+    - number
+    - 'null'
+    minimumExclusive: -1
+    maximumExclusive: 1
+required:
+- x

@@ -1,0 +1,54 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.trigonometric.arccos",
+  "name": "Arccos",
+  "abstract": "Inverse cosine",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 arccos",
+      "link": "https://processes.openeo.org/#arccos"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 arccos.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/arccos.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/arccos/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/arccos/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/trigonometric/arccos/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/arccos/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/trigonometric/arccos/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/trigonometric/arccos/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`arccos`](https://processes.openeo.org/#arccos) \u2014 *Inverse cosine*. It models the `arguments` object of a process graph node invoking `arccos`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the arc cosine of `x`. The arc cosine is the inverse function of the cosine so that *`arccos(cos(x)) = x`*.\n\nWorks on radians only.\nNo-data values are passed through. `NaN` is returned for values < -1 and > 1.\n\n## Source\n\nOpenEO Processes specification: [`arccos`](https://processes.openeo.org/#arccos) ([openeo-processes/arccos.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/arccos.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `arccos` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/trigonometric/arccos/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 1\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Inverse cosine\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\n    minimum: -1\n    maximum: 1\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/trigonometric/arccos"
+}

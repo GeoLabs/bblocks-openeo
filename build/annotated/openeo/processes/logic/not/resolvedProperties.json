@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["x"],"required":true,"schema_type":["boolean","null"],"sources":["bblocks://ogc.openeo.processes.logic.not"]}]}

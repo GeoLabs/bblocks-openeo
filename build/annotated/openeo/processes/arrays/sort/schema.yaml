@@ -1,0 +1,20 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Sort data
+type: object
+properties:
+  data:
+    type: array
+    items:
+      anyOf:
+      - type: number
+      - type: 'null'
+      - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml
+      - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml
+  asc:
+    type: boolean
+  nodata:
+    type:
+    - boolean
+    - 'null'
+required:
+- data

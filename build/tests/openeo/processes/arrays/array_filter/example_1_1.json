@@ -1,0 +1,22 @@
+{
+  "data": [
+    0,
+    1,
+    2,
+    3
+  ],
+  "condition": {
+    "process_graph": {
+      "gt1": {
+        "process_id": "gt",
+        "arguments": {
+          "x": {
+            "from_parameter": "x"
+          },
+          "y": 1
+        },
+        "result": true
+      }
+    }
+  }
+}

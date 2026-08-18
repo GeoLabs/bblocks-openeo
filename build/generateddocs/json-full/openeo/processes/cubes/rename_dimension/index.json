@@ -1,0 +1,57 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.rename_dimension",
+  "name": "Rename dimension",
+  "abstract": "Rename a dimension",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 rename_dimension",
+      "link": "https://processes.openeo.org/#rename_dimension"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 rename_dimension.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/rename_dimension.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/rename_dimension/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/rename_dimension/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/rename_dimension/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/rename_dimension/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/rename_dimension/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/rename_dimension/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`rename_dimension`](https://processes.openeo.org/#rename_dimension) \u2014 *Rename a dimension*. It models the `arguments` object of a process graph node invoking `rename_dimension`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nRenames a dimension in the data cube while preserving all other properties.\n\n## Exceptions\n\n- `DimensionNotAvailable`: A dimension with the specified name does not exist.\n- `DimensionExists`: A dimension with the specified name already exists.\n\n## Source\n\nOpenEO Processes specification: [`rename_dimension`](https://processes.openeo.org/#rename_dimension) ([openeo-processes/rename_dimension.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/rename_dimension.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `rename_dimension` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/rename_dimension/example_1_1.json",
+          "sizeBytes": 85,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"source\": \"t\",\n  \"target\": \"time\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Rename a dimension\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  source:\n    type: string\n  target:\n    type: string\nrequired:\n- data\n- source\n- target\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/rename_dimension"
+}

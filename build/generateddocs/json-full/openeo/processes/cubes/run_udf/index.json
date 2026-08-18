@@ -1,0 +1,63 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.run_udf",
+  "name": "Run udf",
+  "abstract": "Run a UDF",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 run_udf",
+      "link": "https://processes.openeo.org/#run_udf"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 run_udf.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/run_udf.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "import",
+    "udf"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.udf-runtime-version",
+    "ogc.openeo.types.uri",
+    "ogc.openeo.types.file-path",
+    "ogc.openeo.types.udf-code",
+    "ogc.openeo.types.udf-runtime"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/run_udf/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/run_udf/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/run_udf/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/run_udf/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/run_udf/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/run_udf/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`run_udf`](https://processes.openeo.org/#run_udf) \u2014 *Run a UDF*. It models the `arguments` object of a process graph node invoking `run_udf`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nRuns a UDF in one of the supported runtime environments.\n\nThe process can either:\n\n1. load and run a UDF stored in a file on the server-side workspace of the authenticated user. The path to the UDF file must be relative to the root directory of the user's workspace.\n2. fetch and run a remotely stored and published UDF by absolute URI.\n3. run the source code specified inline as string.\n\nThe loaded UDF can be executed in several processes such as `aggregate_spatial()`, `apply()`, `apply_dimension()` and `reduce_dimension()`. The user must ensure that the data is provided in a way that the UDF code can make sense of it.\n\n## Exceptions\n\n- `InvalidRuntime`: The specified UDF runtime is not supported.\n- `InvalidVersion`: The specified UDF runtime version is not supported.\n- `FileNotFound`: The specified file does not exist.\n\n## Source\n\nOpenEO Processes specification: [`run_udf`](https://processes.openeo.org/#run_udf) ([openeo-processes/run_udf.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/run_udf.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `run_udf` with these arguments returns `0.42`.\n\nThe return value's actual type depends entirely on what the UDF code returns (`data` is of type \"any\"); the illustrative value shown here is not computed.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/run_udf/example_1_1.json",
+          "sizeBytes": 145,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"udf\": \"import numpy as np\\n\\ndef apply(data):\\n    return data * 2\\n\",\n  \"runtime\": \"Python\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Run a UDF\ntype: object\nproperties:\n  data:\n    description: A value of any data type.\n  udf:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/uri/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/file-path/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-code/schema.yaml\n  runtime:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-runtime/schema.yaml\n  version:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-runtime-version/schema.yaml\n    - title: Default runtime version\n      type: 'null'\n  context:\n    description: Any data type.\nrequired:\n- data\n- udf\n- runtime\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/run_udf"
+}

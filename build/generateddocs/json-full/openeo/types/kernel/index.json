@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.kernel",
+  "name": "OpenEO type: Image Kernel",
+  "abstract": "A two-dimensional numeric array used as a convolution kernel.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/kernel/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/kernel/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/kernel/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/kernel/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/kernel/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `kernel`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nA two-dimensional array of numbers to be used as kernel for the image operation.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A 3x3 Laplacian edge-detection kernel.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/kernel/example_1_1.json",
+          "sizeBytes": 90,
+          "code": "[\n  [\n    1,\n    1,\n    1\n  ],\n  [\n    1,\n    -8,\n    1\n  ],\n  [\n    1,\n    1,\n    1\n  ]\n]"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: array\nsubtype: kernel\ntitle: Image Kernel\ndescription: A two-dimensional array of numbers to be used as kernel for the image\n  operation.\nitems:\n  type: array\n  items:\n    type: number\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/kernel"
+}

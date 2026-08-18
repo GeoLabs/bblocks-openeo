@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Filter an array based on a condition",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "description": "Any data type is allowed."
+      }
+    },
+    "condition": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.json"
+    },
+    "context": {
+      "description": "Any data type."
+    }
+  },
+  "required": [
+    "data",
+    "condition"
+  ]
+}

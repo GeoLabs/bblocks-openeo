@@ -1,0 +1,60 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.aggregate_temporal",
+  "name": "Aggregate temporal",
+  "abstract": "Temporal aggregations",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 aggregate_temporal",
+      "link": "https://processes.openeo.org/#aggregate_temporal"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 aggregate_temporal.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_temporal.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "aggregate"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.temporal-intervals"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/aggregate_temporal/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/aggregate_temporal/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/aggregate_temporal/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/aggregate_temporal/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/aggregate_temporal/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/aggregate_temporal/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`aggregate_temporal`](https://processes.openeo.org/#aggregate_temporal) \u2014 *Temporal aggregations*. It models the `arguments` object of a process graph node invoking `aggregate_temporal`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes a temporal aggregation based on an array of temporal intervals.\n\nFor common regular calendar hierarchies such as year, month, week or seasons `aggregate_temporal_period()` can be used. Other calendar hierarchies must be transformed into specific intervals by the clients.\n\nFor each interval, all data along the dimension will be passed through the reducer.\n\nThe computed values will be projected to the labels. If no labels are specified, the start of the temporal interval will be used as label for the corresponding values. In case of a conflict (i.e. the user-specified values for the start times of the temporal intervals are not distinct), the user-defined labels must be specified in the parameter `labels` as otherwise a `DistinctDimensionLabelsRequired` exception would be thrown. The number of user-defined labels and the number of intervals need to be equal.\n\nIf the dimension is not set or is set to `null`, the data cube is expected to only have one temporal dimension.\n\n## Callback (child process) signature\n\nThe child process passed as `reducer` is called with the following named parameters:\n\n- `data`: A labeled array with elements of any type. If there's no data for the interval, the array is empty.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The value to be set in the new data cube.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `TooManyDimensions`: The data cube contains multiple temporal dimensions. The parameter `dimension` must be specified.\n- `DimensionNotAvailable`: A dimension with the specified name does not exist or no temporal dimension is available.\n- `DistinctDimensionLabelsRequired`: The dimension labels have duplicate values. Distinct labels must be specified.\n- `TemporalExtentEmpty`: At least one of the intervals is empty. The second instant in time must always be greater/later than the first instant.\n\n## Source\n\nOpenEO Processes specification: [`aggregate_temporal`](https://processes.openeo.org/#aggregate_temporal) ([openeo-processes/aggregate_temporal.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_temporal.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Example arguments for calling `aggregate_temporal`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/aggregate_temporal/example_1_1.json",
+          "sizeBytes": 637,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"intervals\": [\n    [\n      \"2015-01-01\",\n      \"2016-01-01\"\n    ],\n    [\n      \"2016-01-01\",\n      \"2017-01-01\"\n    ],\n    [\n      \"2017-01-01\",\n      \"2018-01-01\"\n    ],\n    [\n      \"2018-01-01\",\n      \"2019-01-01\"\n    ],\n    [\n      \"2019-01-01\",\n      \"2020-01-01\"\n    ]\n  ],\n  \"labels\": [\n    \"2015\",\n    \"2016\",\n    \"2017\",\n    \"2018\",\n    \"2019\"\n  ],\n  \"reducer\": {\n    \"process_graph\": {\n      \"mean1\": {\n        \"process_id\": \"mean\",\n        \"arguments\": {\n          \"data\": {\n            \"from_parameter\": \"data\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Temporal aggregations\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  intervals:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-intervals/schema.yaml\n  reducer:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  labels:\n    type: array\n    uniqueItems: true\n    items:\n      type:\n      - number\n      - string\n  dimension:\n    type:\n    - string\n    - 'null'\n  context:\n    description: Any data type.\nrequired:\n- data\n- intervals\n- reducer\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/aggregate_temporal"
+}

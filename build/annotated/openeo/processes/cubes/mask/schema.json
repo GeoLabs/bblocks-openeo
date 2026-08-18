@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Apply a raster mask",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "mask": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "replacement": {
+      "type": [
+        "number",
+        "boolean",
+        "string",
+        "null"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "mask"
+  ]
+}

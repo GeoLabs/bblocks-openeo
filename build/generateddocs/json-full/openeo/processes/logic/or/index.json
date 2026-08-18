@@ -1,0 +1,102 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.logic.or",
+  "name": "Or",
+  "abstract": "Logical OR",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 or",
+      "link": "https://processes.openeo.org/#or"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 or.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/or.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "logic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/or/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/or/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/or/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/or/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/or/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/logic/or/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`or`](https://processes.openeo.org/#or) \u2014 *Logical OR*. It models the `arguments` object of a process graph node invoking `or`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nChecks if **at least one** of the values is true. Evaluates parameter `x` before `y` and stops once the outcome is unambiguous. If any argument is a no-data value, the result will be the no-data value whenever the outcome is ambiguous.\n\n**Truth table:**\n\n```\nx \\ y   || no-data | false   | true\n------- || ------- | ------- | ----\nno-data || no-data | no-data | true\nfalse   || no-data | false   | true\ntrue    || true    | true    | true\n```\n\n## Source\n\nOpenEO Processes specification: [`or`](https://processes.openeo.org/#or) ([openeo-processes/or.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/or.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `or` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/or/example_1_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": true,\n  \"y\": true\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `or` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/or/example_2_1.json",
+          "sizeBytes": 30,
+          "code": "{\n  \"x\": false,\n  \"y\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `or` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/or/example_3_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": true,\n  \"y\": null\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `or` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/or/example_4_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": null,\n  \"y\": true\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `or` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/or/example_5_1.json",
+          "sizeBytes": 29,
+          "code": "{\n  \"x\": false,\n  \"y\": null\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Logical OR\ntype: object\nproperties:\n  x:\n    type:\n    - boolean\n    - 'null'\n  y:\n    type:\n    - boolean\n    - 'null'\nrequired:\n- x\n- y\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/logic/or"
+}

@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.time",
+  "name": "OpenEO type: Time only",
+  "abstract": "A time of day without a date component (UTC).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/time/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/time/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/time/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `time`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nTime only representation, as defined for `partial-time` by [RFC 3339 in section 5.6](https://www.rfc-editor.org/rfc/rfc3339.html#section-5.6). The time zone is UTC.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "Noon, UTC.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/time/example_1_1.json",
+          "sizeBytes": 10,
+          "code": "\"12:00:00\""
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: string\nsubtype: time\npattern: ^\\d{2}:\\d{2}:\\d{2}$\ntitle: Time only\ndescription: Time only representation, as defined for `partial-time` by [RFC 3339\n  in section 5.6](https://www.rfc-editor.org/rfc/rfc3339.html#section-5.6). The time\n  zone is UTC.\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/time"
+}

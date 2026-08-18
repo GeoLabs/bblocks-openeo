@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.workspace-id",
+  "name": "OpenEO type: Workspace ID",
+  "abstract": "An identifier for a workspace known to the back-end.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/workspace-id/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/workspace-id/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/workspace-id/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/workspace-id/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/workspace-id/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `workspace-id`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nA workspace identifier from the list of available workspaces.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "An identifier for a back-end workspace.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/workspace-id/example_1_1.json",
+          "sizeBytes": 14,
+          "code": "\"my-workspace\""
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: string\nsubtype: workspace-id\ntitle: Workspace ID\ndescription: A workspace identifier from the list of available workspaces.\npattern: ^[\\w\\-\\.~]+$\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/workspace-id"
+}

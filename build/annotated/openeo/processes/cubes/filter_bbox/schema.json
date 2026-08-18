@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Spatial filter using a bounding box",
+  "type": "object",
+  "properties": {
+    "data": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+        }
+      ]
+    },
+    "extent": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/schema.json"
+    }
+  },
+  "required": [
+    "data",
+    "extent"
+  ]
+}

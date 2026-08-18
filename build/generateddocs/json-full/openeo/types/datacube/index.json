@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.datacube",
+  "name": "OpenEO type: Data Cube",
+  "abstract": "A data cube with an arbitrary number of dimensions, without a required dimension typing.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/datacube/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/datacube/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/datacube/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `datacube`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nA data cube that consists of an arbitrary number of dimensions and doesn't require any dimension type specifically.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A data cube reference. In an actual process graph, cube-valued arguments are normally supplied as node/parameter references (`from_node`/`from_parameter`, defined by the OpenEO API rather than this processes schema); this schema only constrains the value to be an object.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/datacube/example_1_1.json",
+          "sizeBytes": 2,
+          "code": "{}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: datacube\ntitle: Data Cube\ndescription: A data cube that consists of an arbitrary number of dimensions and doesn't\n  require any dimension type specifically.\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/datacube"
+}

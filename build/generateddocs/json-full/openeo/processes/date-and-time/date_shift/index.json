@@ -1,0 +1,142 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.date-and-time.date_shift",
+  "name": "Date shift",
+  "abstract": "Manipulates dates and times by addition or subtraction",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 date_shift",
+      "link": "https://processes.openeo.org/#date_shift"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 date_shift.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/date_shift.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "date-and-time"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date-time",
+    "ogc.openeo.types.date"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/date-and-time/date_shift/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/date-and-time/date_shift/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/date-and-time/date_shift/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/date-and-time/date_shift/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/date-and-time/date_shift/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/date-and-time/date_shift/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`date_shift`](https://processes.openeo.org/#date_shift) \u2014 *Manipulates dates and times by addition or subtraction*. It models the `arguments` object of a process graph node invoking `date_shift`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nBased on a given date (and optionally time), calculates a new date (and time if given) by adding or subtracting a given temporal period.\n\nSome specifics about dates and times need to be taken into account:\n\n* This process doesn't have any effect on the time zone.\n* It doesn't take daylight saving time (DST) into account as only dates and times in UTC (with potential numerical time zone modifier) are supported.\n* Leap years are implemented in a way that computations handle them gracefully (see parameter `unit` for details).\n* Leap seconds are mostly ignored in manipulations as they don't follow a regular pattern. Leap seconds can be passed to the process, but will never be returned.\n\n## Source\n\nOpenEO Processes specification: [`date_shift`](https://processes.openeo.org/#date_shift) ([openeo-processes/date_shift.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/date_shift.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `date_shift` with these arguments returns `\"2020-08-01T17:22:45Z\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_1_1.json",
+          "sizeBytes": 69,
+          "code": "{\n  \"date\": \"2020-02-01T17:22:45Z\",\n  \"value\": 6,\n  \"unit\": \"month\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `date_shift` with these arguments returns `\"2021-03-24T00:00:00+02:00\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_2_1.json",
+          "sizeBytes": 73,
+          "code": "{\n  \"date\": \"2021-03-31T00:00:00+02:00\",\n  \"value\": -7,\n  \"unit\": \"day\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Adding a year to February 29th in a leap year will result in February 28th in the next (non-leap) year.\n\nCalling `date_shift` with these arguments returns `\"2021-02-28T17:22:45Z\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_3_1.json",
+          "sizeBytes": 68,
+          "code": "{\n  \"date\": \"2020-02-29T17:22:45Z\",\n  \"value\": 1,\n  \"unit\": \"year\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Adding a month to January 31th will result in February 29th in leap years.\n\nCalling `date_shift` with these arguments returns `\"2020-02-29\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_4_1.json",
+          "sizeBytes": 59,
+          "code": "{\n  \"date\": \"2020-01-31\",\n  \"value\": 1,\n  \"unit\": \"month\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "The process skips over the leap second `2016-12-31T23:59:60Z`.\n\nCalling `date_shift` with these arguments returns `\"2017-01-01T00:00:00Z\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_5_1.json",
+          "sizeBytes": 70,
+          "code": "{\n  \"date\": \"2016-12-31T23:59:59Z\",\n  \"value\": 1,\n  \"unit\": \"second\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Milliseconds can be added or subtracted. If not given, the default value is `0`.\n\nCalling `date_shift` with these arguments returns `\"2018-12-31T17:22:46.150Z\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_6_1.json",
+          "sizeBytes": 78,
+          "code": "{\n  \"date\": \"2018-12-31T17:22:45Z\",\n  \"value\": 1150,\n  \"unit\": \"millisecond\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 7",
+      "content": "Calling `date_shift` with these arguments returns `\"2018-01-02\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_7_1.json",
+          "sizeBytes": 59,
+          "code": "{\n  \"date\": \"2018-01-01\",\n  \"value\": 25,\n  \"unit\": \"hour\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 8",
+      "content": "Calling `date_shift` with these arguments returns `\"2017-12-31\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/date-and-time/date_shift/example_8_1.json",
+          "sizeBytes": 59,
+          "code": "{\n  \"date\": \"2018-01-01\",\n  \"value\": -1,\n  \"unit\": \"hour\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Manipulates dates and times by addition or subtraction\ntype: object\nproperties:\n  date:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml\n  value:\n    type: integer\n  unit:\n    type: string\n    enum:\n    - millisecond\n    - second\n    - minute\n    - hour\n    - day\n    - week\n    - month\n    - year\nrequired:\n- date\n- value\n- unit\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/date-and-time/date_shift"
+}

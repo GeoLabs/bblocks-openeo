@@ -1,0 +1,78 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.logic.not",
+  "name": "Not",
+  "abstract": "Inverting a boolean",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 not",
+      "link": "https://processes.openeo.org/#not"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 not.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/not.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "logic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/not/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/not/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/not/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/not/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/not/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/logic/not/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`not`](https://processes.openeo.org/#not) \u2014 *Inverting a boolean*. It models the `arguments` object of a process graph node invoking `not`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nInverts a single boolean so that `true` gets `false` and `false` gets `true`.\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`not`](https://processes.openeo.org/#not) ([openeo-processes/not.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/not.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `not` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/not/example_1_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": null\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `not` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/not/example_2_1.json",
+          "sizeBytes": 16,
+          "code": "{\n  \"x\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `not` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/not/example_3_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": true\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Inverting a boolean\ntype: object\nproperties:\n  x:\n    type:\n    - boolean\n    - 'null'\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/logic/not"
+}

@@ -1,0 +1,54 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Between comparison for dates and times",
+  "type": "object",
+  "properties": {
+    "x": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.json"
+        }
+      ]
+    },
+    "min": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.json"
+        }
+      ]
+    },
+    "max": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.json"
+        }
+      ]
+    },
+    "exclude_max": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "x",
+    "min",
+    "max"
+  ]
+}

@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.texts.text_concat - Text concat
+Generated 2026-08-18T09:14:56.818633+00:00
+=== Files ===
+Using example_2_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

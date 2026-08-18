@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.aggregate.aggregate_temporal_period - Aggregate temporal period
+Generated 2026-08-18T09:14:59.168366+00:00
+=== Files ===
+Using example_1_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Text contains another text",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "pattern": {
+      "type": "string"
+    },
+    "case_sensitive": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "data",
+    "pattern"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Merge two arrays",
+  "type": "object",
+  "properties": {
+    "array1": {
+      "type": "array",
+      "items": {
+        "description": "Any data type is allowed."
+      }
+    },
+    "array2": {
+      "type": "array",
+      "items": {
+        "description": "Any data type is allowed."
+      }
+    }
+  },
+  "required": [
+    "array1",
+    "array2"
+  ]
+}

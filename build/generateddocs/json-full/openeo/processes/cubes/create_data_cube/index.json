@@ -1,0 +1,53 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.create_data_cube",
+  "name": "Create data cube",
+  "abstract": "Create an empty data cube",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 create_data_cube",
+      "link": "https://processes.openeo.org/#create_data_cube"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 create_data_cube.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/create_data_cube.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/create_data_cube/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/create_data_cube/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/create_data_cube/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/create_data_cube/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/create_data_cube/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`create_data_cube`](https://processes.openeo.org/#create_data_cube) \u2014 *Create an empty data cube*. It models the `arguments` object of a process graph node invoking `create_data_cube`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nCreates a new data cube without dimensions. Dimensions can be added with `add_dimension()`.\n\n## Source\n\nOpenEO Processes specification: [`create_data_cube`](https://processes.openeo.org/#create_data_cube) ([openeo-processes/create_data_cube.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/create_data_cube.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `create_data_cube` with these arguments returns `{}`.\n\nTakes no parameters; always returns a new, empty data cube.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/create_data_cube/example_1_1.json",
+          "sizeBytes": 2,
+          "code": "{}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Create an empty data cube\ntype: object\nproperties: {}\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/create_data_cube"
+}

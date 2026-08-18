@@ -1,0 +1,114 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.comparison.lte",
+  "name": "LTE",
+  "abstract": "Less than or equal to comparison",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 lte",
+      "link": "https://processes.openeo.org/#lte"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 lte.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/lte.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/lte/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/lte/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/lte/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/lte/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/lte/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/comparison/lte/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`lte`](https://processes.openeo.org/#lte) \u2014 *Less than or equal to comparison*. It models the `arguments` object of a process graph node invoking `lte`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nCompares whether `x` is less than or equal to `y`.\n\n**Remarks:**\n\n* If any operand is a no-data value, the result will be the no-data value (or `null`).\n* The comparison of `NaN` (not a number) follows [IEEE Standard 754](https://ieeexplore.ieee.org/document/8766229).\n* If the operands are not equal (see process `eq()`) and any of them is not the data type `number`, the process returns `false`.\n* Temporal strings are normal strings. To compare temporal strings as dates/times, use `date_difference()`.\n\n## Source\n\nOpenEO Processes specification: [`lte`](https://processes.openeo.org/#lte) ([openeo-processes/lte.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/lte.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `lte` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/lte/example_1_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 1,\n  \"y\": null\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `lte` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/lte/example_2_1.json",
+          "sizeBytes": 22,
+          "code": "{\n  \"x\": 0,\n  \"y\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `lte` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/lte/example_3_1.json",
+          "sizeBytes": 22,
+          "code": "{\n  \"x\": 1,\n  \"y\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `lte` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/lte/example_4_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": -0.5,\n  \"y\": -0.6\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `lte` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/lte/example_5_1.json",
+          "sizeBytes": 69,
+          "code": "{\n  \"x\": \"2018-01-01T00:00:00Z\",\n  \"y\": \"2018-01-01T00:00:00+00:00\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Calling `lte` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/lte/example_6_1.json",
+          "sizeBytes": 29,
+          "code": "{\n  \"x\": false,\n  \"y\": true\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Less than or equal to comparison\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - boolean\n    - string\n    - 'null'\n  y:\n    type:\n    - number\n    - boolean\n    - string\n    - 'null'\nrequired:\n- x\n- y\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/comparison/lte"
+}

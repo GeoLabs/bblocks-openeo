@@ -1,0 +1,60 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.aggregate_spatial",
+  "name": "Aggregate spatial",
+  "abstract": "Zonal statistics for geometries",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 aggregate_spatial",
+      "link": "https://processes.openeo.org/#aggregate_spatial"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 aggregate_spatial.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_spatial.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "aggregate"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/aggregate_spatial/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/aggregate_spatial/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/aggregate_spatial/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/aggregate_spatial/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/aggregate_spatial/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/aggregate_spatial/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`aggregate_spatial`](https://processes.openeo.org/#aggregate_spatial) \u2014 *Zonal statistics for geometries*. It models the `arguments` object of a process graph node invoking `aggregate_spatial`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nAggregates statistics for one or more geometries (e.g. zonal statistics for polygons) over the spatial dimensions. The given data cube can have multiple additional dimensions and for all these dimensions results will be computed individually.\n\nAn 'unbounded' aggregation over the full extent of the horizontal spatial dimensions can be computed with the process `reduce_spatial()`.\n\nThis process passes a list of values to the reducer. The list of values has an undefined order, therefore processes such as `last()` and `first()` that depend on the order of the values will lead to unpredictable results.\n\n## Callback (child process) signature\n\nThe child process passed as `reducer` is called with the following named parameters:\n\n- `data`: An array with elements of any type.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The value to be set in the vector data cube.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `geometries` (a `datacube`): must include a dimension matching `geometry`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `geometry`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `TargetDimensionExists`: A dimension with the specified target dimension name already exists.\n\n## Source\n\nOpenEO Processes specification: [`aggregate_spatial`](https://processes.openeo.org/#aggregate_spatial) ([openeo-processes/aggregate_spatial.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_spatial.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `aggregate_spatial` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/aggregate_spatial/example_1_1.json",
+          "sizeBytes": 626,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"geometries\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [\n          16.1,\n          48.1\n        ],\n        [\n          16.6,\n          48.1\n        ],\n        [\n          16.6,\n          48.6\n        ],\n        [\n          16.1,\n          48.6\n        ],\n        [\n          16.1,\n          48.1\n        ]\n      ]\n    ]\n  },\n  \"reducer\": {\n    \"process_graph\": {\n      \"mean1\": {\n        \"process_id\": \"mean\",\n        \"arguments\": {\n          \"data\": {\n            \"from_parameter\": \"data\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Zonal statistics for geometries\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  geometries:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.yaml\n      deprecated: true\n  reducer:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  target_dimension:\n    type:\n    - string\n    - 'null'\n  context:\n    description: Any data type.\nrequired:\n- data\n- geometries\n- reducer\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/aggregate_spatial"
+}

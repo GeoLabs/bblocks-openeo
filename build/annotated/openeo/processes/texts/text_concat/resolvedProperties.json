@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"schema_type":"array","sources":["bblocks://ogc.openeo.processes.texts.text_concat"]},{"path":["separator"],"schema_type":["string","number","boolean","null"],"sources":["bblocks://ogc.openeo.processes.texts.text_concat"]}]}

@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.comparison.is_nan - Is nan
+Generated 2026-08-18T09:14:55.645938+00:00
+=== Files ===
+Using example_1_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

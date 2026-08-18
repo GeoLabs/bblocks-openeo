@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.udf-code",
+  "name": "OpenEO type: UDF source code",
+  "abstract": "The multi-line source code of a user-defined function (UDF).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-code/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-code/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/udf-code/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/udf-code/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/udf-code/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `udf-code`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nThe multi-line source code of a user-defined function (UDF), must contain a newline/line-break.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A minimal Python UDF that doubles the input.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/udf-code/example_1_1.json",
+          "sizeBytes": 63,
+          "code": "\"import numpy as np\\n\\ndef apply(data):\\n    return data * 2\\n\""
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: string\nsubtype: udf-code\ntitle: UDF source code\ndescription: The multi-line source code of a user-defined function (UDF), must contain\n  a newline/line-break.\npattern: \"(\\r\\n|\\r|\\n)\"\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/udf-code"
+}

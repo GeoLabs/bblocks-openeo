@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Value is not a number",
+  "type": "object",
+  "properties": {
+    "x": {
+      "description": "Any data type is allowed."
+    }
+  },
+  "required": [
+    "x"
+  ]
+}

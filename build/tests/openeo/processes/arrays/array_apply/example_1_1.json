@@ -1,0 +1,20 @@
+{
+  "data": [
+    -1,
+    2,
+    -3
+  ],
+  "process": {
+    "process_graph": {
+      "abs1": {
+        "process_id": "absolute",
+        "arguments": {
+          "x": {
+            "from_parameter": "x"
+          }
+        },
+        "result": true
+      }
+    }
+  }
+}

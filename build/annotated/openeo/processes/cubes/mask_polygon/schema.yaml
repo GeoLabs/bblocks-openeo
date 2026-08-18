@@ -1,0 +1,22 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a polygon mask
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  mask:
+    anyOf:
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.yaml
+      deprecated: true
+  replacement:
+    anyOf:
+    - type: number
+    - type: boolean
+    - type: string
+    - type: 'null'
+  inside:
+    type: boolean
+required:
+- data
+- mask

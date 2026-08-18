@@ -1,0 +1,21 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "geometries": {
+    "from_parameter": "geometries"
+  },
+  "process": {
+    "process_graph": {
+      "mean1": {
+        "process_id": "mean",
+        "arguments": {
+          "data": {
+            "from_parameter": "data"
+          }
+        },
+        "result": true
+      }
+    }
+  }
+}

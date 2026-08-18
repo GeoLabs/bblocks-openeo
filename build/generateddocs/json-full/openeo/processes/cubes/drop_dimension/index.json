@@ -1,0 +1,57 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.drop_dimension",
+  "name": "Drop dimension",
+  "abstract": "Remove a dimension",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 drop_dimension",
+      "link": "https://processes.openeo.org/#drop_dimension"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 drop_dimension.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/drop_dimension.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/drop_dimension/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/drop_dimension/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/drop_dimension/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/drop_dimension/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/drop_dimension/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/drop_dimension/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`drop_dimension`](https://processes.openeo.org/#drop_dimension) \u2014 *Remove a dimension*. It models the `arguments` object of a process graph node invoking `drop_dimension`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nDrops a dimension from the data cube.\n\nDropping a dimension only works on dimensions with a single dimension label left, otherwise the process fails with a `DimensionLabelCountMismatch` exception. Dimension values can be reduced to a single value with a filter such as `filter_bands()` or the `reduce_dimension()` process. If a dimension with the specified name does not exist, the process fails with a `DimensionNotAvailable` exception.\n\n## Exceptions\n\n- `DimensionLabelCountMismatch`: The number of dimension labels exceeds one, which requires a reducer.\n- `DimensionNotAvailable`: A dimension with the specified name does not exist.\n\n## Source\n\nOpenEO Processes specification: [`drop_dimension`](https://processes.openeo.org/#drop_dimension) ([openeo-processes/drop_dimension.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/drop_dimension.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `drop_dimension` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/drop_dimension/example_1_1.json",
+          "sizeBytes": 67,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"name\": \"bands\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Remove a dimension\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  name:\n    type: string\nrequired:\n- data\n- name\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/drop_dimension"
+}

@@ -1,0 +1,54 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.development.inspect",
+  "name": "Inspect",
+  "abstract": "Add information to the logs",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 inspect",
+      "link": "https://processes.openeo.org/#inspect"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 inspect.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/inspect.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "development"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/development/inspect/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/development/inspect/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/development/inspect/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/development/inspect/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/development/inspect/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/development/inspect/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`inspect`](https://processes.openeo.org/#inspect) \u2014 *Add information to the logs*. It models the `arguments` object of a process graph node invoking `inspect`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nThis process can be used to add runtime information to the logs, e.g. for debugging purposes. This process should be used with caution and it is recommended to remove the process in production workflows. For example, logging each value or array individually in a process such as `apply()` or `reduce_dimension()` could lead to a (too) large number of log entries. Several data structures (e.g. data cubes) are too large to log and will only return summaries of their contents.\n\nThe data provided in the parameter `data` is returned without changes.\n\n## Source\n\nOpenEO Processes specification: [`inspect`](https://processes.openeo.org/#inspect) ([openeo-processes/inspect.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/inspect.json)).\n",
+  "examples": [
+    {
+      "title": "Log a value for debugging",
+      "content": "Calling `inspect` with these arguments returns `42`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/development/inspect/example_1_1.json",
+          "sizeBytes": 67,
+          "code": "{\n  \"data\": 42,\n  \"message\": \"checking value\",\n  \"level\": \"debug\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Add information to the logs\ntype: object\nproperties:\n  data:\n    description: Any data type is allowed.\n  message:\n    type: string\n  code:\n    type: string\n  level:\n    type: string\n    enum:\n    - error\n    - warning\n    - info\n    - debug\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/development/inspect"
+}

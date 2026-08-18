@@ -1,0 +1,58 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.apply_polygon",
+  "name": "Apply polygon",
+  "abstract": "Apply a process to segments of the data cube",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 apply_polygon",
+      "link": "https://processes.openeo.org/#apply_polygon"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 apply_polygon.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_polygon.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_polygon/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_polygon/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply_polygon/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_polygon/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply_polygon/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/apply_polygon/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`apply_polygon`](https://processes.openeo.org/#apply_polygon) \u2014 *Apply a process to segments of the data cube*. It models the `arguments` object of a process graph node invoking `apply_polygon`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a process to segments of the data cube that are defined by the given polygons. For each polygon provided, all pixels for which the point at the pixel center intersects with the polygon (as defined in the Simple Features standard by the OGC) are collected into sub data cubes. If a pixel is part of multiple of the provided polygons (e.g., when the polygons overlap), the `GeometriesOverlap` exception is thrown. Each sub data cube is passed individually to the given process.\n\n## Callback (child process) signature\n\nThe child process passed as `process` is called with the following named parameters:\n\n- `data`: A sub data cube of the original data cube. The sub data cubes provided cover the smallest possible grid-aligned extent of the corresponding polygon and all pixels outside of the polygon are replaced with the value given in `mask_value`.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The updated sub data cube with the newly computed values and the same dimensions. The dimension properties (name, type, reference system and resolution) must remain unchanged. The labels can change, but the number of labels must remain unchanged.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `geometries` (a `datacube`): must include a dimension matching `geometry` (geometry_type=['Polygon', 'MultiPolygon']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `GeometriesOverlap`: Geometries are not allowed to overlap to avoid that pixel values are processed multiple times.\n\n## Source\n\nOpenEO Processes specification: [`apply_polygon`](https://processes.openeo.org/#apply_polygon) ([openeo-processes/apply_polygon.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_polygon.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `apply_polygon` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint. `geometries` is also shown as a reference: unlike some other cube-masking processes, apply_polygon's `geometries` parameter only accepts a vector data cube (no GeoJSON literal alternative).",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/apply_polygon/example_1_1.json",
+          "sizeBytes": 336,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"geometries\": {\n    \"from_parameter\": \"geometries\"\n  },\n  \"process\": {\n    \"process_graph\": {\n      \"mean1\": {\n        \"process_id\": \"mean\",\n        \"arguments\": {\n          \"data\": {\n            \"from_parameter\": \"data\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Apply a process to segments of the data cube\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  geometries:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  process:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  mask_value:\n    anyOf:\n    - type: number\n    - type: boolean\n    - type: string\n    - type: 'null'\n  context:\n    description: Any data type.\nrequired:\n- data\n- geometries\n- process\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/apply_polygon"
+}

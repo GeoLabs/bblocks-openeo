@@ -1,0 +1,60 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.aggregate.aggregate_temporal_period",
+  "name": "Aggregate temporal period",
+  "abstract": "Temporal aggregations based on calendar hierarchies",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 aggregate_temporal_period",
+      "link": "https://processes.openeo.org/#aggregate_temporal_period"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 aggregate_temporal_period.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_temporal_period.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "aggregate",
+    "climatology",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/aggregate/aggregate_temporal_period/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/aggregate/aggregate_temporal_period/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/aggregate/aggregate_temporal_period/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/aggregate/aggregate_temporal_period/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/aggregate/aggregate_temporal_period/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/aggregate/aggregate_temporal_period/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`aggregate_temporal_period`](https://processes.openeo.org/#aggregate_temporal_period) \u2014 *Temporal aggregations based on calendar hierarchies*. It models the `arguments` object of a process graph node invoking `aggregate_temporal_period`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes a temporal aggregation based on calendar hierarchies such as years, months or seasons. For other calendar hierarchies `aggregate_temporal()` can be used.\n\nFor each interval, all data along the dimension will be passed through the reducer.\n\nIf the dimension is not set or is set to `null`, the data cube is expected to only have one temporal dimension.\n\n## Callback (child process) signature\n\nThe child process passed as `reducer` is called with the following named parameters:\n\n- `data`: A labeled array with elements of any type. If there's no data for the period, the array is empty.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The value to be set in the new data cube.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension of type `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension of type `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `TooManyDimensions`: The data cube contains multiple temporal dimensions. The parameter `dimension` must be specified.\n- `DimensionNotAvailable`: A dimension with the specified name does not exist or no temporal dimension is available.\n\n## Source\n\nOpenEO Processes specification: [`aggregate_temporal_period`](https://processes.openeo.org/#aggregate_temporal_period) ([openeo-processes/aggregate_temporal_period.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/aggregate_temporal_period.json)).\n",
+  "examples": [
+    {
+      "title": "Monthly mean aggregation",
+      "content": "Calling `aggregate_temporal_period` with these arguments returns `{}`.\n\n`data` and the return value are data cube references \u2014 in an actual process graph these are node/parameter references (`from_node` / `from_parameter`), not literal JSON; `{}` here only satisfies the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/aggregate/aggregate_temporal_period/example_1_1.json",
+          "sizeBytes": 267,
+          "code": "{\n  \"data\": {},\n  \"period\": \"month\",\n  \"reducer\": {\n    \"process_graph\": {\n      \"mean1\": {\n        \"process_id\": \"mean\",\n        \"arguments\": {\n          \"data\": {\n            \"from_parameter\": \"data\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Temporal aggregations based on calendar hierarchies\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  period:\n    type: string\n    enum:\n    - hour\n    - day\n    - week\n    - dekad\n    - month\n    - season\n    - tropical-season\n    - year\n    - decade\n    - decade-ad\n  reducer:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  dimension:\n    type:\n    - string\n    - 'null'\n  context:\n    description: Any data type.\nrequired:\n- data\n- period\n- reducer\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/aggregate/aggregate_temporal_period"
+}

@@ -1,0 +1,60 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.comparison.date_between",
+  "name": "Date between",
+  "abstract": "Between comparison for dates and times",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 date_between",
+      "link": "https://processes.openeo.org/#date_between"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 date_between.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/date_between.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison",
+    "date-and-time"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date-time",
+    "ogc.openeo.types.date",
+    "ogc.openeo.types.time"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/date_between/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/date_between/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/date_between/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/date_between/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/date_between/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/comparison/date_between/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`date_between`](https://processes.openeo.org/#date_between) \u2014 *Between comparison for dates and times*. It models the `arguments` object of a process graph node invoking `date_between`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nBy default, this process checks whether `x` is later than or equal to `min` and before or equal to `max`.\n\nIf `exclude_max` is set to `true` the upper bound is excluded so that the process checks whether `x` is later than or equal to `min` and before `max`.\n\nLower and upper bounds are not allowed to be swapped. So `min` MUST be before or equal to `max` or otherwise the process always returns `false`.\n\n## Source\n\nOpenEO Processes specification: [`date_between`](https://processes.openeo.org/#date_between) ([openeo-processes/date_between.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/date_between.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `date_between` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/date_between/example_1_1.json",
+          "sizeBytes": 69,
+          "code": "{\n  \"x\": \"2020-01-01\",\n  \"min\": \"2021-01-01\",\n  \"max\": \"2022-01-01\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Between comparison for dates and times\ntype: object\nproperties:\n  x:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.yaml\n  min:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.yaml\n  max:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.yaml\n  exclude_max:\n    type: boolean\nrequired:\n- x\n- min\n- max\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/comparison/date_between"
+}

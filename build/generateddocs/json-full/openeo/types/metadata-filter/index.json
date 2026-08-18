@@ -1,0 +1,52 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.metadata-filter",
+  "name": "OpenEO type: Filters",
+  "abstract": "A set of metadata property filters, each expressed as a callback (child process).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/metadata-filter/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/metadata-filter/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/metadata-filter/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/metadata-filter/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/metadata-filter/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/metadata-filter/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `metadata-filter`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nA list of filters to check against. Specify key-value-pairs with the key being the name of the metadata property name and the value being a user-defined process evaluated against the metadata values.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "Filters collections/items to those with less than 50% cloud cover.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/metadata-filter/example_1_1.json",
+          "sizeBytes": 252,
+          "code": "{\n  \"eo:cloud_cover\": {\n    \"process_graph\": {\n      \"lt1\": {\n        \"process_id\": \"lt\",\n        \"arguments\": {\n          \"x\": {\n            \"from_parameter\": \"value\"\n          },\n          \"y\": 50\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: metadata-filter\ntitle: Filters\ndescription: A list of filters to check against. Specify key-value-pairs with the\n  key being the name of the metadata property name and the value being a user-defined\n  process evaluated against the metadata values.\nadditionalProperties:\n  $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/metadata-filter"
+}

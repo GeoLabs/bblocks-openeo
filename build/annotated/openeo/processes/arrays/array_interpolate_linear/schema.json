@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "One-dimensional linear interpolation for arrays",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "type": [
+          "number",
+          "null"
+        ]
+      }
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

@@ -1,0 +1,11 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Get the dimension labels
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  dimension:
+    type: string
+required:
+- data
+- dimension

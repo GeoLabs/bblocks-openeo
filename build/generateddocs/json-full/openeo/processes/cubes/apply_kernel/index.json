@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.apply_kernel",
+  "name": "Apply kernel",
+  "abstract": "Apply a spatial convolution with a kernel",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 apply_kernel",
+      "link": "https://processes.openeo.org/#apply_kernel"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 apply_kernel.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_kernel.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "math-image-filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.kernel",
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_kernel/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_kernel/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply_kernel/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_kernel/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply_kernel/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/apply_kernel/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`apply_kernel`](https://processes.openeo.org/#apply_kernel) \u2014 *Apply a spatial convolution with a kernel*. It models the `arguments` object of a process graph node invoking `apply_kernel`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a 2D convolution (i.e. a focal operation with a weighted kernel) on the horizontal spatial dimensions (axes `x` and `y`) of a raster data cube.\n\nEach value in the kernel is multiplied with the corresponding pixel value and all products are summed up afterwards. The sum is then multiplied with the factor.\n\nThe process can't handle non-numerical or infinite numerical values in the data cube. Boolean values are converted to integers (`false` = 0, `true` = 1), but all other non-numerical, NaN, no-data, or infinite values are replaced with zeroes by default (see parameter `replace_invalid`).\n\nFor cases requiring more generic focal operations or non-numerical values, see `apply_neighborhood()`.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `KernelDimensionsUneven`: Each dimension of the kernel must have an uneven number of elements.\n\n## Source\n\nOpenEO Processes specification: [`apply_kernel`](https://processes.openeo.org/#apply_kernel) ([openeo-processes/apply_kernel.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_kernel.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `apply_kernel` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/apply_kernel/example_1_1.json",
+          "sizeBytes": 199,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"kernel\": [\n    [\n      1,\n      1,\n      1\n    ],\n    [\n      1,\n      -8,\n      1\n    ],\n    [\n      1,\n      1,\n      1\n    ]\n  ],\n  \"factor\": 1\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Apply a spatial convolution with a kernel\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  kernel:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/kernel/schema.yaml\n  factor:\n    type: number\n  border:\n    anyOf:\n    - type: string\n      enum:\n      - replicate\n      - reflect\n      - reflect_pixel\n      - wrap\n    - type: number\n  replace_invalid:\n    type: number\nrequired:\n- data\n- kernel\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/apply_kernel"
+}

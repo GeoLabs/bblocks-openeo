@@ -1,0 +1,90 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.exponential-and-logarithmic.log",
+  "name": "Log",
+  "abstract": "Logarithm to a base",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 log",
+      "link": "https://processes.openeo.org/#log"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 log.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/log.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-exponential-and-logarithmic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/exponential-and-logarithmic/log/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/exponential-and-logarithmic/log/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/exponential-and-logarithmic/log/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/exponential-and-logarithmic/log/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/exponential-and-logarithmic/log/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/exponential-and-logarithmic/log/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`log`](https://processes.openeo.org/#log) \u2014 *Logarithm to a base*. It models the `arguments` object of a process graph node invoking `log`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nLogarithm to the base `base` of the number `x` is defined to be the inverse function of taking b to the power of x.\n\nIf any argument is a no-data value, the result will be the no-data value (or `null`).\n\nThe computations follow [IEEE Standard 754](https://ieeexplore.ieee.org/document/8766229) whenever the processing environment supports it. Therefore, having `x` set to `0` with any base results in -infinity if the processing environment supports it or otherwise an exception is thrown. `NaN` is returned for values outside of the allowed range.\n\n## Source\n\nOpenEO Processes specification: [`log`](https://processes.openeo.org/#log) ([openeo-processes/log.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/log.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `log` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/exponential-and-logarithmic/log/example_1_1.json",
+          "sizeBytes": 27,
+          "code": "{\n  \"x\": 10,\n  \"base\": 10\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `log` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/exponential-and-logarithmic/log/example_2_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 2,\n  \"base\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `log` with these arguments returns `2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/exponential-and-logarithmic/log/example_3_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 4,\n  \"base\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `log` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/exponential-and-logarithmic/log/example_4_1.json",
+          "sizeBytes": 26,
+          "code": "{\n  \"x\": 1,\n  \"base\": 16\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Logarithm to a base\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\n    minimum: 0\n  base:\n    type:\n    - number\n    - 'null'\nrequired:\n- x\n- base\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/exponential-and-logarithmic/log"
+}

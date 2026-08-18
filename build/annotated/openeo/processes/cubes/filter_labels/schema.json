@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Filter dimension labels based on a condition",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "condition": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.json"
+    },
+    "dimension": {
+      "type": "string"
+    },
+    "context": {
+      "description": "Any data type."
+    }
+  },
+  "required": [
+    "data",
+    "condition",
+    "dimension"
+  ]
+}

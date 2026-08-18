@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Add a new dimension",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "name": {
+      "type": "string"
+    },
+    "label": {
+      "anyOf": [
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "bands",
+        "geometry",
+        "spatial",
+        "temporal",
+        "other"
+      ]
+    }
+  },
+  "required": [
+    "data",
+    "name",
+    "label"
+  ]
+}

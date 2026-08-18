@@ -1,0 +1,22 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a process to segments of the data cube
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  geometries:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  process:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml
+  mask_value:
+    anyOf:
+    - type: number
+    - type: boolean
+    - type: string
+    - type: 'null'
+  context:
+    description: Any data type.
+required:
+- data
+- geometries
+- process

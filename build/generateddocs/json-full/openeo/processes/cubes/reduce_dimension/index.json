@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.reduce_dimension",
+  "name": "Reduce dimension",
+  "abstract": "Reduce dimensions",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 reduce_dimension",
+      "link": "https://processes.openeo.org/#reduce_dimension"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 reduce_dimension.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/reduce_dimension.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "reducer"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/reduce_dimension/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/reduce_dimension/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/reduce_dimension/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/reduce_dimension/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/reduce_dimension/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/reduce_dimension/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`reduce_dimension`](https://processes.openeo.org/#reduce_dimension) \u2014 *Reduce dimensions*. It models the `arguments` object of a process graph node invoking `reduce_dimension`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a reducer to a data cube dimension by collapsing all the values along the specified dimension into an output value computed by the reducer.\n\nThe dimension is dropped. To avoid this, use `apply_dimension()` instead.\n\n## Callback (child process) signature\n\nThe child process passed as `reducer` is called with the following named parameters:\n\n- `data`: A labeled array with elements of any type.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The value to be set in the new data cube.\n\n## Exceptions\n\n- `DimensionNotAvailable`: A dimension with the specified name does not exist.\n\n## Source\n\nOpenEO Processes specification: [`reduce_dimension`](https://processes.openeo.org/#reduce_dimension) ([openeo-processes/reduce_dimension.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/reduce_dimension.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `reduce_dimension` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/reduce_dimension/example_1_1.json",
+          "sizeBytes": 298,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"reducer\": {\n    \"process_graph\": {\n      \"mean1\": {\n        \"process_id\": \"mean\",\n        \"arguments\": {\n          \"data\": {\n            \"from_parameter\": \"data\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  },\n  \"dimension\": \"t\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Reduce dimensions\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  reducer:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  dimension:\n    type: string\n  context:\n    description: Any data type.\nrequired:\n- data\n- reducer\n- dimension\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/reduce_dimension"
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "subtype": "duration",
+  "title": "Duration",
+  "description": "[ISO 8601 duration](https://en.wikipedia.org/wiki/ISO_8601#Durations), e.g. `P1D` for one day.",
+  "pattern": "^(-?)P(?=\\d|T\\d)(?:(\\d+)Y)?(?:(\\d+)M)?(?:(\\d+)([DW]))?(?:T(?:(\\d+)H)?(?:(\\d+)M)?(?:(\\d+(?:\\.\\d+)?)S)?)?$"
+}

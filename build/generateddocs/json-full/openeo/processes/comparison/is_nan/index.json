@@ -1,0 +1,55 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.comparison.is_nan",
+  "name": "Is nan",
+  "abstract": "Value is not a number",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 is_nan",
+      "link": "https://processes.openeo.org/#is_nan"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 is_nan.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/is_nan.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison",
+    "math-constants"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/is_nan/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/is_nan/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/is_nan/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/is_nan/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/is_nan/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/comparison/is_nan/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`is_nan`](https://processes.openeo.org/#is_nan) \u2014 *Value is not a number*. It models the `arguments` object of a process graph node invoking `is_nan`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nChecks whether the specified value `x` carries the special value `NaN` (not a number) as defined by the [IEEE Standard 754](https://ieeexplore.ieee.org/document/4610935), in which case it returns `true`. Returns `false` otherwise.\n\n## Source\n\nOpenEO Processes specification: [`is_nan`](https://processes.openeo.org/#is_nan) ([openeo-processes/is_nan.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/is_nan.json)).\n",
+  "examples": [
+    {
+      "title": "An ordinary number is not NaN",
+      "content": "Calling `is_nan` with these arguments returns `false`.\n\nJSON has no literal representation for `NaN`, so a JSON example cannot demonstrate the `true` branch; in a process graph, a NaN value typically arises from a prior computation (e.g. `0 / 0`) rather than from a literal argument.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/is_nan/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 5\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Value is not a number\ntype: object\nproperties:\n  x:\n    description: Any data type is allowed.\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/comparison/is_nan"
+}

@@ -1,0 +1,61 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.save_result",
+  "name": "Save result",
+  "abstract": "Save processed data",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 save_result",
+      "link": "https://processes.openeo.org/#save_result"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 save_result.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/save_result.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "export",
+    "stac"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.output-format-options",
+    "ogc.openeo.types.output-format"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/save_result/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/save_result/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/save_result/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/save_result/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/save_result/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/save_result/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`save_result`](https://processes.openeo.org/#save_result) \u2014 *Save processed data*. It models the `arguments` object of a process graph node invoking `save_result`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nMakes the processed data available in the given file format to the corresponding medium that is relevant for the context this processes is applied in:\n\n* For **batch jobs** the data is stored on the back-end. STAC-compatible metadata is usually made available with the processed data.\n* For **synchronous processing** the data is sent to the client as a direct response to the request.\n* **Secondary web services** are provided with the processed data so that it can make use of it (e.g., visualize it). Web service may require the data in a certain format. Please refer to the documentation of the individual service types for details.\n\n## Exceptions\n\n- `FormatUnsuitable`: Data can't be transformed into the requested output format.\n- `DataCubeEmpty`: The file format doesn't support storing empty data cubes.\n\n## Source\n\nOpenEO Processes specification: [`save_result`](https://processes.openeo.org/#save_result) ([openeo-processes/save_result.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/save_result.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `save_result` with these arguments returns `{\"type\": \"Feature\", \"stac_version\": \"1.0.0\", \"id\": \"result-item\", \"geometry\": null, \"properties\": {\"datetime\": \"2020-01-01T00:00:00Z\"}, \"links\": [], \"assets\": {}}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a minimal illustrative STAC Item, matching the `stac` shared type.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/save_result/example_1_1.json",
+          "sizeBytes": 69,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"format\": \"GTiff\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Save processed data\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  format:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/output-format/schema.yaml\n  options:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/output-format-options/schema.yaml\nrequired:\n- data\n- format\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/save_result"
+}

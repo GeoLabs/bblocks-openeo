@@ -1,0 +1,90 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_create",
+  "name": "Array create",
+  "abstract": "Create an array",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_create",
+      "link": "https://processes.openeo.org/#array_create"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_create.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_create.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_create/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_create/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_create/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_create/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_create/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_create/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_create`](https://processes.openeo.org/#array_create) \u2014 *Create an array*. It models the `arguments` object of a process graph node invoking `array_create`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nCreates a new array, which by default is empty.\n\nThe second parameter `repeat` allows to add the given array multiple times to the new array.\n\nIn most cases you can simply pass a (native) array to processes directly, but this process is especially useful to create a new array that is getting returned by a child process, for example in `apply_dimension()`.\n\n## Source\n\nOpenEO Processes specification: [`array_create`](https://processes.openeo.org/#array_create) ([openeo-processes/array_create.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_create.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `array_create` with these arguments returns `[]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_create/example_1_1.json",
+          "sizeBytes": 2,
+          "code": "{}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `array_create` with these arguments returns `[\"this\", \"is\", \"a\", \"test\"]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_create/example_2_1.json",
+          "sizeBytes": 61,
+          "code": "{\n  \"data\": [\n    \"this\",\n    \"is\",\n    \"a\",\n    \"test\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `array_create` with these arguments returns `[null, null, null]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_create/example_3_1.json",
+          "sizeBytes": 43,
+          "code": "{\n  \"data\": [\n    null\n  ],\n  \"repeat\": 3\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `array_create` with these arguments returns `[1, 2, 3, 1, 2, 3]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_create/example_4_1.json",
+          "sizeBytes": 54,
+          "code": "{\n  \"data\": [\n    1,\n    2,\n    3\n  ],\n  \"repeat\": 2\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Create an array\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  repeat:\n    type: integer\n    minimum: 1\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_create"
+}

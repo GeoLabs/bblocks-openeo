@@ -1,0 +1,102 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.statistics.quantiles",
+  "name": "Quantiles",
+  "abstract": "Quantiles",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 quantiles",
+      "link": "https://processes.openeo.org/#quantiles"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 quantiles.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/quantiles.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/quantiles/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/quantiles/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/quantiles/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/quantiles/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/quantiles/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/statistics/quantiles/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`quantiles`](https://processes.openeo.org/#quantiles) \u2014 *Quantiles*. It models the `arguments` object of a process graph node invoking `quantiles`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nCalculates quantiles, which are cut points dividing the range of a sample distribution into either\n\n1. intervals corresponding to the given probabilities *or*\n2. equal-sized intervals (q-quantiles).\n\nEither the parameter `probabilities` or `q` must be specified, otherwise the `QuantilesParameterMissing` exception is thrown. If both parameters are set the `QuantilesParameterConflict` exception is thrown.\n\nSample quantiles can be computed with several different algorithms. Hyndman and Fan (1996) have concluded on nine different types, which are commonly implemented in statistical software packages. This process is implementing type 7, which is implemented widely and often also the default type (e.g. in Excel, Julia, Python, R and S).\n\n## Exceptions\n\n- `QuantilesParameterMissing`: The process `quantiles` requires either the `probabilities` or `q` parameter to be set.\n- `QuantilesParameterConflict`: The process `quantiles` only allows that either the `probabilities` or the `q` parameter is set.\n- `AscendingProbabilitiesRequired`: The values passed for parameter `probabilities` must be sorted in ascending order.\n\n## Source\n\nOpenEO Processes specification: [`quantiles`](https://processes.openeo.org/#quantiles) ([openeo-processes/quantiles.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/quantiles.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `quantiles` with these arguments returns `[2.07, 2.14, 2.28, 2.7, 3.4, 4.5]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/quantiles/example_1_1.json",
+          "sizeBytes": 158,
+          "code": "{\n  \"data\": [\n    2,\n    4,\n    4,\n    4,\n    5,\n    5,\n    7,\n    9\n  ],\n  \"probabilities\": [\n    0.005,\n    0.01,\n    0.02,\n    0.05,\n    0.1,\n    0.5\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `quantiles` with these arguments returns `[4, 4.5, 5.5]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/quantiles/example_2_1.json",
+          "sizeBytes": 96,
+          "code": "{\n  \"data\": [\n    2,\n    4,\n    4,\n    4,\n    5,\n    5,\n    7,\n    9\n  ],\n  \"probabilities\": 4\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `quantiles` with these arguments returns `[-0.5]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/quantiles/example_3_1.json",
+          "sizeBytes": 75,
+          "code": "{\n  \"data\": [\n    -1,\n    -0.5,\n    null,\n    1\n  ],\n  \"probabilities\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `quantiles` with these arguments returns `[null, null, null]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/quantiles/example_4_1.json",
+          "sizeBytes": 101,
+          "code": "{\n  \"data\": [\n    -1,\n    -0.5,\n    null,\n    1\n  ],\n  \"probabilities\": 4,\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Empty array",
+      "content": "Calling `quantiles` with these arguments returns `[null, null]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/quantiles/example_5_1.json",
+          "sizeBytes": 59,
+          "code": "{\n  \"data\": [],\n  \"probabilities\": [\n    0.1,\n    0.5\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Quantiles\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\n  probabilities:\n    anyOf:\n    - title: List of probabilities\n      type: array\n      uniqueItems: true\n      items:\n        type: number\n        minimum: 0\n        maximum: 1\n    - title: Number of intervals (q-quantiles)\n      type: integer\n      minimum: 2\n  q:\n    type: integer\n    minimum: 2\n    deprecated: true\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/statistics/quantiles"
+}

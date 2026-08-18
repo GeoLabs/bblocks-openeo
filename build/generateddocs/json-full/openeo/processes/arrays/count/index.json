@@ -1,0 +1,107 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.count",
+  "name": "Count",
+  "abstract": "Count the number of elements",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 count",
+      "link": "https://processes.openeo.org/#count"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 count.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/count.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "math-statistics",
+    "reducer"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/count/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/count/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/count/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/count/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/count/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/count/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`count`](https://processes.openeo.org/#count) \u2014 *Count the number of elements*. It models the `arguments` object of a process graph node invoking `count`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nGives the number of elements in an array that matches the specified condition.\n\n**Remarks:**\n\n* Counts the number of valid elements by default (`condition` is set to `null`). A valid element is every element for which `is_valid()` returns `true`.\n* To count all elements in a list set the `condition` parameter to boolean `true`.\n\n## Callback (child process) signature\n\nThe child process passed as `condition` is called with the following named parameters:\n\n- `x`: The value of the current element being processed.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: `true` if the element should increase the counter, otherwise `false`.\n\n## Source\n\nOpenEO Processes specification: [`count`](https://processes.openeo.org/#count) ([openeo-processes/count.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/count.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `count` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/count/example_1_1.json",
+          "sizeBytes": 16,
+          "code": "{\n  \"data\": []\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `count` with these arguments returns `4`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/count/example_2_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    1,\n    0,\n    3,\n    2\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `count` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/count/example_3_1.json",
+          "sizeBytes": 39,
+          "code": "{\n  \"data\": [\n    \"ABC\",\n    null\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `count` with these arguments returns `2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/count/example_4_1.json",
+          "sizeBytes": 60,
+          "code": "{\n  \"data\": [\n    false,\n    null\n  ],\n  \"condition\": true\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `count` with these arguments returns `3`.\n\nNote: this official OpenEO example represents `condition` as a bare process-node map, without the `process_graph` wrapper key required by the `process-graph` subtype schema. This snippet is kept verbatim for fidelity to the source and is not schema-validated; it appears to be an inconsistency in the upstream openeo-processes specification between this example and its own subtype schema.",
+      "snippets": [
+        {
+          "language": "text",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/count/example_5_1.text",
+          "sizeBytes": 266,
+          "code": "{\n  \"data\": [\n    0,\n    1,\n    2,\n    3,\n    4,\n    5,\n    null\n  ],\n  \"condition\": {\n    \"gt\": {\n      \"process_id\": \"gt\",\n      \"arguments\": {\n        \"x\": {\n          \"from_parameter\": \"element\"\n        },\n        \"y\": 2\n      },\n      \"result\": true\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Count the number of elements\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  condition:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n    - title: All elements\n      description: Boolean `true` counts all elements in the list.\n      type: boolean\n      const: true\n    - title: Valid elements\n      description: '`null` counts valid elements in the list.'\n      type: 'null'\n  context:\n    description: Any data type.\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/count"
+}

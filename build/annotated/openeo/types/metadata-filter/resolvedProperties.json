@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["process_graph"],"required":true,"schema_type":"object"},{"path":["process_graph","process_id"],"required":true,"schema_type":"string"},{"path":["process_graph","arguments"],"required":true}]}

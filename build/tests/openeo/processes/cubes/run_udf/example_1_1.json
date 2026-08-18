@@ -1,0 +1,7 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "udf": "import numpy as np\n\ndef apply(data):\n    return data * 2\n",
+  "runtime": "Python"
+}

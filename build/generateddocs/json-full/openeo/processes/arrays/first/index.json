@@ -1,0 +1,79 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.first",
+  "name": "First",
+  "abstract": "First element",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 first",
+      "link": "https://processes.openeo.org/#first"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 first.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/first.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/first/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/first/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/first/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/first/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/first/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/first/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`first`](https://processes.openeo.org/#first) \u2014 *First element*. It models the `arguments` object of a process graph node invoking `first`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nGives the first element of an array.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`first`](https://processes.openeo.org/#first) ([openeo-processes/first.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/first.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `first` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/first/example_1_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    1,\n    0,\n    3,\n    2\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `first` with these arguments returns `\"A\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/first/example_2_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    null,\n    \"A\",\n    \"B\"\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `first` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/first/example_3_1.json",
+          "sizeBytes": 68,
+          "code": "{\n  \"data\": [\n    null,\n    2,\n    3\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: First element\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/first"
+}

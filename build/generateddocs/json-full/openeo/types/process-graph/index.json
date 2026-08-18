@@ -1,0 +1,49 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.process-graph",
+  "name": "OpenEO type: User-defined process",
+  "abstract": "A user-defined process (child process graph) passed as a callback argument.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/process-graph/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/process-graph/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/process-graph/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `process-graph`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nAn process graph that is passed as an argument and is expected to be executed by the process. Parameters passed to the process graph are specified in the `parameters` property of the corresponding schema.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A minimal callback process graph that computes `1 + 1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/process-graph/example_1_1.json",
+          "sizeBytes": 157,
+          "code": "{\n  \"process_graph\": {\n    \"add1\": {\n      \"process_id\": \"add\",\n      \"arguments\": {\n        \"x\": 1,\n        \"y\": 1\n      },\n      \"result\": true\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: process-graph\ntitle: User-defined process\ndescription: An process graph that is passed as an argument and is expected to be\n  executed by the process. Parameters passed to the process graph are specified in\n  the `parameters` property of the corresponding schema.\nrequired:\n- process_graph\nproperties:\n  process_graph:\n    type: object\n    additionalProperties:\n      type: object\n      required:\n      - process_id\n      - arguments\n      properties:\n        process_id:\n          type: string\n        arguments: {}\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/process-graph"
+}

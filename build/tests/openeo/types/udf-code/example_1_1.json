@@ -1,0 +1,1 @@
+"import numpy as np\n\ndef apply(data):\n    return data * 2\n"

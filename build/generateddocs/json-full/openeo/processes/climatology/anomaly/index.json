@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.climatology.anomaly",
+  "name": "Anomaly",
+  "abstract": "Compute anomalies",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 anomaly",
+      "link": "https://processes.openeo.org/#anomaly"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 anomaly.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/anomaly.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "climatology",
+    "cubes",
+    "math"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/climatology/anomaly/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/climatology/anomaly/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/climatology/anomaly/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/climatology/anomaly/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/climatology/anomaly/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/climatology/anomaly/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`anomaly`](https://processes.openeo.org/#anomaly) \u2014 *Compute anomalies*. It models the `arguments` object of a process graph node invoking `anomaly`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes anomalies based on normals for temporal periods. It compares the data for each label in the temporal dimension with the corresponding data in the normals data cube by subtracting the normal from the data.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension of type `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `normals` (a `datacube`): must include a dimension of type `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension of type `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Source\n\nOpenEO Processes specification: [`anomaly`](https://processes.openeo.org/#anomaly) ([openeo-processes/anomaly.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/anomaly.json)).\n",
+  "examples": [
+    {
+      "title": "Anomaly against monthly normals",
+      "content": "Calling `anomaly` with these arguments returns `{}`.\n\n`data`, `normals` and the return value are data cube references \u2014 in an actual process graph these are node/parameter references, not literal JSON; `{}` here only satisfies the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/climatology/anomaly/example_1_1.json",
+          "sizeBytes": 54,
+          "code": "{\n  \"data\": {},\n  \"normals\": {},\n  \"period\": \"month\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compute anomalies\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  normals:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  period:\n    type: string\n    enum:\n    - hour\n    - day\n    - week\n    - dekad\n    - month\n    - season\n    - tropical-season\n    - year\n    - decade\n    - decade-ad\n    - climatology-period\n    - single-period\nrequired:\n- data\n- normals\n- period\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/climatology/anomaly"
+}

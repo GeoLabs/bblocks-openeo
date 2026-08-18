@@ -1,0 +1,102 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.logic.xor",
+  "name": "Xor",
+  "abstract": "Logical XOR (exclusive or)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 xor",
+      "link": "https://processes.openeo.org/#xor"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 xor.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/xor.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "logic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/xor/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/xor/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/xor/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/xor/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/xor/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/logic/xor/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`xor`](https://processes.openeo.org/#xor) \u2014 *Logical XOR (exclusive or)*. It models the `arguments` object of a process graph node invoking `xor`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nChecks if **exactly one** of the values is true. If any argument is a no-data value, the result will be the no-data value whenever the outcome is ambiguous.\n\n**Truth table:**\n\n```\nx \\ y   || no-data | false   | true\n------- || ------- | ------- | -------\nno-data || no-data | no-data | no-data\nfalse   || no-data | false   | true\ntrue    || no-data | true    | false\n```\n\n## Source\n\nOpenEO Processes specification: [`xor`](https://processes.openeo.org/#xor) ([openeo-processes/xor.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/xor.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `xor` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/xor/example_1_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": true,\n  \"y\": true\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `xor` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/xor/example_2_1.json",
+          "sizeBytes": 30,
+          "code": "{\n  \"x\": false,\n  \"y\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `xor` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/xor/example_3_1.json",
+          "sizeBytes": 29,
+          "code": "{\n  \"x\": true,\n  \"y\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `xor` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/xor/example_4_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": true,\n  \"y\": null\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `xor` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/xor/example_5_1.json",
+          "sizeBytes": 29,
+          "code": "{\n  \"x\": false,\n  \"y\": null\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Logical XOR (exclusive or)\ntype: object\nproperties:\n  x:\n    type:\n    - boolean\n    - 'null'\n  y:\n    type:\n    - boolean\n    - 'null'\nrequired:\n- x\n- y\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/logic/xor"
+}

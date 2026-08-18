@@ -1,0 +1,17 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Normalized Difference Vegetation Index
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  nir:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml
+  red:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml
+  target_band:
+    anyOf:
+    - type: string
+      pattern: ^\w+$
+    - type: 'null'
+required:
+- data

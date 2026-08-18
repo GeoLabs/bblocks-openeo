@@ -1,0 +1,43 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.epsg-code",
+  "name": "OpenEO type: EPSG Code",
+  "abstract": "A coordinate reference system identified by its EPSG code.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/epsg-code/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/epsg-code/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/epsg-code/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/epsg-code/",
+  "validationPassed": true,
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `epsg-code`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nSpecifies details about cartographic projections as [EPSG](http://www.epsg.org) code.\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "An example value for this subtype: `3857`."
+    },
+    {
+      "title": "Example value",
+      "content": "The EPSG code for WGS 84. For example, `4326`."
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: integer\nsubtype: epsg-code\ntitle: EPSG Code\ndescription: Specifies details about cartographic projections as [EPSG](http://www.epsg.org)\n  code.\nminimum: 1000\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/epsg-code"
+}

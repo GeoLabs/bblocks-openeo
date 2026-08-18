@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.filter_labels",
+  "name": "Filter labels",
+  "abstract": "Filter dimension labels based on a condition",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 filter_labels",
+      "link": "https://processes.openeo.org/#filter_labels"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 filter_labels.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_labels.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/filter_labels/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/filter_labels/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/filter_labels/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/filter_labels/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/filter_labels/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/filter_labels/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`filter_labels`](https://processes.openeo.org/#filter_labels) \u2014 *Filter dimension labels based on a condition*. It models the `arguments` object of a process graph node invoking `filter_labels`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nFilters the dimension labels in the data cube for the given dimension. Only the dimension labels that match the specified condition are preserved, all other labels with their corresponding data get removed.\n\n## Callback (child process) signature\n\nThe child process passed as `condition` is called with the following named parameters:\n\n- `value`: A single dimension label to compare against. The data type of the parameter depends on the dimension labels set for the dimension. Please note that for some dimension types a representation is used, e.g.\n\n* dates and/or times are usually strings compliant to [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601),\n* geometries can be a WKT string or an identifier.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: `true` if the dimension label should be kept in the data cube, otherwise `false`.\n\n## Exceptions\n\n- `DimensionNotAvailable`: A dimension with the specified name does not exist.\n\n## Source\n\nOpenEO Processes specification: [`filter_labels`](https://processes.openeo.org/#filter_labels) ([openeo-processes/filter_labels.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_labels.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Filters the data cube to only contain data from platform Sentinel-2A. This example assumes that the data cube has a dimension `platform` so that computations can distinguish between Sentinel-2A and Sentinel-2B data.\n\nExample arguments for calling `filter_labels`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/filter_labels/example_1_1.json",
+          "sizeBytes": 375,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"sentinel2_data\"\n  },\n  \"condition\": {\n    \"process_graph\": {\n      \"eq\": {\n        \"process_id\": \"eq\",\n        \"arguments\": {\n          \"x\": {\n            \"from_parameter\": \"value\"\n          },\n          \"y\": \"Sentinel-2A\",\n          \"case_sensitive\": false\n        },\n        \"result\": true\n      }\n    }\n  },\n  \"dimension\": \"platform\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Filter dimension labels based on a condition\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  condition:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  dimension:\n    type: string\n  context:\n    description: Any data type.\nrequired:\n- data\n- condition\n- dimension\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/filter_labels"
+}

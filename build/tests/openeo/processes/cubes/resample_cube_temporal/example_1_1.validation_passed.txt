@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.cubes.resample_cube_temporal - Resample cube temporal
+Generated 2026-08-18T09:14:59.285166+00:00
+=== Files ===
+Using example_1_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

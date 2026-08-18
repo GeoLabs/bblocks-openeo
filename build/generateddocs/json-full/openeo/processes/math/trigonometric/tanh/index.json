@@ -1,0 +1,54 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.trigonometric.tanh",
+  "name": "Tanh",
+  "abstract": "Hyperbolic tangent",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 tanh",
+      "link": "https://processes.openeo.org/#tanh"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 tanh.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/tanh.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/tanh/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/tanh/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/trigonometric/tanh/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/tanh/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/trigonometric/tanh/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/trigonometric/tanh/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`tanh`](https://processes.openeo.org/#tanh) \u2014 *Hyperbolic tangent*. It models the `arguments` object of a process graph node invoking `tanh`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the hyperbolic tangent of `x`. The tangent is defined to be the hyperbolic sine of x divided by the hyperbolic cosine of x.\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`tanh`](https://processes.openeo.org/#tanh) ([openeo-processes/tanh.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/tanh.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `tanh` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/trigonometric/tanh/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 0\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Hyperbolic tangent\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/trigonometric/tanh"
+}

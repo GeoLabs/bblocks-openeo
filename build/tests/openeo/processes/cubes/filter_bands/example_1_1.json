@@ -1,0 +1,9 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "bands": [
+    "B04",
+    "B08"
+  ]
+}

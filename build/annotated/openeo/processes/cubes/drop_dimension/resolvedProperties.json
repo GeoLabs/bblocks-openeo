@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.drop_dimension"]},{"path":["name"],"required":true,"schema_type":"string","sources":["bblocks://ogc.openeo.processes.cubes.drop_dimension"]}]}

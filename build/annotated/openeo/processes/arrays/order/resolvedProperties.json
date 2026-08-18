@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"schema_type":"array","sources":["bblocks://ogc.openeo.processes.arrays.order"]},{"path":["asc"],"schema_type":"boolean","sources":["bblocks://ogc.openeo.processes.arrays.order"]},{"path":["nodata"],"schema_type":["boolean","null"],"sources":["bblocks://ogc.openeo.processes.arrays.order"]}]}

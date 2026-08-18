@@ -1,0 +1,127 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.power",
+  "name": "Power",
+  "abstract": "Exponentiation",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 power",
+      "link": "https://processes.openeo.org/#power"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 power.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/power.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "math-exponential-and-logarithmic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/power/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/power/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/power/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/power/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/power/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/power/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`power`](https://processes.openeo.org/#power) \u2014 *Exponentiation*. It models the `arguments` object of a process graph node invoking `power`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the exponentiation for the base `base` raised to the power of `p`.\n\nIf any argument is a no-data value, the result will be the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`power`](https://processes.openeo.org/#power) ([openeo-processes/power.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/power.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `power` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_1_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"base\": 0,\n  \"p\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `power` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_2_1.json",
+          "sizeBytes": 27,
+          "code": "{\n  \"base\": 2.5,\n  \"p\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `power` with these arguments returns `27`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_3_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"base\": 3,\n  \"p\": 3\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `power` with these arguments returns `0.2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_4_1.json",
+          "sizeBytes": 26,
+          "code": "{\n  \"base\": 5,\n  \"p\": -1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `power` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_5_1.json",
+          "sizeBytes": 27,
+          "code": "{\n  \"base\": 1,\n  \"p\": 0.5\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Calling `power` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_6_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"base\": 1,\n  \"p\": null\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 7",
+      "content": "Calling `power` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/power/example_7_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"base\": null,\n  \"p\": 2\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Exponentiation\ntype: object\nproperties:\n  base:\n    type:\n    - number\n    - 'null'\n  p:\n    type:\n    - number\n    - 'null'\nrequired:\n- base\n- p\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/power"
+}

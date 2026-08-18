@@ -1,0 +1,7 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: integer
+subtype: epsg-code
+title: EPSG Code
+description: Specifies details about cartographic projections as [EPSG](http://www.epsg.org)
+  code.
+minimum: 1000

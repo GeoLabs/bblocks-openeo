@@ -1,0 +1,52 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.chunk-size",
+  "name": "OpenEO type: Chunk Size",
+  "abstract": "A per-dimension chunk size specification for tiling/processing hints.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.duration"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/chunk-size/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/chunk-size/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/chunk-size/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `chunk-size`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nThe chunk size per dimension given. This object maps the dimension names given as key to chunks given as either a physical measure or pixels. If not given or `null`, no chunking is applied.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A 256-pixel chunk size for the x dimension.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/chunk-size/example_1_1.json",
+          "sizeBytes": 38,
+          "code": "{\n  \"dimension\": \"x\",\n  \"value\": 256\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: chunk-size\ntitle: Chunk Size\ndescription: The chunk size per dimension given. This object maps the dimension names\n  given as key to chunks given as either a physical measure or pixels. If not given\n  or `null`, no chunking is applied.\nrequired:\n- dimension\n- value\nproperties:\n  dimension:\n    type: string\n  value:\n    default: null\n    anyOf:\n    - type: 'null'\n    - type: number\n      minimum: 0\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/duration/schema.yaml\n  unit:\n    type: string\n    description: The unit the values are given in. If no unit is given, uses the unit\n      specified for the dimension or otherwise the default unit of the reference system.\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/chunk-size"
+}

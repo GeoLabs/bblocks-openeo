@@ -1,0 +1,7 @@
+{
+  "x": 0.3,
+  "inputMin": -1,
+  "inputMax": 1,
+  "outputMin": 0,
+  "outputMax": 255
+}

@@ -1,0 +1,159 @@
+{
+  "title": "Validation report for ogc.openeo.processes.math.min - Min",
+  "bblockName": "Min",
+  "bblockId": "ogc.openeo.processes.math.min",
+  "generated": "2026-08-18T09:14:56.509988+00:00",
+  "result": true,
+  "items": [
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/openeo/processes/math/min/example_1_1.json",
+        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_1_1.json",
+        "exampleIndex": 1,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_1_1.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/openeo/processes/math/min/example_2_1.json",
+        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_2_1.json",
+        "exampleIndex": 2,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_2_1.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/openeo/processes/math/min/example_3_1.json",
+        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_3_1.json",
+        "exampleIndex": 3,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_3_1.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "source": {
+        "type": "EXAMPLE",
+        "requireFail": false,
+        "filename": "build/tests/openeo/processes/math/min/example_4_1.json",
+        "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_4_1.json",
+        "exampleIndex": 4,
+        "snippetIndex": 1,
+        "language": "application/json"
+      },
+      "result": true,
+      "sections": [
+        {
+          "name": "FILES",
+          "title": "Files",
+          "entries": [
+            {
+              "isError": false,
+              "message": "Using example_4_1.json from examples"
+            }
+          ]
+        },
+        {
+          "name": "JSON_SCHEMA",
+          "title": "JSON Schema",
+          "entries": [
+            {
+              "op": "validation",
+              "result": true,
+              "isError": false,
+              "message": "Validation passed"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "globalErrors": {},
+  "counts": {
+    "total": 4,
+    "passed": 4,
+    "failed": 0
+  }
+}

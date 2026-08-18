@@ -1,0 +1,49 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.raster-cube",
+  "name": "OpenEO type: Raster data cube",
+  "abstract": "A raster data cube (deprecated in favour of `datacube`).",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type",
+    "deprecated"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/raster-cube/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/raster-cube/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/raster-cube/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/raster-cube/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/raster-cube/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `raster-cube`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\n> **Note:** OpenEO marks this subtype as deprecated in its own specification; it is retained here for completeness while existing processes still reference it.\n\nA raster data cube, which is a data cube with two dimension of type spatial (x and y). This has been deprecated in favour of `datacube`.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A raster data cube reference; prefer the `datacube` subtype for new processes.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/raster-cube/example_1_1.json",
+          "sizeBytes": 2,
+          "code": "{}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: raster-cube\ntitle: Raster data cube\ndescription: A raster data cube, which is a data cube with two dimension of type spatial\n  (x and y). This has been deprecated in favour of `datacube`.\ndeprecated: true\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/raster-cube"
+}

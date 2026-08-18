@@ -1,0 +1,45 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "geometries": {
+    "type": "Polygon",
+    "coordinates": [
+      [
+        [
+          16.1,
+          48.1
+        ],
+        [
+          16.6,
+          48.1
+        ],
+        [
+          16.6,
+          48.6
+        ],
+        [
+          16.1,
+          48.6
+        ],
+        [
+          16.1,
+          48.1
+        ]
+      ]
+    ]
+  },
+  "reducer": {
+    "process_graph": {
+      "mean1": {
+        "process_id": "mean",
+        "arguments": {
+          "data": {
+            "from_parameter": "data"
+          }
+        },
+        "result": true
+      }
+    }
+  }
+}

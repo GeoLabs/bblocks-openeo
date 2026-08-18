@@ -1,0 +1,7 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: wkt2-definition
+title: WKT2 definition
+description: Specifies details about cartographic projections as WKT2 string. Refers
+  to the latest WKT2 version (currently [WKT2:2018](http://docs.opengeospatial.org/is/18-010r7/18-010r7.html)
+  / ISO 19162:2018) unless otherwise stated by the process.

@@ -1,0 +1,24 @@
+{
+  "cube1": {
+    "from_parameter": "cube1"
+  },
+  "cube2": {
+    "from_parameter": "cube2"
+  },
+  "overlap_resolver": {
+    "process_graph": {
+      "add1": {
+        "process_id": "add",
+        "arguments": {
+          "x": {
+            "from_parameter": "x"
+          },
+          "y": {
+            "from_parameter": "y"
+          }
+        },
+        "result": true
+      }
+    }
+  }
+}

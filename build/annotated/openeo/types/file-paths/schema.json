@@ -1,0 +1,10 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "subtype": "file-paths",
+  "title": "Multiple File paths",
+  "description": "An array with relative paths to user-uploaded files. Clients should assist to generate a list of files for folders.",
+  "items": {
+    "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/file-path/schema.json"
+  }
+}

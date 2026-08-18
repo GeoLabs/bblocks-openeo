@@ -1,0 +1,54 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.trigonometric.sin",
+  "name": "Sin",
+  "abstract": "Sine",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 sin",
+      "link": "https://processes.openeo.org/#sin"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 sin.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sin.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-trigonometric"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/sin/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/sin/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/trigonometric/sin/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/trigonometric/sin/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/trigonometric/sin/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/trigonometric/sin/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`sin`](https://processes.openeo.org/#sin) \u2014 *Sine*. It models the `arguments` object of a process graph node invoking `sin`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the sine of `x`.\n\nWorks on radians only.\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`sin`](https://processes.openeo.org/#sin) ([openeo-processes/sin.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sin.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `sin` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/trigonometric/sin/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 0\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Sine\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/trigonometric/sin"
+}

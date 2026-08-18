@@ -1,0 +1,138 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.rounding.round",
+  "name": "Round",
+  "abstract": "Round to a specified precision",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 round",
+      "link": "https://processes.openeo.org/#round"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 round.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/round.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-rounding"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/rounding/round/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/rounding/round/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/rounding/round/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/rounding/round/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/rounding/round/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/rounding/round/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`round`](https://processes.openeo.org/#round) \u2014 *Round to a specified precision*. It models the `arguments` object of a process graph node invoking `round`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nRounds a real number `x` to specified precision `p`.\n\nIf `x` is halfway between closest numbers of precision `p`, it is rounded to the closest even number of precision `p`.\nThis behavior follows [IEEE Standard 754](https://ieeexplore.ieee.org/document/8766229) and is often called \"round to nearest (even)\" or \"banker's rounding\". It minimizes rounding errors that result from consistently rounding a midpoint value in a single direction.\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`round`](https://processes.openeo.org/#round) ([openeo-processes/round.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/round.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `round` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `round` with these arguments returns `3.6`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_2_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 3.56,\n  \"p\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `round` with these arguments returns `-0.44`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_3_1.json",
+          "sizeBytes": 31,
+          "code": "{\n  \"x\": -0.4444444,\n  \"p\": 2\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `round` with these arguments returns `-2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_4_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": -2.5\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `round` with these arguments returns `-4`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_5_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": -3.5\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Calling `round` with these arguments returns `0.2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_6_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 0.25,\n  \"p\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 7",
+      "content": "Calling `round` with these arguments returns `0.4`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_7_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 0.35,\n  \"p\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 8",
+      "content": "Calling `round` with these arguments returns `1200`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/rounding/round/example_8_1.json",
+          "sizeBytes": 28,
+          "code": "{\n  \"x\": 1234.5,\n  \"p\": -2\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Round to a specified precision\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\n  p:\n    type: integer\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/rounding/round"
+}

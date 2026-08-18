@@ -1,0 +1,7 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: string
+subtype: band-name
+title: Band Name
+description: Either a unique band name (metadata field `name`) or a [common band name](https://github.com/radiantearth/stac-spec/tree/v0.9.0/extensions/eo#common-band-names)
+  (metadata field `common_name`) available in the data cube. If the unique band name
+  and the common name conflict, the unique band name has a higher priority.

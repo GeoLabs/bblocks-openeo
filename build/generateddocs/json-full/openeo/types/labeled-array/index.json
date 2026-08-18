@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.labeled-array",
+  "name": "OpenEO type: Array with labels",
+  "abstract": "An ordered, associative array: a list of values with a label attached to each value.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/labeled-array/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/labeled-array/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/labeled-array/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/labeled-array/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/labeled-array/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `labeled-array`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nAn associative, ordered list of key-value pairs. Basically an array, which additionally has labels for each value. Labels can be numbers or (temporal) strings.\n\n**Important:** Due to the lack of such a data type in JSON, the schema for the items is not formally specified yet and a placeholder.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "An array; when labeled, each value would carry an associated label.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/labeled-array/example_1_1.json",
+          "sizeBytes": 17,
+          "code": "[\n  1,\n  2,\n  3\n]"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: array\nsubtype: labeled-array\ntitle: Array with labels\ndescription: 'An associative, ordered list of key-value pairs. Basically an array,\n  which additionally has labels for each value. Labels can be numbers or (temporal)\n  strings.\n\n\n  **Important:** Due to the lack of such a data type in JSON, the schema for the items\n  is not formally specified yet and a placeholder.'\nitems:\n  description: Any data type.\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/labeled-array"
+}

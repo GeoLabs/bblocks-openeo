@@ -1,0 +1,60 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.ndvi",
+  "name": "Ndvi",
+  "abstract": "Normalized Difference Vegetation Index",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 ndvi",
+      "link": "https://processes.openeo.org/#ndvi"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 ndvi.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/ndvi.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "math-indices",
+    "vegetation-indices"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.band-name"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/ndvi/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/ndvi/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/ndvi/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/ndvi/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/ndvi/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/ndvi/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`ndvi`](https://processes.openeo.org/#ndvi) \u2014 *Normalized Difference Vegetation Index*. It models the `arguments` object of a process graph node invoking `ndvi`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the Normalized Difference Vegetation Index (NDVI). The NDVI is computed as *`(nir - red) / (nir + red)`*.\n\nThe `data` parameter expects a raster data cube with a dimension of type `bands` or a `DimensionAmbiguous` exception is thrown otherwise. By default, the dimension must have at least two bands with the common names `red` and `nir` assigned. Otherwise, the user has to specify the parameters `nir` and `red`. If neither is the case, either the exception `NirBandAmbiguous` or `RedBandAmbiguous` is thrown. The common names for each band are specified in the collection's band metadata and are *not* equal to the band names.\n\nBy default, the dimension of type `bands` is dropped by this process. To keep the dimension specify a new band name in the parameter `target_band`. This adds a new dimension label with the specified name to the dimension, which can be used to access the computed values. If a band with the specified name exists, a `BandExists` is thrown.\n\nThis process is very similar to the process `normalized_difference()`, but determines the bands automatically based on the common names (`red`/`nir`) specified in the metadata.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), `bands`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `NirBandAmbiguous`: The NIR band can't be resolved, please specify the specific NIR band name.\n- `RedBandAmbiguous`: The red band can't be resolved, please specify the specific red band name.\n- `DimensionAmbiguous`: dimension of type `bands` is not available or is ambiguous..\n- `BandExists`: A band with the specified target name exists.\n\n## Source\n\nOpenEO Processes specification: [`ndvi`](https://processes.openeo.org/#ndvi) ([openeo-processes/ndvi.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/ndvi.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `ndvi` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint. Uses the `nir`/`red` defaults (band common names `nir` and `red`), so no explicit band names are needed here.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/ndvi/example_1_1.json",
+          "sizeBytes": 48,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Normalized Difference Vegetation Index\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  nir:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml\n  red:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml\n  target_band:\n    anyOf:\n    - type: string\n      pattern: ^\\w+$\n    - type: 'null'\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/ndvi"
+}

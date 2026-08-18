@@ -1,0 +1,58 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_filter",
+  "name": "Array filter",
+  "abstract": "Filter an array based on a condition",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_filter",
+      "link": "https://processes.openeo.org/#array_filter"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_filter.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_filter.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_filter/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_filter/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_filter/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_filter/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_filter/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_filter/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_filter`](https://processes.openeo.org/#array_filter) \u2014 *Filter an array based on a condition*. It models the `arguments` object of a process graph node invoking `array_filter`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nFilters the array elements based on a logical expression so that afterwards an array is returned that only contains the values, indices and/or labels conforming to the condition.\n\n## Callback (child process) signature\n\nThe child process passed as `condition` is called with the following named parameters:\n\n- `x`: The value of the current element being processed.\n- `index`: The zero-based index of the current element being processed.\n- `label` (optional): The label of the current element being processed. Only populated for labeled arrays.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: `true` if the value should be kept in the array, otherwise `false`.\n\n## Source\n\nOpenEO Processes specification: [`array_filter`](https://processes.openeo.org/#array_filter) ([openeo-processes/array_filter.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_filter.json)).\n",
+  "examples": [
+    {
+      "title": "Keep elements greater than 1",
+      "content": "Filters the array to the elements for which `gt(x, 1)` returns `true`.\n\nCalling `array_filter` with these arguments returns `[2, 3]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_filter/example_1_1.json",
+          "sizeBytes": 286,
+          "code": "{\n  \"data\": [\n    0,\n    1,\n    2,\n    3\n  ],\n  \"condition\": {\n    \"process_graph\": {\n      \"gt1\": {\n        \"process_id\": \"gt\",\n        \"arguments\": {\n          \"x\": {\n            \"from_parameter\": \"x\"\n          },\n          \"y\": 1\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Filter an array based on a condition\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  condition:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  context:\n    description: Any data type.\nrequired:\n- data\n- condition\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_filter"
+}

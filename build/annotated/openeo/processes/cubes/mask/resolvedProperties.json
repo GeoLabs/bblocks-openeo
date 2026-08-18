@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.mask"]},{"path":["mask"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.mask"]},{"path":["replacement"],"schema_type":["number","boolean","string","null"],"sources":["bblocks://ogc.openeo.processes.cubes.mask"]}]}

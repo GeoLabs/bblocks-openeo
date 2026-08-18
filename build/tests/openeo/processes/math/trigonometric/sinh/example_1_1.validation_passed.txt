@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.math.trigonometric.sinh - Sinh
+Generated 2026-08-18T09:14:56.753038+00:00
+=== Files ===
+Using example_1_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

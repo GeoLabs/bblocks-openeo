@@ -1,0 +1,49 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.stac",
+  "name": "OpenEO type: STAC resource",
+  "abstract": "A STAC Catalog, Collection, or Item.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/stac/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/stac/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/stac/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/stac/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/stac/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/stac/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `stac`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nA STAC Catalog, Collection, or Item, as defined by the [STAC specification](https://stacspec.org) version 0.9.0 or later.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A minimal valid STAC Item (no geometry).",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/stac/example_1_1.json",
+          "sizeBytes": 186,
+          "code": "{\n  \"type\": \"Feature\",\n  \"stac_version\": \"1.0.0\",\n  \"id\": \"sample-item\",\n  \"geometry\": null,\n  \"properties\": {\n    \"datetime\": \"2020-01-01T00:00:00Z\"\n  },\n  \"links\": [],\n  \"assets\": {}\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: stac\ntitle: STAC resource\ndescription: A STAC Catalog, Collection, or Item, as defined by the [STAC specification](https://stacspec.org)\n  version 0.9.0 or later.\noneOf:\n- $ref: http://schemas.stacspec.org/v1.0.0/catalog-spec/json-schema/catalog.json\n- $ref: http://schemas.stacspec.org/v1.0.0/collection-spec/json-schema/collection.json\n- $ref: http://schemas.stacspec.org/v1.0.0/item-spec/json-schema/item.json\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/stac"
+}

@@ -1,0 +1,90 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.linear_scale_range",
+  "name": "Linear scale range",
+  "abstract": "Linear transformation between two ranges",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 linear_scale_range",
+      "link": "https://processes.openeo.org/#linear_scale_range"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 linear_scale_range.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/linear_scale_range.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/linear_scale_range/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/linear_scale_range/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/linear_scale_range/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/linear_scale_range/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/linear_scale_range/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/linear_scale_range/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`linear_scale_range`](https://processes.openeo.org/#linear_scale_range) \u2014 *Linear transformation between two ranges*. It models the `arguments` object of a process graph node invoking `linear_scale_range`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nPerforms a linear transformation between the input and output range.\n\nThe given number in `x` is clipped to the bounds specified in `inputMin` and `inputMax` so that the underlying formula *`((x - inputMin) / (inputMax - inputMin)) * (outputMax - outputMin) + outputMin`* never returns a value outside of the range defined by `outputMin` and `outputMax`.\n\nPotential use case include\n\n* scaling values to the 8-bit range (0 - 255) often used for numeric representation of values in one of the channels of the [RGB colour model](https://en.wikipedia.org/wiki/RGB_color_model#Numeric_representations) or\n* calculating percentages (0 - 100).\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`linear_scale_range`](https://processes.openeo.org/#linear_scale_range) ([openeo-processes/linear_scale_range.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/linear_scale_range.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `linear_scale_range` with these arguments returns `165.75`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/linear_scale_range/example_1_1.json",
+          "sizeBytes": 87,
+          "code": "{\n  \"x\": 0.3,\n  \"inputMin\": -1,\n  \"inputMax\": 1,\n  \"outputMin\": 0,\n  \"outputMax\": 255\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `linear_scale_range` with these arguments returns `0.1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/linear_scale_range/example_2_1.json",
+          "sizeBytes": 51,
+          "code": "{\n  \"x\": 25.5,\n  \"inputMin\": 0,\n  \"inputMax\": 255\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `linear_scale_range` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/linear_scale_range/example_3_1.json",
+          "sizeBytes": 51,
+          "code": "{\n  \"x\": null,\n  \"inputMin\": 0,\n  \"inputMax\": 100\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Shows that the input data is clipped.\n\nCalling `linear_scale_range` with these arguments returns `255`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/linear_scale_range/example_4_1.json",
+          "sizeBytes": 87,
+          "code": "{\n  \"x\": 1.12,\n  \"inputMin\": 0,\n  \"inputMax\": 1,\n  \"outputMin\": 0,\n  \"outputMax\": 255\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Linear transformation between two ranges\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\n  inputMin:\n    type: number\n  inputMax:\n    type: number\n  outputMin:\n    type: number\n  outputMax:\n    type: number\nrequired:\n- x\n- inputMin\n- inputMax\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/linear_scale_range"
+}

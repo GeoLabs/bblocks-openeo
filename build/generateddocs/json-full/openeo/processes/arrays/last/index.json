@@ -1,0 +1,79 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.last",
+  "name": "Last",
+  "abstract": "Last element",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 last",
+      "link": "https://processes.openeo.org/#last"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 last.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/last.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/last/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/last/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/last/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/last/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/last/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/last/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`last`](https://processes.openeo.org/#last) \u2014 *Last element*. It models the `arguments` object of a process graph node invoking `last`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nGives the last element of an array.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`last`](https://processes.openeo.org/#last) ([openeo-processes/last.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/last.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `last` with these arguments returns `2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/last/example_1_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    1,\n    0,\n    3,\n    2\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `last` with these arguments returns `\"B\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/last/example_2_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    \"A\",\n    \"B\",\n    null\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `last` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/last/example_3_1.json",
+          "sizeBytes": 68,
+          "code": "{\n  \"data\": [\n    0,\n    1,\n    null\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Last element\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/last"
+}

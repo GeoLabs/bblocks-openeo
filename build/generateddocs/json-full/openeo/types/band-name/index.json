@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.band-name",
+  "name": "OpenEO type: Band Name",
+  "abstract": "A band name or common band name identifying a band in a data cube.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/band-name/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/band-name/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/band-name/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `band-name`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nEither a unique band name (metadata field `name`) or a [common band name](https://github.com/radiantearth/stac-spec/tree/v0.9.0/extensions/eo#common-band-names) (metadata field `common_name`) available in the data cube. If the unique band name and the common name conflict, the unique band name has a higher priority.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A common Sentinel-2 band name.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/band-name/example_1_1.json",
+          "sizeBytes": 5,
+          "code": "\"B04\""
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: string\nsubtype: band-name\ntitle: Band Name\ndescription: Either a unique band name (metadata field `name`) or a [common band name](https://github.com/radiantearth/stac-spec/tree/v0.9.0/extensions/eo#common-band-names)\n  (metadata field `common_name`) available in the data cube. If the unique band name\n  and the common name conflict, the unique band name has a higher priority.\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/band-name"
+}

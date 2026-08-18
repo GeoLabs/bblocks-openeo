@@ -1,0 +1,64 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.load_collection",
+  "name": "Load collection",
+  "abstract": "Load a collection",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 load_collection",
+      "link": "https://processes.openeo.org/#load_collection"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 load_collection.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/load_collection.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "import"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.temporal-interval",
+    "ogc.openeo.types.bounding-box",
+    "ogc.openeo.types.collection-id",
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson",
+    "ogc.openeo.types.metadata-filter",
+    "ogc.openeo.types.band-name"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/load_collection/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/load_collection/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/load_collection/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/load_collection/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/load_collection/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/load_collection/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`load_collection`](https://processes.openeo.org/#load_collection) \u2014 *Load a collection*. It models the `arguments` object of a process graph node invoking `load_collection`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nLoads a collection from the current back-end by its id and returns it as a processable data cube. The data that is added to the data cube can be restricted with the parameters `spatial_extent`, `temporal_extent`, `bands` and `properties`. If no data is available for the given extents, a `NoDataAvailable` exception is thrown.\n\n**Remarks:**\n\n* All dimensions that specify nominal dimension labels (e.g. bands) are ordered as specified in the data cube metadata (`cube:dimensions`) unless otherwise specified in a corresponding parameter (e.g. `bands`).\n* If no additional parameter is specified this would imply that the whole data set is expected to be loaded. Due to the large size of many data sets, this is not recommended and may be optimized by back-ends to only load the data that is actually required after evaluating subsequent processes such as filters. This means that the values in the data cube should be processed only after the data has been limited to the required extent and as a consequence also to a manageable size.\n* The scale and offset are not applied automatically when loading the data. If the corresponding STAC properties are present in the collection metadata, they need to be applied explicitly in the UDP.\n\n## Data cube dimension requirements\n\n- `spatial_extent` (a `datacube`): must include a dimension matching `geometry`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `NoDataAvailable`: There is no data available for the given extents.\n- `TemporalExtentEmpty`: The temporal extent is empty. The second instant in time must always be greater/later than the first instant in time.\n\n## Source\n\nOpenEO Processes specification: [`load_collection`](https://processes.openeo.org/#load_collection) ([openeo-processes/load_collection.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/load_collection.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Loading `Sentinel-2B` data from a `Sentinel-2` collection for 2018, but only with cloud cover between 0 and 50%.\n\nExample arguments for calling `load_collection`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/load_collection/example_1_1.json",
+          "sizeBytes": 834,
+          "code": "{\n  \"id\": \"Sentinel-2\",\n  \"spatial_extent\": {\n    \"west\": 16.1,\n    \"east\": 16.6,\n    \"north\": 48.6,\n    \"south\": 47.2\n  },\n  \"temporal_extent\": [\n    \"2018-01-01\",\n    \"2019-01-01\"\n  ],\n  \"properties\": {\n    \"eo:cloud_cover\": {\n      \"process_graph\": {\n        \"cc\": {\n          \"process_id\": \"between\",\n          \"arguments\": {\n            \"x\": {\n              \"from_parameter\": \"value\"\n            },\n            \"min\": 0,\n            \"max\": 50\n          },\n          \"result\": true\n        }\n      }\n    },\n    \"platform\": {\n      \"process_graph\": {\n        \"pf\": {\n          \"process_id\": \"eq\",\n          \"arguments\": {\n            \"x\": {\n              \"from_parameter\": \"value\"\n            },\n            \"y\": \"Sentinel-2B\",\n            \"case_sensitive\": false\n          },\n          \"result\": true\n        }\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Load a collection\ntype: object\nproperties:\n  id:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/collection-id/schema.yaml\n  spatial_extent:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.yaml\n      deprecated: true\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n    - title: No filter\n      description: Don't filter spatially. All data is included in the data cube.\n      type: 'null'\n  temporal_extent:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-interval/schema.yaml\n    - title: No filter\n      description: Don't filter temporally. All data is included in the data cube.\n      type: 'null'\n  bands:\n    anyOf:\n    - type: array\n      minItems: 1\n      items:\n        $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml\n    - title: No filter\n      description: Don't filter bands. All bands are included in the data cube.\n      type: 'null'\n  properties:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/metadata-filter/schema.yaml\n    - title: No filter\n      description: Don't filter by metadata properties.\n      type: 'null'\nrequired:\n- id\n- spatial_extent\n- temporal_extent\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/load_collection"
+}

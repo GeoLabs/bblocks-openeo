@@ -1,0 +1,115 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.sum",
+  "name": "Sum",
+  "abstract": "Compute the sum by adding up numbers",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 sum",
+      "link": "https://processes.openeo.org/#sum"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 sum.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sum.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/sum/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/sum/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/sum/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/sum/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/sum/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/sum/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`sum`](https://processes.openeo.org/#sum) \u2014 *Compute the sum by adding up numbers*. It models the `arguments` object of a process graph node invoking `sum`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nSums up all elements in a sequential array of numbers and returns the computed sum.\n\nThe computations follow [IEEE Standard 754](https://ieeexplore.ieee.org/document/8766229) whenever the processing environment supports it.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`sum`](https://processes.openeo.org/#sum) ([openeo-processes/sum.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sum.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `sum` with these arguments returns `6`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sum/example_1_1.json",
+          "sizeBytes": 32,
+          "code": "{\n  \"data\": [\n    5,\n    1\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `sum` with these arguments returns `4.5`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sum/example_2_1.json",
+          "sizeBytes": 42,
+          "code": "{\n  \"data\": [\n    -2,\n    4,\n    2.5\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `sum` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sum/example_3_1.json",
+          "sizeBytes": 61,
+          "code": "{\n  \"data\": [\n    1,\n    null\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `sum` with these arguments returns `100`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sum/example_4_1.json",
+          "sizeBytes": 27,
+          "code": "{\n  \"data\": [\n    100\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `sum` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sum/example_5_1.json",
+          "sizeBytes": 54,
+          "code": "{\n  \"data\": [\n    null\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Calling `sum` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sum/example_6_1.json",
+          "sizeBytes": 16,
+          "code": "{\n  \"data\": []\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Compute the sum by adding up numbers\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/sum"
+}

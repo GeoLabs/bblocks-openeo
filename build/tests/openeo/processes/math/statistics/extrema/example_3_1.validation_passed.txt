@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.math.statistics.extrema - Extrema
+Generated 2026-08-18T09:14:56.610668+00:00
+=== Files ===
+Using example_3_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

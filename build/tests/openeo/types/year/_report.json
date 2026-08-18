@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.openeo.types.year - OpenEO type: Year only",
+  "bblockName": "OpenEO type: Year only",
+  "bblockId": "ogc.openeo.types.year",
+  "generated": "2026-08-18T09:14:56.238132+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

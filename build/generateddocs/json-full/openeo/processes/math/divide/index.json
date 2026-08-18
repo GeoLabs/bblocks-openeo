@@ -1,0 +1,78 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.divide",
+  "name": "Divide",
+  "abstract": "Division of two numbers",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 divide",
+      "link": "https://processes.openeo.org/#divide"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 divide.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/divide.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/divide/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/divide/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/divide/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/divide/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/divide/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/divide/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`divide`](https://processes.openeo.org/#divide) \u2014 *Division of two numbers*. It models the `arguments` object of a process graph node invoking `divide`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nDivides argument `x` by the argument `y` (*`x / y`*) and returns the computed result.\n\nNo-data values are taken into account so that the no-data value is returned if any element is such a value.\n\nThe computations follow [IEEE Standard 754](https://ieeexplore.ieee.org/document/8766229) whenever the processing environment supports it. A division by zero results in:\n\n- +infinity for `x` > 0,\n- -infinity for `x` < 0,\n- `NaN` for `x` = 0,\n- or otherwise, throws a `DivisionByZero` exception if the other options are not supported by the processing environment.\n\n## Exceptions\n\n- `DivisionByZero`: Division by zero is not supported.\n\n## Source\n\nOpenEO Processes specification: [`divide`](https://processes.openeo.org/#divide) ([openeo-processes/divide.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/divide.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `divide` with these arguments returns `2`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/divide/example_1_1.json",
+          "sizeBytes": 24,
+          "code": "{\n  \"x\": 5,\n  \"y\": 2.5\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `divide` with these arguments returns `-0.5`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/divide/example_2_1.json",
+          "sizeBytes": 23,
+          "code": "{\n  \"x\": -2,\n  \"y\": 4\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `divide` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/divide/example_3_1.json",
+          "sizeBytes": 25,
+          "code": "{\n  \"x\": 1,\n  \"y\": null\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Division of two numbers\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\n  y:\n    type:\n    - number\n    - 'null'\nrequired:\n- x\n- y\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/divide"
+}

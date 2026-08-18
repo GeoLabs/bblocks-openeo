@@ -1,0 +1,53 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.bounding-box",
+  "name": "OpenEO type: Bounding Box",
+  "abstract": "A spatial bounding box given as west/south/east/north extents and an optional CRS.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.epsg-code",
+    "ogc.openeo.types.wkt2-definition"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/bounding-box/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/bounding-box/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/bounding-box/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `bounding-box`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nA bounding box with the required fields `west`, `south`, `east`, `north` and optionally `base`, `height`, `crs`. The `crs` is a EPSG code or a WKT2:2018 string.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A bounding box around Vienna, Austria, in EPSG:4326.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/bounding-box/example_1_1.json",
+          "sizeBytes": 87,
+          "code": "{\n  \"west\": 16.06,\n  \"south\": 48.06,\n  \"east\": 16.65,\n  \"north\": 48.31,\n  \"crs\": 4326\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: object\nsubtype: bounding-box\ntitle: Bounding Box\ndescription: A bounding box with the required fields `west`, `south`, `east`, `north`\n  and optionally `base`, `height`, `crs`. The `crs` is a EPSG code or a WKT2:2018\n  string.\nrequired:\n- west\n- south\n- east\n- north\nproperties:\n  west:\n    description: West (lower left corner, coordinate axis 1).\n    type: number\n  south:\n    description: South (lower left corner, coordinate axis 2).\n    type: number\n  east:\n    description: East (upper right corner, coordinate axis 1).\n    type: number\n  north:\n    description: North (upper right corner, coordinate axis 2).\n    type: number\n  base:\n    description: Base (optional, lower left corner, coordinate axis 3).\n    type:\n    - number\n    - 'null'\n    default: null\n  height:\n    description: Height (optional, upper right corner, coordinate axis 3).\n    type:\n    - number\n    - 'null'\n    default: null\n  crs:\n    description: Coordinate reference system of the extent, specified as [EPSG code](https://spatialreference.org/ref/epsg/)\n      or [WKT2 CRS string](http://docs.opengeospatial.org/is/18-010r7/18-010r7.html).\n      Defaults to `4326` (EPSG code 4326) unless the client explicitly requests a\n      different coordinate reference system.\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/epsg-code/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/wkt2-definition/schema.yaml\n    default: 4326\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/bounding-box"
+}

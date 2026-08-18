@@ -1,0 +1,90 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.comparison.is_nodata",
+  "name": "Is nodata",
+  "abstract": "Value is a no-data value",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 is_nodata",
+      "link": "https://processes.openeo.org/#is_nodata"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 is_nodata.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/is_nodata.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "comparison"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/is_nodata/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/is_nodata/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/is_nodata/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/comparison/is_nodata/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/comparison/is_nodata/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/comparison/is_nodata/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`is_nodata`](https://processes.openeo.org/#is_nodata) \u2014 *Value is a no-data value*. It models the `arguments` object of a process graph node invoking `is_nodata`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nChecks whether the specified data is no-data value, i.e. equals to any of the no-data values of the data cube (or `null`). The specific no-data values are usually provided through the collection or STAC metadata.\n\nThe special numerical value `NaN` (not a number) as defined by the [IEEE Standard 754](https://ieeexplore.ieee.org/document/4610935) is only considered as no-data value if explicitly specified as no-data value for the data cube.\n\n## Source\n\nOpenEO Processes specification: [`is_nodata`](https://processes.openeo.org/#is_nodata) ([openeo-processes/is_nodata.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/is_nodata.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `is_nodata` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/is_nodata/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `is_nodata` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/is_nodata/example_2_1.json",
+          "sizeBytes": 17,
+          "code": "{\n  \"x\": \"Test\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `is_nodata` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/is_nodata/example_3_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": null\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `is_nodata` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/comparison/is_nodata/example_4_1.json",
+          "sizeBytes": 35,
+          "code": "{\n  \"x\": [\n    null,\n    null\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Value is a no-data value\ntype: object\nproperties:\n  x:\n    description: Any data type is allowed.\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/comparison/is_nodata"
+}

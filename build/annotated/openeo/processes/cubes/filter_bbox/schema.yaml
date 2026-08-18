@@ -1,0 +1,13 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Spatial filter using a bounding box
+type: object
+properties:
+  data:
+    anyOf:
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  extent:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/schema.yaml
+required:
+- data
+- extent

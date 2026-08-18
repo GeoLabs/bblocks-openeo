@@ -1,0 +1,6 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: object
+subtype: output-format-options
+title: Options for Output File Formats
+description: Key-value-pairs with arguments for the output format options supported
+  by the back-end.

@@ -1,0 +1,78 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.temporal-interval",
+  "name": "OpenEO type: Single temporal interval",
+  "abstract": "A single left-closed temporal interval, as a two-element array [start, end].",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date-time",
+    "ogc.openeo.types.date",
+    "ogc.openeo.types.year",
+    "ogc.openeo.types.time"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-interval/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-interval/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/temporal-interval/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/temporal-interval/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/temporal-interval/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `temporal-interval`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nLeft-closed temporal interval, represented as two-element array with the following elements:\n\n1. The first element is the start of the temporal interval. The specified time instant is **included** in the interval.\n2. The second element is the end of the temporal interval. The specified time instant is **excluded** from the interval.\n\nThe second element must always be greater/later than the first element. Otherwise, an exception is thrown.\n\nThe specified temporal strings follow [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339.html). Also supports unbounded intervals by setting one of the boundaries to `null`, but never both.\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "An example value for this subtype.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/temporal-interval/example_1_1.json",
+          "sizeBytes": 54,
+          "code": "[\n  \"2015-01-01T00:00:00Z\",\n  \"2016-01-01T00:00:00Z\"\n]"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "An example value for this subtype.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/temporal-interval/example_2_1.json",
+          "sizeBytes": 34,
+          "code": "[\n  \"2015-01-01\",\n  \"2016-01-01\"\n]"
+        }
+      ]
+    },
+    {
+      "title": "Example value",
+      "content": "A left-closed interval covering the year 2020.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/temporal-interval/example_3_1.json",
+          "sizeBytes": 34,
+          "code": "[\n  \"2020-01-01\",\n  \"2021-01-01\"\n]"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: array\nsubtype: temporal-interval\ntitle: Single temporal interval\ndescription: 'Left-closed temporal interval, represented as two-element array with\n  the following elements:\n\n\n  1. The first element is the start of the temporal interval. The specified time instant\n  is **included** in the interval.\n\n  2. The second element is the end of the temporal interval. The specified time instant\n  is **excluded** from the interval.\n\n\n  The second element must always be greater/later than the first element. Otherwise,\n  an exception is thrown.\n\n\n  The specified temporal strings follow [RFC 3339](https://www.rfc-editor.org/rfc/rfc3339.html).\n  Also supports unbounded intervals by setting one of the boundaries to `null`, but\n  never both.'\nuniqueItems: true\nminItems: 2\nmaxItems: 2\nitems:\n  description: Processes and implementations may choose to only implement a subset\n    of the subtypes specified here. Clients must check what back-ends / processes\n    actually support.\n  anyOf:\n  - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml\n  - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml\n  - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/time/schema.yaml\n  - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/year/schema.yaml\n  - type: 'null'\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/temporal-interval"
+}

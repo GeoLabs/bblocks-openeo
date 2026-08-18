@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"schema_type":"array","sources":["bblocks://ogc.openeo.processes.arrays.array_append"]},{"path":["value"],"description":"Any data type is allowed.","required":true,"sources":["bblocks://ogc.openeo.processes.arrays.array_append"]},{"path":["label"],"sources":["bblocks://ogc.openeo.processes.arrays.array_append"]}]}

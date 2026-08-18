@@ -1,0 +1,115 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.texts.text_ends",
+  "name": "Text ends",
+  "abstract": "Text ends with another text",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 text_ends",
+      "link": "https://processes.openeo.org/#text_ends"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 text_ends.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_ends.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "texts",
+    "comparison"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_ends/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_ends/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/texts/text_ends/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_ends/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/texts/text_ends/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/texts/text_ends/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`text_ends`](https://processes.openeo.org/#text_ends) \u2014 *Text ends with another text*. It models the `arguments` object of a process graph node invoking `text_ends`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nChecks whether the text (also known as *string*) specified for `data` contains the text specified for `pattern` at the end. No-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`text_ends`](https://processes.openeo.org/#text_ends) ([openeo-processes/text_ends.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_ends.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `text_ends` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_ends/example_1_1.json",
+          "sizeBytes": 63,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"amet\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `text_ends` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_ends/example_2_1.json",
+          "sizeBytes": 63,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"AMET\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `text_ends` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_ends/example_3_1.json",
+          "sizeBytes": 64,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"Lorem\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `text_ends` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_ends/example_4_1.json",
+          "sizeBytes": 90,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"AMET\",\n  \"case_sensitive\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `text_ends` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_ends/example_5_1.json",
+          "sizeBytes": 72,
+          "code": "{\n  \"data\": \"\\u00c4\",\n  \"pattern\": \"\\u00e4\",\n  \"case_sensitive\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Calling `text_ends` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_ends/example_6_1.json",
+          "sizeBytes": 39,
+          "code": "{\n  \"data\": null,\n  \"pattern\": \"null\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Text ends with another text\ntype: object\nproperties:\n  data:\n    type:\n    - string\n    - 'null'\n  pattern:\n    type: string\n  case_sensitive:\n    type: boolean\nrequired:\n- data\n- pattern\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/texts/text_ends"
+}

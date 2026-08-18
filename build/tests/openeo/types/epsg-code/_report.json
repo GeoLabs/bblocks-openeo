@@ -1,0 +1,14 @@
+{
+  "title": "Validation report for ogc.openeo.types.epsg-code - OpenEO type: EPSG Code",
+  "bblockName": "OpenEO type: EPSG Code",
+  "bblockId": "ogc.openeo.types.epsg-code",
+  "generated": "2026-08-18T09:14:56.259483+00:00",
+  "result": true,
+  "items": [],
+  "globalErrors": {},
+  "counts": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0
+  }
+}

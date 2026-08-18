@@ -1,0 +1,55 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.indices.normalized_difference",
+  "name": "Normalized difference",
+  "abstract": "Normalized difference",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 normalized_difference",
+      "link": "https://processes.openeo.org/#normalized_difference"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 normalized_difference.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/normalized_difference.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-indices",
+    "vegetation-indices"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/indices/normalized_difference/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/indices/normalized_difference/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/indices/normalized_difference/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/indices/normalized_difference/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/indices/normalized_difference/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/indices/normalized_difference/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`normalized_difference`](https://processes.openeo.org/#normalized_difference) \u2014 *Normalized difference*. It models the `arguments` object of a process graph node invoking `normalized_difference`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the normalized difference for two bands. The normalized difference is computed as *`(x - y) / (x + y)`*.\n\nThis process could be used for a number of remote sensing indices such as:\n\n* [NDVI](https://eos.com/ndvi/): `x` = NIR band, `y` = red band\n* [NDWI](https://eos.com/ndwi/): `x` = NIR band, `y` = SWIR band\n* [NDSI](https://eos.com/ndsi/): `x` = green band, `y` = SWIR band\n\nSome back-ends may have native processes such as `ndvi()` available for convenience.\n\n## Source\n\nOpenEO Processes specification: [`normalized_difference`](https://processes.openeo.org/#normalized_difference) ([openeo-processes/normalized_difference.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/normalized_difference.json)).\n",
+  "examples": [
+    {
+      "title": "NDVI-style normalized difference",
+      "content": "Calling `normalized_difference` with these arguments returns `0.7142857142857143`.\n\nFor example, `x` = NIR reflectance and `y` = red reflectance gives NDVI.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/indices/normalized_difference/example_1_1.json",
+          "sizeBytes": 26,
+          "code": "{\n  \"x\": 0.6,\n  \"y\": 0.1\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Normalized difference\ntype: object\nproperties:\n  x:\n    type: number\n  y:\n    type: number\nrequired:\n- x\n- y\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/indices/normalized_difference"
+}

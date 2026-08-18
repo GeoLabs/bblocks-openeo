@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["x"],"description":"Any data type.","required":true,"sources":["bblocks://ogc.openeo.processes.math.constants.constant"]}]}

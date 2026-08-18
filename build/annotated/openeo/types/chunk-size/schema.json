@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "subtype": "chunk-size",
+  "title": "Chunk Size",
+  "description": "The chunk size per dimension given. This object maps the dimension names given as key to chunks given as either a physical measure or pixels. If not given or `null`, no chunking is applied.",
+  "required": [
+    "dimension",
+    "value"
+  ],
+  "properties": {
+    "dimension": {
+      "type": "string"
+    },
+    "value": {
+      "default": null,
+      "anyOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/duration/schema.json"
+        }
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "description": "The unit the values are given in. If no unit is given, uses the unit specified for the dimension or otherwise the default unit of the reference system."
+    }
+  }
+}

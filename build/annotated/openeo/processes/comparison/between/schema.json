@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Between comparison",
+  "type": "object",
+  "properties": {
+    "x": {
+      "description": "Any data type is allowed."
+    },
+    "min": {
+      "type": "number"
+    },
+    "max": {
+      "type": "number"
+    },
+    "exclude_max": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "x",
+    "min",
+    "max"
+  ]
+}

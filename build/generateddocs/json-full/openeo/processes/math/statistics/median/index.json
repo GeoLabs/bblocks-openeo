@@ -1,0 +1,91 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.statistics.median",
+  "name": "Median",
+  "abstract": "Statistical median",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 median",
+      "link": "https://processes.openeo.org/#median"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 median.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/median.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/median/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/median/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/median/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/median/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/median/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/statistics/median/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`median`](https://processes.openeo.org/#median) \u2014 *Statistical median*. It models the `arguments` object of a process graph node invoking `median`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nThe statistical median of an array of numbers is the value separating the higher half from the lower half of the data.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n**Remarks:**\n\n* For symmetric arrays, the result is equal to the `mean()`.\n* The median can also be calculated by computing the `quantiles()` with a probability of *0.5*.\n\n## Source\n\nOpenEO Processes specification: [`median`](https://processes.openeo.org/#median) ([openeo-processes/median.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/median.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `median` with these arguments returns `6`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/median/example_1_1.json",
+          "sizeBytes": 67,
+          "code": "{\n  \"data\": [\n    1,\n    3,\n    3,\n    6,\n    7,\n    8,\n    9\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `median` with these arguments returns `4.5`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/median/example_2_1.json",
+          "sizeBytes": 74,
+          "code": "{\n  \"data\": [\n    1,\n    2,\n    3,\n    4,\n    5,\n    6,\n    8,\n    9\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `median` with these arguments returns `-0.5`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/median/example_3_1.json",
+          "sizeBytes": 53,
+          "code": "{\n  \"data\": [\n    -1,\n    -0.5,\n    null,\n    1\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `median` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/median/example_4_1.json",
+          "sizeBytes": 76,
+          "code": "{\n  \"data\": [\n    -1,\n    0,\n    null,\n    1\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Statistical median\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/statistics/median"
+}

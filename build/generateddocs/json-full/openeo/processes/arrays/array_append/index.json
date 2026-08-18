@@ -1,0 +1,54 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_append",
+  "name": "Array append",
+  "abstract": "Append a value to an array",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_append",
+      "link": "https://processes.openeo.org/#array_append"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_append.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_append.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_append/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_append/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_append/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_append/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_append/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_append/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_append`](https://processes.openeo.org/#array_append) \u2014 *Append a value to an array*. It models the `arguments` object of a process graph node invoking `array_append`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nAppends a new value to the end of the array, which may also include a new label for labeled arrays.\n\n## Exceptions\n\n- `LabelExists`: An array element with the specified label already exists.\n- `ArrayNotLabeled`: A label can't be provided as the given array is not labeled.\n\n## Source\n\nOpenEO Processes specification: [`array_append`](https://processes.openeo.org/#array_append) ([openeo-processes/array_append.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_append.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `array_append` with these arguments returns `[1, 2, 3]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_append/example_1_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    1,\n    2\n  ],\n  \"value\": 3\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Append a value to an array\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      description: Any data type is allowed.\n  value:\n    description: Any data type is allowed.\n  label:\n    anyOf:\n    - type: number\n    - type: string\n    - type: 'null'\nrequired:\n- data\n- value\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_append"
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "array",
+  "subtype": "kernel",
+  "title": "Image Kernel",
+  "description": "A two-dimensional array of numbers to be used as kernel for the image operation.",
+  "items": {
+    "type": "array",
+    "items": {
+      "type": "number"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Apply a process to all values along a dimension",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "process": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.json"
+    },
+    "dimension": {
+      "type": "string"
+    },
+    "target_dimension": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "context": {
+      "description": "Any data type."
+    }
+  },
+  "required": [
+    "data",
+    "process",
+    "dimension"
+  ]
+}

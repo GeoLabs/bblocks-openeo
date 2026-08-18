@@ -1,0 +1,8 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "name": "bands",
+  "label": "NDVI",
+  "type": "bands"
+}

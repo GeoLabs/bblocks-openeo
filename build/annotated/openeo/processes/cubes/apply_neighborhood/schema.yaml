@@ -1,0 +1,26 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Apply a process to pixels in a n-dimensional neighborhood
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  process:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml
+  size:
+    type: array
+    items:
+      $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/schema.yaml
+  overlap:
+    anyOf:
+    - title: Without overlap
+      type: 'null'
+    - title: With overlap
+      type: array
+      items:
+        $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/schema.yaml
+  context:
+    description: Any data type.
+required:
+- data
+- process
+- size

@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.filter_temporal"]},{"path":["extent"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.filter_temporal"]},{"path":["dimension"],"schema_type":["string","null"],"sources":["bblocks://ogc.openeo.processes.cubes.filter_temporal"]}]}

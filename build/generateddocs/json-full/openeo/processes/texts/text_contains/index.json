@@ -1,0 +1,115 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.texts.text_contains",
+  "name": "Text contains",
+  "abstract": "Text contains another text",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 text_contains",
+      "link": "https://processes.openeo.org/#text_contains"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 text_contains.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_contains.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "texts",
+    "comparison"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_contains/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_contains/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/texts/text_contains/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/texts/text_contains/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/texts/text_contains/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/texts/text_contains/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`text_contains`](https://processes.openeo.org/#text_contains) \u2014 *Text contains another text*. It models the `arguments` object of a process graph node invoking `text_contains`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nChecks whether the text (also known as *string*) specified for `data` contains the text specified for `pattern`. No-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`text_contains`](https://processes.openeo.org/#text_contains) ([openeo-processes/text_contains.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/text_contains.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `text_contains` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_contains/example_1_1.json",
+          "sizeBytes": 65,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"openEO\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `text_contains` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_contains/example_2_1.json",
+          "sizeBytes": 70,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"ipsum dolor\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `text_contains` with these arguments returns `false`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_contains/example_3_1.json",
+          "sizeBytes": 70,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"Ipsum Dolor\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `text_contains` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_contains/example_4_1.json",
+          "sizeBytes": 89,
+          "code": "{\n  \"data\": \"Lorem ipsum dolor sit amet\",\n  \"pattern\": \"SIT\",\n  \"case_sensitive\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `text_contains` with these arguments returns `true`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_contains/example_5_1.json",
+          "sizeBytes": 84,
+          "code": "{\n  \"data\": \"\\u00c4\\u00d6\\u00dc\",\n  \"pattern\": \"\\u00f6\",\n  \"case_sensitive\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 6",
+      "content": "Calling `text_contains` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/texts/text_contains/example_6_1.json",
+          "sizeBytes": 39,
+          "code": "{\n  \"data\": null,\n  \"pattern\": \"null\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Text contains another text\ntype: object\nproperties:\n  data:\n    type:\n    - string\n    - 'null'\n  pattern:\n    type: string\n  case_sensitive:\n    type: boolean\nrequired:\n- data\n- pattern\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/texts/text_contains"
+}

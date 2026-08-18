@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.logic.all - All
+Generated 2026-08-18T09:14:56.319859+00:00
+=== Files ===
+Using example_7_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Resample and warp the spatial dimensions",
+  "type": "object",
+  "properties": {
+    "data": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+    },
+    "resolution": {
+      "anyOf": [
+        {
+          "description": "A single number used as the resolution for both x and y.",
+          "type": "number",
+          "minimum": 0
+        },
+        {
+          "description": "A two-element array to specify separate resolutions for x (first element) and y (second element).",
+          "type": "array",
+          "minItems": 2,
+          "maxItems": 2,
+          "items": {
+            "type": "number",
+            "minimum": 0
+          }
+        }
+      ]
+    },
+    "projection": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/epsg-code/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/wkt2-definition/schema.json"
+        },
+        {
+          "title": "Don't change projection",
+          "type": "null"
+        }
+      ]
+    },
+    "method": {
+      "type": "string",
+      "enum": [
+        "average",
+        "bilinear",
+        "cubic",
+        "cubicspline",
+        "lanczos",
+        "max",
+        "med",
+        "min",
+        "mode",
+        "near",
+        "q1",
+        "q3",
+        "rms",
+        "sum"
+      ]
+    },
+    "align": {
+      "type": "string",
+      "enum": [
+        "lower-left",
+        "upper-left",
+        "lower-right",
+        "upper-right"
+      ]
+    }
+  },
+  "required": [
+    "data"
+  ]
+}

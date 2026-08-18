@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.cubes.save_result - Save result
+Generated 2026-08-18T09:14:59.453580+00:00
+=== Files ===
+Using example_1_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

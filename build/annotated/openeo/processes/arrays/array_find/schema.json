@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Get the index for a value in an array",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "description": "Any data type is allowed."
+      }
+    },
+    "value": {
+      "description": "Any data type is allowed."
+    },
+    "reverse": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "data",
+    "value"
+  ]
+}

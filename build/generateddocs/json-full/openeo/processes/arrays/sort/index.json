@@ -1,0 +1,71 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.sort",
+  "name": "Sort",
+  "abstract": "Sort data",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 sort",
+      "link": "https://processes.openeo.org/#sort"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 sort.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sort.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays",
+    "sorting"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.date-time",
+    "ogc.openeo.types.date"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/sort/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/sort/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/sort/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/sort/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/sort/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/sort/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`sort`](https://processes.openeo.org/#sort) \u2014 *Sort data*. It models the `arguments` object of a process graph node invoking `sort`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nSorts an array into ascending (default) or descending order.\n\n**Remarks:**\n\n* The ordering of ties is implementation-dependent.\n* Temporal strings can *not* be compared based on their string representation due to the time zone/time-offset representations.\n\n## Source\n\nOpenEO Processes specification: [`sort`](https://processes.openeo.org/#sort) ([openeo-processes/sort.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sort.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `sort` with these arguments returns `[-1, 2, 3, 4, 6, 7, 8, 9, 9]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/sort/example_1_1.json",
+          "sizeBytes": 102,
+          "code": "{\n  \"data\": [\n    6,\n    -1,\n    2,\n    null,\n    7,\n    4,\n    null,\n    8,\n    3,\n    9,\n    9\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `sort` with these arguments returns `[9, 9, 8, 7, 6, 4, 3, 2, -1, null, null]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/sort/example_2_1.json",
+          "sizeBytes": 136,
+          "code": "{\n  \"data\": [\n    6,\n    -1,\n    2,\n    null,\n    7,\n    4,\n    null,\n    8,\n    3,\n    9,\n    9\n  ],\n  \"asc\": false,\n  \"nodata\": true\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Sort data\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      anyOf:\n      - type: number\n      - type: 'null'\n      - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml\n      - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml\n  asc:\n    type: boolean\n  nodata:\n    type:\n    - boolean\n    - 'null'\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/sort"
+}

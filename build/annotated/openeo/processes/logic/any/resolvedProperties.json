@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"schema_type":"array","sources":["bblocks://ogc.openeo.processes.logic.any"]},{"path":["ignore_nodata"],"schema_type":"boolean","sources":["bblocks://ogc.openeo.processes.logic.any"]}]}

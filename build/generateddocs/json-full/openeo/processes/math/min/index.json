@@ -1,0 +1,92 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.min",
+  "name": "Min",
+  "abstract": "Minimum value",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 min",
+      "link": "https://processes.openeo.org/#min"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 min.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/min.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "math-statistics",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/min/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/min/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/min/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/min/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/min/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/min/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`min`](https://processes.openeo.org/#min) \u2014 *Minimum value*. It models the `arguments` object of a process graph node invoking `min`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the smallest value of an array of numbers, which is equal to the last element of a sorted (i.e., ordered) version of the array.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`min`](https://processes.openeo.org/#min) ([openeo-processes/min.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/min.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `min` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_1_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    1,\n    0,\n    3,\n    2\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `min` with these arguments returns `-0.7`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_2_1.json",
+          "sizeBytes": 54,
+          "code": "{\n  \"data\": [\n    5,\n    2.5,\n    null,\n    -0.7\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `min` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_3_1.json",
+          "sizeBytes": 82,
+          "code": "{\n  \"data\": [\n    1,\n    0,\n    3,\n    null,\n    2\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `min` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/min/example_4_1.json",
+          "sizeBytes": 16,
+          "code": "{\n  \"data\": []\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Minimum value\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/min"
+}

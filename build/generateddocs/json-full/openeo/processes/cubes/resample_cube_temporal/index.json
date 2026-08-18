@@ -1,0 +1,58 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.resample_cube_temporal",
+  "name": "Resample cube temporal",
+  "abstract": "Resample temporal dimensions to match a target data cube",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 resample_cube_temporal",
+      "link": "https://processes.openeo.org/#resample_cube_temporal"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 resample_cube_temporal.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/resample_cube_temporal.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "reproject"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/resample_cube_temporal/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/resample_cube_temporal/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/resample_cube_temporal/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/resample_cube_temporal/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/resample_cube_temporal/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/resample_cube_temporal/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`resample_cube_temporal`](https://processes.openeo.org/#resample_cube_temporal) \u2014 *Resample temporal dimensions to match a target data cube*. It models the `arguments` object of a process graph node invoking `resample_cube_temporal`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nResamples one or more given temporal dimensions from a source data cube to align with the corresponding dimensions of the given target data cube using the nearest neighbor method. Returns a new data cube with the resampled dimensions.\n\nBy default, this process simply takes the nearest neighbor independent of the value (including no-data values). Depending on the data cubes this may lead to values being assigned to two target timestamps. To only consider valid values in a specific range around the target timestamps, use the parameter `valid_within`.\n\nThe rare case of ties is resolved by choosing the earlier timestamps.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `target` (a `datacube`): must include a dimension matching `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `temporal`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `DimensionMismatch`: The temporal dimensions for resampling don't match.\n- `DimensionNotAvailable`: A dimension with the specified name does not exist.\n\n## Source\n\nOpenEO Processes specification: [`resample_cube_temporal`](https://processes.openeo.org/#resample_cube_temporal) ([openeo-processes/resample_cube_temporal.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/resample_cube_temporal.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `resample_cube_temporal` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/resample_cube_temporal/example_1_1.json",
+          "sizeBytes": 98,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"target\": {\n    \"from_parameter\": \"target\"\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Resample temporal dimensions to match a target data cube\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  target:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  dimension:\n    type:\n    - string\n    - 'null'\n  valid_within:\n    type:\n    - number\n    - 'null'\nrequired:\n- data\n- target\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/resample_cube_temporal"
+}

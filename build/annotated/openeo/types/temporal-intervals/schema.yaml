@@ -1,0 +1,9 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+type: array
+subtype: temporal-intervals
+title: Multiple temporal intervals
+description: Left-closed temporal intervals, which are allowed to overlap. Formatted
+  as an array of two-element arrays, each being an array with subtype `temporal-interval`.
+items:
+  $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-interval/schema.yaml
+minItems: 1

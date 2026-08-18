@@ -1,0 +1,8 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "resolution": 10,
+  "projection": 32632,
+  "method": "bilinear"
+}

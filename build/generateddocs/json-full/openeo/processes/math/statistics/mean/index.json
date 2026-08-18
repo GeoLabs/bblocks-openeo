@@ -1,0 +1,79 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.statistics.mean",
+  "name": "Mean",
+  "abstract": "Arithmetic mean (average)",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 mean",
+      "link": "https://processes.openeo.org/#mean"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 mean.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mean.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/mean/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/mean/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/mean/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/mean/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/mean/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/statistics/mean/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`mean`](https://processes.openeo.org/#mean) \u2014 *Arithmetic mean (average)*. It models the `arguments` object of a process graph node invoking `mean`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nThe arithmetic mean of an array of numbers is the quantity commonly called the average. It is defined as the sum of all elements divided by the number of elements.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`mean`](https://processes.openeo.org/#mean) ([openeo-processes/mean.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mean.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `mean` with these arguments returns `1.5`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/mean/example_1_1.json",
+          "sizeBytes": 46,
+          "code": "{\n  \"data\": [\n    1,\n    0,\n    3,\n    2\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `mean` with these arguments returns `3`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/mean/example_2_1.json",
+          "sizeBytes": 54,
+          "code": "{\n  \"data\": [\n    9,\n    2.5,\n    null,\n    -2.5\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `mean` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/mean/example_3_1.json",
+          "sizeBytes": 61,
+          "code": "{\n  \"data\": [\n    1,\n    null\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Arithmetic mean (average)\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/statistics/mean"
+}

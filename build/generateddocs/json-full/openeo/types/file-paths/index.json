@@ -1,0 +1,51 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.file-paths",
+  "name": "OpenEO type: Multiple File paths",
+  "abstract": "An array of relative paths to user-uploaded files.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.file-path"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/file-paths/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/file-paths/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/file-paths/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/file-paths/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/file-paths/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `file-paths`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nAn array with relative paths to user-uploaded files. Clients should assist to generate a list of files for folders.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "Two relative paths to uploaded files.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/file-paths/example_1_1.json",
+          "sizeBytes": 44,
+          "code": "[\n  \"data/input1.tif\",\n  \"data/input2.tif\"\n]"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: array\nsubtype: file-paths\ntitle: Multiple File paths\ndescription: An array with relative paths to user-uploaded files. Clients should assist\n  to generate a list of files for folders.\nitems:\n  $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/file-path/schema.yaml\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/file-paths"
+}

@@ -1,0 +1,48 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.types.wkt2-definition",
+  "name": "OpenEO type: WKT2 definition",
+  "abstract": "A coordinate reference system given as a WKT2 string.",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 subtype-schemas.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json"
+    }
+  ],
+  "tags": [
+    "openeo-type"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/wkt2-definition/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/wkt2-definition/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/wkt2-definition/schema.yaml",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/types/wkt2-definition/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/types/wkt2-definition/",
+  "description": "This Building Block proposes a schema representation of the OpenEO shared subtype `wkt2-definition`, as defined in the [OpenEO Processes subtype schemas](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/meta/subtype-schemas.json). It is a candidate correspondence, not a settled equivalence to any existing OGC schema.\n\nSpecifies details about cartographic projections as WKT2 string. Refers to the latest WKT2 version (currently [WKT2:2018](http://docs.opengeospatial.org/is/18-010r7/18-010r7.html) / ISO 19162:2018) unless otherwise stated by the process.\n",
+  "examples": [
+    {
+      "title": "Example value",
+      "content": "A (truncated) WKT2 CRS definition.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/types/wkt2-definition/example_1_1.json",
+          "sizeBytes": 26,
+          "code": "\"GEOGCRS[\\\"WGS 84\\\", ...]\""
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ntype: string\nsubtype: wkt2-definition\ntitle: WKT2 definition\ndescription: Specifies details about cartographic projections as WKT2 string. Refers\n  to the latest WKT2 version (currently [WKT2:2018](http://docs.opengeospatial.org/is/18-010r7/18-010r7.html)\n  / ISO 19162:2018) unless otherwise stated by the process.\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/types/wkt2-definition"
+}

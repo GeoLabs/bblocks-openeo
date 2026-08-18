@@ -1,0 +1,14 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Rename a dimension
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  source:
+    type: string
+  target:
+    type: string
+required:
+- data
+- source
+- target

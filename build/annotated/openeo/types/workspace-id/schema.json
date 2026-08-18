@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "subtype": "workspace-id",
+  "title": "Workspace ID",
+  "description": "A workspace identifier from the list of available workspaces.",
+  "pattern": "^[\\w\\-\\.~]+$"
+}

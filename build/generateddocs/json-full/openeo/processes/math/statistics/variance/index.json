@@ -1,0 +1,79 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.statistics.variance",
+  "name": "Variance",
+  "abstract": "Variance",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 variance",
+      "link": "https://processes.openeo.org/#variance"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 variance.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/variance.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math-statistics",
+    "reducer"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/variance/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/variance/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/variance/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/statistics/variance/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/statistics/variance/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/statistics/variance/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`variance`](https://processes.openeo.org/#variance) \u2014 *Variance*. It models the `arguments` object of a process graph node invoking `variance`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the sample variance of an array of numbers by calculating the square of the standard deviation (see `sd()`). It is defined to be the expectation of the squared deviation of a random variable from its expected value. Basically, it measures how far the numbers in the array are spread out from their average value.\n\nAn array with solely no-data values returns the no-data value (or `null`).\n\n## Source\n\nOpenEO Processes specification: [`variance`](https://processes.openeo.org/#variance) ([openeo-processes/variance.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/variance.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `variance` with these arguments returns `4`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/variance/example_1_1.json",
+          "sizeBytes": 40,
+          "code": "{\n  \"data\": [\n    -1,\n    1,\n    3\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `variance` with these arguments returns `1.1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/variance/example_2_1.json",
+          "sizeBytes": 70,
+          "code": "{\n  \"data\": [\n    2,\n    3,\n    3,\n    null,\n    4,\n    4,\n    5\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `variance` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/statistics/variance/example_3_1.json",
+          "sizeBytes": 76,
+          "code": "{\n  \"data\": [\n    -1,\n    1,\n    null,\n    3\n  ],\n  \"ignore_nodata\": false\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Variance\ntype: object\nproperties:\n  data:\n    type: array\n    items:\n      type:\n      - number\n      - 'null'\n  ignore_nodata:\n    type: boolean\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/statistics/variance"
+}

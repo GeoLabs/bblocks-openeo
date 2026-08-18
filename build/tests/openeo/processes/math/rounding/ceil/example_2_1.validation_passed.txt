@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.math.rounding.ceil - Ceil
+Generated 2026-08-18T09:14:56.560818+00:00
+=== Files ===
+Using example_2_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

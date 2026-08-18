@@ -1,0 +1,25 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Manipulates dates and times by addition or subtraction
+type: object
+properties:
+  date:
+    anyOf:
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date-time/schema.yaml
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/date/schema.yaml
+  value:
+    type: integer
+  unit:
+    type: string
+    enum:
+    - millisecond
+    - second
+    - minute
+    - hour
+    - day
+    - week
+    - month
+    - year
+required:
+- date
+- value
+- unit

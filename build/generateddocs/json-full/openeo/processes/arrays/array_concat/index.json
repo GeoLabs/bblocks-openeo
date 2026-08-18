@@ -1,0 +1,66 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.arrays.array_concat",
+  "name": "Array concat",
+  "abstract": "Merge two arrays",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 array_concat",
+      "link": "https://processes.openeo.org/#array_concat"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 array_concat.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_concat.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "arrays"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_concat/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_concat/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_concat/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/arrays/array_concat/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/arrays/array_concat/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/arrays/array_concat/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`array_concat`](https://processes.openeo.org/#array_concat) \u2014 *Merge two arrays*. It models the `arguments` object of a process graph node invoking `array_concat`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nConcatenates two arrays into a single array by appending the second array to the first array.\n\nArray labels are kept only if both given arrays are labeled. Otherwise, the labels get discarded from both arrays. The process fails with an `ArrayLabelConflict` exception if a label is present in both arrays. Conflicts must be resolved beforehand.\n\n## Exceptions\n\n- `ArrayLabelConflict`: At least one label exists in both arrays and the conflict must be resolved before.\n\n## Source\n\nOpenEO Processes specification: [`array_concat`](https://processes.openeo.org/#array_concat) ([openeo-processes/array_concat.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/array_concat.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Concatenates two numerical arrays.\n\nCalling `array_concat` with these arguments returns `[1.5, 2.5, 5]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_concat/example_1_1.json",
+          "sizeBytes": 63,
+          "code": "{\n  \"array1\": [\n    1.5,\n    2.5\n  ],\n  \"array2\": [\n    5\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Concatenates two arrays containing different data type, may not always be supported.\n\nCalling `array_concat` with these arguments returns `[\"a\", \"b\", 1, 2]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/arrays/array_concat/example_2_1.json",
+          "sizeBytes": 70,
+          "code": "{\n  \"array1\": [\n    \"a\",\n    \"b\"\n  ],\n  \"array2\": [\n    1,\n    2\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Merge two arrays\ntype: object\nproperties:\n  array1:\n    type: array\n    items:\n      description: Any data type is allowed.\n  array2:\n    type: array\n    items:\n      description: Any data type is allowed.\nrequired:\n- array1\n- array2\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/arrays/array_concat"
+}

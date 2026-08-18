@@ -1,0 +1,8 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Remove dimension labels with no-data values
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+required:
+- data

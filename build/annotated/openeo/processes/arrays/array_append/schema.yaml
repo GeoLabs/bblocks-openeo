@@ -1,0 +1,18 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Append a value to an array
+type: object
+properties:
+  data:
+    type: array
+    items:
+      description: Any data type is allowed.
+  value:
+    description: Any data type is allowed.
+  label:
+    anyOf:
+    - type: number
+    - type: string
+    - type: 'null'
+required:
+- data
+- value

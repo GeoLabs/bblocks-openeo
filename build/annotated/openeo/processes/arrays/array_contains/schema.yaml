@@ -1,0 +1,17 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Check whether the array contains a given value
+type: object
+properties:
+  data:
+    type: array
+    items:
+      description: Any data type is allowed.
+  value:
+    type:
+    - number
+    - boolean
+    - string
+    - 'null'
+required:
+- data
+- value

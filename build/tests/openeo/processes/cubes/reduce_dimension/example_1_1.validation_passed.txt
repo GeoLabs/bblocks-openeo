@@ -1,0 +1,10 @@
+Validation report for ogc.openeo.processes.cubes.reduce_dimension - Reduce dimension
+Generated 2026-08-18T09:14:59.254564+00:00
+=== Files ===
+Using example_1_1.json from examples
+=== End Files ===
+
+=== JSON Schema ===
+Validation passed
+=== End JSON Schema ===
+

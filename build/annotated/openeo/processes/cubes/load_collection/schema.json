@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Load a collection",
+  "type": "object",
+  "properties": {
+    "id": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/collection-id/schema.json"
+    },
+    "spatial_extent": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/bounding-box/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.json",
+          "deprecated": true
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.json"
+        },
+        {
+          "title": "No filter",
+          "description": "Don't filter spatially. All data is included in the data cube.",
+          "type": "null"
+        }
+      ]
+    },
+    "temporal_extent": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-interval/schema.json"
+        },
+        {
+          "title": "No filter",
+          "description": "Don't filter temporally. All data is included in the data cube.",
+          "type": "null"
+        }
+      ]
+    },
+    "bands": {
+      "anyOf": [
+        {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.json"
+          }
+        },
+        {
+          "title": "No filter",
+          "description": "Don't filter bands. All bands are included in the data cube.",
+          "type": "null"
+        }
+      ]
+    },
+    "properties": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/metadata-filter/schema.json"
+        },
+        {
+          "title": "No filter",
+          "description": "Don't filter by metadata properties.",
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "required": [
+    "id",
+    "spatial_extent",
+    "temporal_extent"
+  ]
+}

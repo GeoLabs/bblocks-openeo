@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.mask_polygon",
+  "name": "Mask polygon",
+  "abstract": "Apply a polygon mask",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 mask_polygon",
+      "link": "https://processes.openeo.org/#mask_polygon"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 mask_polygon.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mask_polygon.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "masks"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.geojson"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/mask_polygon/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/mask_polygon/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/mask_polygon/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/mask_polygon/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/mask_polygon/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/mask_polygon/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`mask_polygon`](https://processes.openeo.org/#mask_polygon) \u2014 *Apply a polygon mask*. It models the `arguments` object of a process graph node invoking `mask_polygon`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a (multi) polygon mask to a raster data cube. To apply a raster mask use `mask()`.\n\nAll pixels for which the point at the pixel center **does not** intersect with any polygon (as defined in the Simple Features standard by the OGC) are replaced. This behavior can be inverted by setting the parameter `inside` to `true`. The pixel values are replaced with the value specified for `replacement`, which defaults to the no-data value of the raster data cube. No data values in `data` will be left untouched by the masking operation.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `mask` (a `datacube`): must include a dimension matching `geometry` (geometry_type=['Polygon', 'MultiPolygon']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Source\n\nOpenEO Processes specification: [`mask_polygon`](https://processes.openeo.org/#mask_polygon) ([openeo-processes/mask_polygon.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/mask_polygon.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `mask_polygon` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/mask_polygon/example_1_1.json",
+          "sizeBytes": 390,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"mask\": {\n    \"type\": \"Polygon\",\n    \"coordinates\": [\n      [\n        [\n          16.1,\n          48.1\n        ],\n        [\n          16.6,\n          48.1\n        ],\n        [\n          16.6,\n          48.6\n        ],\n        [\n          16.1,\n          48.6\n        ],\n        [\n          16.1,\n          48.1\n        ]\n      ]\n    ]\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Apply a polygon mask\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  mask:\n    anyOf:\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.yaml\n      deprecated: true\n  replacement:\n    anyOf:\n    - type: number\n    - type: boolean\n    - type: string\n    - type: 'null'\n  inside:\n    type: boolean\nrequired:\n- data\n- mask\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/mask_polygon"
+}

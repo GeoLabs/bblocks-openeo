@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Inverse tangent of two numbers
+type: object
+properties:
+  y:
+    type:
+    - number
+    - 'null'
+  x:
+    type:
+    - number
+    - 'null'
+required:
+- y
+- x

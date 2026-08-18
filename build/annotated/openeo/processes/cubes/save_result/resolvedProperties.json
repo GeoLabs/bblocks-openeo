@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.save_result"]},{"path":["format"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.save_result"]},{"path":["options"],"sources":["bblocks://ogc.openeo.processes.cubes.save_result"]}]}

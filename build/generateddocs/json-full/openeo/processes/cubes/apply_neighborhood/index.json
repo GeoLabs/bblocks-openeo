@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.apply_neighborhood",
+  "name": "Apply neighborhood",
+  "abstract": "Apply a process to pixels in a n-dimensional neighborhood",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 apply_neighborhood",
+      "link": "https://processes.openeo.org/#apply_neighborhood"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 apply_neighborhood.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_neighborhood.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.chunk-size"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_neighborhood/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_neighborhood/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply_neighborhood/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply_neighborhood/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply_neighborhood/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/apply_neighborhood/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`apply_neighborhood`](https://processes.openeo.org/#apply_neighborhood) \u2014 *Apply a process to pixels in a n-dimensional neighborhood*. It models the `arguments` object of a process graph node invoking `apply_neighborhood`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a focal process to a data cube.\n\nA focal process is a process that works on a 'neighborhood' of pixels. The neighborhood can extend into multiple dimensions, this extent is specified by the `size` argument. It is not only (part of) the size of the input window, but also the size of the output for a given position of the sliding window. The sliding window moves with multiples of `size`.\n\nAn overlap can be specified so that neighborhoods can have overlapping boundaries. This allows for continuity of the output. The overlap region must be included in the data cube or array returned by `process`, but any changed values will be ignored. The missing overlap at the borders of the original data cube is made available as no-data values in the sub-data cubes.\n\nThe neighborhood size should be kept small enough, to avoid running beyond computational resources, but a too-small size will result in a larger number of process invocations, which may slow down processing. Window sizes for spatial dimensions typically range from 64 to 512 pixels, while overlaps of 8 to 32 pixels are common.\n\nFor the special case of 2D convolution, it is recommended to use `apply_kernel()`.\n\n## Callback (child process) signature\n\nThe child process passed as `process` is called with the following named parameters:\n\n- `data`: The input data, which is a subset of the data cube as specified in `size` and `overlap`. If the given size and overlap result in a one-dimensional data cube it is converted to a labeled array.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: An array or data cube with the newly computed values. The data type and dimensionality must correspond to the input data.\n\n* Data cubes must have the same dimensions and the dimension properties (name, type, labels, reference system and resolution) must remain unchanged. Otherwise, a `DataCubePropertiesImmutable` exception will be thrown.\n* Arrays can be returned with or without labels.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `spatial` (axis=['x', 'y']), per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `DimensionNotAvailable`: A dimension with the specified name does not exist.\n- `DataCubePropertiesImmutable`: The dimension properties (name, type, labels, reference system and resolution) must remain unchanged.\n\n## Source\n\nOpenEO Processes specification: [`apply_neighborhood`](https://processes.openeo.org/#apply_neighborhood) ([openeo-processes/apply_neighborhood.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply_neighborhood.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Example arguments for calling `apply_neighborhood`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/apply_neighborhood/example_1_1.json",
+          "sizeBytes": 789,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"process\": {\n    \"process_graph\": {\n      \"udf\": {\n        \"process_id\": \"run_udf\",\n        \"arguments\": {\n          \"data\": {\n            \"from_parameter\": \"data\"\n          },\n          \"udf\": \"ml.py\",\n          \"runtime\": \"Python\"\n        },\n        \"result\": true\n      }\n    }\n  },\n  \"size\": [\n    {\n      \"dimension\": \"x\",\n      \"value\": 128,\n      \"unit\": \"px\"\n    },\n    {\n      \"dimension\": \"y\",\n      \"value\": 128,\n      \"unit\": \"px\"\n    },\n    {\n      \"dimension\": \"t\",\n      \"value\": \"P5D\"\n    }\n  ],\n  \"overlap\": [\n    {\n      \"dimension\": \"x\",\n      \"value\": 16,\n      \"unit\": \"px\"\n    },\n    {\n      \"dimension\": \"y\",\n      \"value\": 16,\n      \"unit\": \"px\"\n    },\n    {\n      \"dimension\": \"t\",\n      \"value\": \"P3D\"\n    }\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Apply a process to pixels in a n-dimensional neighborhood\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  process:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  size:\n    type: array\n    items:\n      $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/schema.yaml\n  overlap:\n    anyOf:\n    - title: Without overlap\n      type: 'null'\n    - title: With overlap\n      type: array\n      items:\n        $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/chunk-size/schema.yaml\n  context:\n    description: Any data type.\nrequired:\n- data\n- process\n- size\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/apply_neighborhood"
+}

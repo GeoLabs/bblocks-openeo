@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "string",
+  "subtype": "collection-id",
+  "title": "Collection ID",
+  "description": "A collection identifier from the list of supported collections.",
+  "pattern": "^[\\w\\-\\.~/]+$"
+}

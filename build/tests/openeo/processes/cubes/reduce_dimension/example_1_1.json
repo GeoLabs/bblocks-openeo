@@ -1,0 +1,19 @@
+{
+  "data": {
+    "from_parameter": "data"
+  },
+  "reducer": {
+    "process_graph": {
+      "mean1": {
+        "process_id": "mean",
+        "arguments": {
+          "data": {
+            "from_parameter": "data"
+          }
+        },
+        "result": true
+      }
+    }
+  },
+  "dimension": "t"
+}

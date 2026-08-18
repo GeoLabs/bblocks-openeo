@@ -1,0 +1,14 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Spatial filter raster data cubes using geometries
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  geometries:
+    anyOf:
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+    - $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/geojson/schema.yaml
+      deprecated: true
+required:
+- data
+- geometries

@@ -1,0 +1,1 @@
+{"defs":{},"properties":[{"path":["data"],"required":true,"sources":["bblocks://ogc.openeo.processes.cubes.filter_bands"]},{"path":["bands"],"schema_type":"array","sources":["bblocks://ogc.openeo.processes.cubes.filter_bands"]},{"path":["wavelengths"],"schema_type":"array","sources":["bblocks://ogc.openeo.processes.cubes.filter_bands"]}]}

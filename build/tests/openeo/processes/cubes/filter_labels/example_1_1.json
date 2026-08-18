@@ -1,0 +1,21 @@
+{
+  "data": {
+    "from_parameter": "sentinel2_data"
+  },
+  "condition": {
+    "process_graph": {
+      "eq": {
+        "process_id": "eq",
+        "arguments": {
+          "x": {
+            "from_parameter": "value"
+          },
+          "y": "Sentinel-2A",
+          "case_sensitive": false
+        },
+        "result": true
+      }
+    }
+  },
+  "dimension": "platform"
+}

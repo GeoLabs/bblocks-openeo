@@ -1,0 +1,8 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Define a constant value
+type: object
+properties:
+  x:
+    description: Any data type.
+required:
+- x

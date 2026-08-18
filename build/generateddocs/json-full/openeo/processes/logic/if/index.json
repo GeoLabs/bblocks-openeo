@@ -1,0 +1,104 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.logic.if",
+  "name": "If",
+  "abstract": "If-Then-Else conditional",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 if",
+      "link": "https://processes.openeo.org/#if"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 if.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/if.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "logic",
+    "comparison",
+    "masks"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/if/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/if/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/if/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/logic/if/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/logic/if/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/logic/if/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`if`](https://processes.openeo.org/#if) \u2014 *If-Then-Else conditional*. It models the `arguments` object of a process graph node invoking `if`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nIf the value passed is `true`, returns the value of the `accept` parameter, otherwise returns the value of the `reject` parameter.\n\nThis is basically an if-then-else construct as in other programming languages.\n\n## Source\n\nOpenEO Processes specification: [`if`](https://processes.openeo.org/#if) ([openeo-processes/if.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/if.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `if` with these arguments returns `\"A\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/if/example_1_1.json",
+          "sizeBytes": 53,
+          "code": "{\n  \"value\": true,\n  \"accept\": \"A\",\n  \"reject\": \"B\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `if` with these arguments returns `\"B\"`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/if/example_2_1.json",
+          "sizeBytes": 53,
+          "code": "{\n  \"value\": null,\n  \"accept\": \"A\",\n  \"reject\": \"B\"\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `if` with these arguments returns `[4, 5, 6]`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/if/example_3_1.json",
+          "sizeBytes": 98,
+          "code": "{\n  \"value\": false,\n  \"accept\": [\n    1,\n    2,\n    3\n  ],\n  \"reject\": [\n    4,\n    5,\n    6\n  ]\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `if` with these arguments returns `123`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/if/example_4_1.json",
+          "sizeBytes": 36,
+          "code": "{\n  \"value\": true,\n  \"accept\": 123\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 5",
+      "content": "Calling `if` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/logic/if/example_5_1.json",
+          "sizeBytes": 35,
+          "code": "{\n  \"value\": false,\n  \"accept\": 1\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: If-Then-Else conditional\ntype: object\nproperties:\n  value:\n    type:\n    - boolean\n    - 'null'\n  accept:\n    description: Any data type is allowed.\n  reject:\n    description: Any data type is allowed.\nrequired:\n- value\n- accept\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/logic/if"
+}

@@ -1,0 +1,59 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.filter_bands",
+  "name": "Filter bands",
+  "abstract": "Filter the bands by names",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 filter_bands",
+      "link": "https://processes.openeo.org/#filter_bands"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 filter_bands.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_bands.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes",
+    "filter"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube",
+    "ogc.openeo.types.band-name"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/filter_bands/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/filter_bands/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/filter_bands/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/filter_bands/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/filter_bands/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/filter_bands/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`filter_bands`](https://processes.openeo.org/#filter_bands) \u2014 *Filter the bands by names*. It models the `arguments` object of a process graph node invoking `filter_bands`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nFilters the bands in the data cube so that bands that don't match any of the criteria are dropped from the data cube. The data cube is expected to have only one dimension of type `bands`. Fails with a `DimensionMissing` exception if no such dimension exists.\n\nThe following criteria can be used to select bands:\n\n* `bands`: band name or common band name (e.g. `B01`, `B8A`, `red` or `nir`)\n* `wavelengths`: ranges of wavelengths in micrometers (\u03bcm) (e.g. 0.5 - 0.6)\n\nAll these information are exposed in the band metadata of the collection. To keep algorithms interoperable it is recommended to prefer the common band names or the wavelengths over band names that are specific to the collection and/or back-end.\n\nIf multiple criteria are specified, any of them must match and not all of them, i.e. they are combined with an OR-operation. If no criteria are specified, the `BandFilterParameterMissing` exception must be thrown.\n\n**Important:** The order of the specified array defines the order of the bands in the data cube, which can be important for subsequent processes. If multiple bands are matched by a single criterion (e.g. a range of wavelengths), they stay in the original order.\n\n## Data cube dimension requirements\n\n- `data` (a `datacube`): must include a dimension matching `bands`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n- `(return value)` (a `datacube`): must include a dimension matching `bands`, per the OpenEO process definition (not enforced by the `datacube` shared type's schema itself, which is deliberately dimension-agnostic).\n\n## Exceptions\n\n- `BandFilterParameterMissing`: The process `filter_bands` requires any of the parameters `bands`, `common_names` or `wavelengths` to be set.\n- `DimensionMissing`: A band dimension is missing.\n\n## Source\n\nOpenEO Processes specification: [`filter_bands`](https://processes.openeo.org/#filter_bands) ([openeo-processes/filter_bands.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/filter_bands.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `filter_bands` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/filter_bands/example_1_1.json",
+          "sizeBytes": 87,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"bands\": [\n    \"B04\",\n    \"B08\"\n  ]\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Filter the bands by names\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  bands:\n    type: array\n    items:\n      $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/band-name/schema.yaml\n  wavelengths:\n    type: array\n    items:\n      type: array\n      minItems: 2\n      maxItems: 2\n      items:\n        type: number\n      examples:\n      - - - 0.45\n          - 0.5\n        - - 0.6\n          - 0.7\nrequired:\n- data\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/filter_bands"
+}

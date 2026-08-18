@@ -1,0 +1,91 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.sqrt",
+  "name": "Sqrt",
+  "abstract": "Square root",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 sqrt",
+      "link": "https://processes.openeo.org/#sqrt"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 sqrt.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sqrt.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math",
+    "math-exponential-and-logarithmic"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/sqrt/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/sqrt/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/sqrt/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/sqrt/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/sqrt/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/sqrt/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`sqrt`](https://processes.openeo.org/#sqrt) \u2014 *Square root*. It models the `arguments` object of a process graph node invoking `sqrt`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nComputes the square root of a real number `x`, which is equal to calculating `x` to the power of *0.5*. For negative `x`, the process returns `NaN`.\n\nA square root of x is a number a such that *`a\u00b2 = x`*. Therefore, the square root is the inverse function of a to the power of 2, but only for *a >= 0*.\n\nNo-data values are passed through.\n\n## Source\n\nOpenEO Processes specification: [`sqrt`](https://processes.openeo.org/#sqrt) ([openeo-processes/sqrt.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/sqrt.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `sqrt` with these arguments returns `0`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sqrt/example_1_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 0\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `sqrt` with these arguments returns `1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sqrt/example_2_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `sqrt` with these arguments returns `3`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sqrt/example_3_1.json",
+          "sizeBytes": 12,
+          "code": "{\n  \"x\": 9\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `sqrt` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/sqrt/example_4_1.json",
+          "sizeBytes": 15,
+          "code": "{\n  \"x\": null\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Square root\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\nrequired:\n- x\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/sqrt"
+}

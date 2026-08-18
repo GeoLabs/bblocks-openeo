@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Run a UDF",
+  "type": "object",
+  "properties": {
+    "data": {
+      "description": "A value of any data type."
+    },
+    "udf": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/uri/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/file-path/schema.json"
+        },
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-code/schema.json"
+        }
+      ]
+    },
+    "runtime": {
+      "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-runtime/schema.json"
+    },
+    "version": {
+      "anyOf": [
+        {
+          "$ref": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/udf-runtime-version/schema.json"
+        },
+        {
+          "title": "Default runtime version",
+          "type": "null"
+        }
+      ]
+    },
+    "context": {
+      "description": "Any data type."
+    }
+  },
+  "required": [
+    "data",
+    "udf",
+    "runtime"
+  ]
+}

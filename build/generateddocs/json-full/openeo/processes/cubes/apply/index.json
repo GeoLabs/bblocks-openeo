@@ -1,0 +1,58 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.apply",
+  "name": "Apply",
+  "abstract": "Apply a process to each value",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 apply",
+      "link": "https://processes.openeo.org/#apply"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 apply.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.process-graph",
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/apply/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/apply/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/apply/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`apply`](https://processes.openeo.org/#apply) \u2014 *Apply a process to each value*. It models the `arguments` object of a process graph node invoking `apply`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nApplies a process to each value in the data cube (i.e. a local operation). In contrast, the process `apply_dimension()` applies a process to all values along a particular dimension.\n\n## Callback (child process) signature\n\nThe child process passed as `process` is called with the following named parameters:\n\n- `x`: The value to process.\n- `context` (optional): Additional data passed by the user.\n\nIt must return: The value to be set in the new data cube.\n\n## Source\n\nOpenEO Processes specification: [`apply`](https://processes.openeo.org/#apply) ([openeo-processes/apply.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/apply.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `apply` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/apply/example_1_1.json",
+          "sizeBytes": 275,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"process\": {\n    \"process_graph\": {\n      \"abs1\": {\n        \"process_id\": \"absolute\",\n        \"arguments\": {\n          \"x\": {\n            \"from_parameter\": \"x\"\n          }\n        },\n        \"result\": true\n      }\n    }\n  }\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Apply a process to each value\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  process:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/process-graph/schema.yaml\n  context:\n    description: Any data type.\nrequired:\n- data\n- process\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/apply"
+}

@@ -1,0 +1,15 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Temporal filter based on temporal intervals
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  extent:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/temporal-interval/schema.yaml
+  dimension:
+    type:
+    - string
+    - 'null'
+required:
+- data
+- extent

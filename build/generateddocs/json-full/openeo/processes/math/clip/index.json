@@ -1,0 +1,90 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.math.clip",
+  "name": "Clip",
+  "abstract": "Clip a value between a minimum and a maximum",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 clip",
+      "link": "https://processes.openeo.org/#clip"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 clip.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/clip.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "math"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/clip/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/clip/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/clip/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/math/clip/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/math/clip/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/math/clip/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`clip`](https://processes.openeo.org/#clip) \u2014 *Clip a value between a minimum and a maximum*. It models the `arguments` object of a process graph node invoking `clip`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nClips a number between specified minimum and maximum values. A value larger than the maximum value is set to the maximum value, a value lower than the minimum value is set to the minimum value. If the maximum value is smaller than the minimum number, the process throws a `MinMaxSwapped` exception.\n\nNo-data values are passed through.\n\n## Exceptions\n\n- `MinMaxSwapped`: The minimum value should be lower than or equal to the maximum value.\n\n## Source\n\nOpenEO Processes specification: [`clip`](https://processes.openeo.org/#clip) ([openeo-processes/clip.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/clip.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `clip` with these arguments returns `-1`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/clip/example_1_1.json",
+          "sizeBytes": 38,
+          "code": "{\n  \"x\": -5,\n  \"min\": -1,\n  \"max\": 1\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 2",
+      "content": "Calling `clip` with these arguments returns `10`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/clip/example_2_1.json",
+          "sizeBytes": 42,
+          "code": "{\n  \"x\": 10.001,\n  \"min\": 1,\n  \"max\": 10\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 3",
+      "content": "Calling `clip` with these arguments returns `1e-06`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/clip/example_3_1.json",
+          "sizeBytes": 43,
+          "code": "{\n  \"x\": 1e-06,\n  \"min\": 0,\n  \"max\": 0.02\n}"
+        }
+      ]
+    },
+    {
+      "title": "Example 4",
+      "content": "Calling `clip` with these arguments returns `null`.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/math/clip/example_4_1.json",
+          "sizeBytes": 39,
+          "code": "{\n  \"x\": null,\n  \"min\": 0,\n  \"max\": 1\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Clip a value between a minimum and a maximum\ntype: object\nproperties:\n  x:\n    type:\n    - number\n    - 'null'\n  min:\n    type: number\n  max:\n    type: number\nrequired:\n- x\n- min\n- max\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/math/clip"
+}

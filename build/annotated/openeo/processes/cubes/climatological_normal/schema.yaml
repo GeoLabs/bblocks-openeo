@@ -1,0 +1,24 @@
+$schema: https://json-schema.org/draft/2020-12/schema
+description: Compute climatology normals
+type: object
+properties:
+  data:
+    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml
+  period:
+    type: string
+    enum:
+    - day
+    - month
+    - season
+    - tropical-season
+    - climatology-period
+  climatology_period:
+    type: array
+    uniqueItems: true
+    minItems: 2
+    maxItems: 2
+    items:
+      $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/year/schema.yaml
+required:
+- data
+- period

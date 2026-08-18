@@ -1,0 +1,57 @@
+
+
+{
+  "itemIdentifier": "ogc.openeo.processes.cubes.add_dimension",
+  "name": "Add dimension",
+  "abstract": "Add a new dimension",
+  "status": "under-development",
+  "dateTimeAddition": "2026-08-03T00:00:00Z",
+  "itemClass": "schema",
+  "version": "0.1",
+  "sources": [
+    {
+      "title": "OpenEO Processes \u2014 add_dimension",
+      "link": "https://processes.openeo.org/#add_dimension"
+    },
+    {
+      "title": "Open-EO/openeo-processes \u2014 add_dimension.json (2.0.0-rc.2)",
+      "link": "https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/add_dimension.json"
+    }
+  ],
+  "tags": [
+    "openeo-process",
+    "cubes"
+  ],
+  "dependsOn": [
+    "ogc.openeo.types.datacube"
+  ],
+  "shaclShapes": {},
+  "dateOfLastChange": "2026-08-03",
+  "schema": {
+    "application/yaml": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/add_dimension/schema.yaml",
+    "application/json": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/add_dimension/schema.json"
+  },
+  "sourceSchema": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/add_dimension/schema.yaml",
+  "resolvedSchemaProperties": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/processes/cubes/add_dimension/resolvedProperties.json",
+  "sourceFiles": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/_sources/processes/cubes/add_dimension/",
+  "validationPassed": true,
+  "testOutputs": "https://github.com/GeoLabs/bblocks-openeo/blob/master/build/tests/openeo/processes/cubes/add_dimension/",
+  "description": "This Building Block proposes a schema representation of the OpenEO process [`add_dimension`](https://processes.openeo.org/#add_dimension) \u2014 *Add a new dimension*. It models the `arguments` object of a process graph node invoking `add_dimension`. This is a proposed correspondence between the OpenEO process definition and an OGC Building Block schema, not a settled equivalence.\n\nAdds a new named dimension to the data cube.\n\nAfterwards, the dimension can be referred to with the specified `name`. If a dimension with the specified name exists, the process fails with a `DimensionExists` exception. The dimension label of the dimension is set to the specified `label`.\n\n## Exceptions\n\n- `DimensionExists`: A dimension with the specified name already exists.\n\n## Source\n\nOpenEO Processes specification: [`add_dimension`](https://processes.openeo.org/#add_dimension) ([openeo-processes/add_dimension.json at 2.0.0-rc.2](https://github.com/Open-EO/openeo-processes/blob/2.0.0-rc.2/add_dimension.json)).\n",
+  "examples": [
+    {
+      "title": "Example 1",
+      "content": "Calling `add_dimension` with these arguments returns `{}`.\n\nData-cube-valued arguments/returns are shown as `from_parameter`/`from_node` references, as is standard practice in OpenEO process graphs (and as OpenEO's own official examples for other cube-manipulating processes do) \u2014 a data cube has no meaningful literal JSON form. This process has no official example in openeo-processes; this one is hand-built from its documented parameters. The return value is a data cube reference; it has no meaningful literal JSON form, so `{}` is shown as a placeholder satisfying only the `datacube` shared type's minimal object constraint.",
+      "snippets": [
+        {
+          "language": "json",
+          "url": "https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/tests/openeo/processes/cubes/add_dimension/example_1_1.json",
+          "sizeBytes": 105,
+          "code": "{\n  \"data\": {\n    \"from_parameter\": \"data\"\n  },\n  \"name\": \"bands\",\n  \"label\": \"NDVI\",\n  \"type\": \"bands\"\n}"
+        }
+      ]
+    }
+  ],
+  "annotatedSchema": "$schema: https://json-schema.org/draft/2020-12/schema\ndescription: Add a new dimension\ntype: object\nproperties:\n  data:\n    $ref: https://raw.githubusercontent.com/GeoLabs/bblocks-openeo/undefined/build/annotated/openeo/types/datacube/schema.yaml\n  name:\n    type: string\n  label:\n    anyOf:\n    - type: number\n    - type: string\n  type:\n    type: string\n    enum:\n    - bands\n    - geometry\n    - spatial\n    - temporal\n    - other\nrequired:\n- data\n- name\n- label\n",
+  "gitRepository": "https://github.com/GeoLabs/bblocks-openeo",
+  "gitPath": "_sources/processes/cubes/add_dimension"
+}
